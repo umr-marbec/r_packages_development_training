@@ -7,19 +7,33 @@ book:
   date: "26/05/2025"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - pages/intro.qmd
+    - pages/summary.qmd
+    - pages/references.qmd
+  appendices:
+    - pages/intro.qmd
+  page-footer: 
+    left: "Copyright 2025, Mathieu Depetris UMR MARBEC (IRD, Ifremer, Montpellier university, CNRS)" 
+    right: 
+      - icon: github
+        text: "Source code"
+        href: https://github.com/umr-marbec/r_packages_development_training
+      - icon: box-arrow-up-right
+        text: "UMR MARBEC website"
+        href: https://umr-marbec.fr/
+  page-navigation: true
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: darkly
   pdf:
     documentclass: scrreprt
 
 editor: visual
+
+lang: en-US
 
 execute:
   freeze: auto
