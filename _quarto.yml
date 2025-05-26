@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "r_packages_development_training"
-  author: "Norah Jones"
+  title: "R packages development training"
+  author: "Mathieu Depetris"
   date: "26/05/2025"
   chapters:
     - index.qmd
