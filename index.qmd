@@ -1,9 +1,7 @@
-# Preface {.unnumbered}
+# Welcome! {.unnumbered}
 
-This is a Quarto book.
+Welcome to the online support to learn how to organise your R code through the creation of an R package. You will find that this process is easier than you can imagine and with a little bit of pratiques you will be able to create your own package. In addition, you will discover that this way open you the field to develop reproducible code, documented faster and simply your processes at many levels and learn how other people can download and use it.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+All this website and material associated if free to use, licenced under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/){.external target="_blank"} licence. At least you will find below several training sessions available if you want a guided explanation for R package creation.
 
-```{r}
-1 + 1
-```
+To conclude, this support was developed according to the book "[R Packages (2e)](https://r-pkgs.org/){.external target="_blank"}" written by [Hadley Wickham](http://hadley.nz) and [Jennifer Bryan](http://jennybryan.org/). An online version is available through this [link](https://r-pkgs.org/){.external target="_blank"}, don't hesitate to take a look.

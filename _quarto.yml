@@ -3,31 +3,44 @@ project:
 
 book:
   title: "R packages development training"
-  author: "Mathieu Depetris"
-  date: "26/05/2025"
-  chapters:
-    - index.qmd
-    - pages/intro.qmd
-    - pages/summary.qmd
-    - pages/references.qmd
-  appendices:
-    - pages/intro.qmd
-  page-footer: 
-    left: "Copyright 2025, Mathieu Depetris UMR MARBEC (IRD, Ifremer, Montpellier university, CNRS)" 
-    right: 
-      - icon: github
-        text: "Source code"
-        href: https://github.com/umr-marbec/r_packages_development_training
-      - icon: box-arrow-up-right
-        text: "UMR MARBEC website"
-        href: https://umr-marbec.fr/
+  author: "[Mathieu Depetris](mailto:mathieu.depetris@cnrs.fr)"
+  description: |
+    Training and material for learning to create your own R package, maintain and distribute it.
+  cover-image: images/cover.png
+  favicon: images/cover.png
   page-navigation: true
+
+  reader-mode: true
+  site-url: https://umr-marbec.github.io/r_packages_development_training/
+  repo-url: https://github.com/umr-marbec/r_packages_development_training
+
+  chapters:
+  - index.qmd
+  - pages/_introduction.qmd
+
+  - part: "Training framework and requirements"
+    chapters:
+    - pages/01_os_software.qmd
+    - pages/02_r_packages_overview.qmd
+
+  - pages/_references.qmd
+
+  appendices:
+    - pages/appendices/a_do_define.qmd
+  
+  page-footer: 
+    left: "Copyright 2025, Mathieu Depetris UMR MARBEC" 
+    right:
+      - text: "DEN website"
+        href: https://umr-marbec.github.io/den_pages/
+      - text: "UMR MARBEC website"
+        href: https://umr-marbec.fr/
 
 bibliography: references.bib
 
 format:
   html:
-    theme: darkly
+    theme: [cosmo, custom.scss]
   pdf:
     documentclass: scrreprt
 
