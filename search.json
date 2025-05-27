@@ -4,39 +4,62 @@
     "href": "index.html",
     "title": "R packages development training",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Welcome!\nWelcome to the online support to learn how to organise your R code through the creation of an R package. You will find that this process is easier than you can imagine and with a little bit of pratiques you will be able to create your own package. In addition, you will discover that this way open you the field to develop reproducible code, documented faster and simply your processes at many levels and learn how other people can download and use it.\nAll this website and material associated if free to use, licenced under the CC BY-NC-ND 4.0 licence. At least you will find below several training sessions available if you want a guided explanation for R package creation.\nTo conclude, this support was developed according to the book “R Packages (2e)” written by Hadley Wickham and Jennifer Bryan. An online version is available through this link, don’t hesitate to take a look.",
     "crumbs": [
-      "Preface"
+      "Welcome!"
     ]
   },
   {
-    "objectID": "pages/intro.html",
-    "href": "pages/intro.html",
-    "title": "1  Introduction",
+    "objectID": "pages/_introduction.html",
+    "href": "pages/_introduction.html",
+    "title": "Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Cover Knuth (1984)\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Introduction"
     ]
   },
   {
-    "objectID": "pages/summary.html",
-    "href": "pages/summary.html",
-    "title": "2  Summary",
+    "objectID": "pages/01_os_software.html",
+    "href": "pages/01_os_software.html",
+    "title": "1  Operating system and software associated",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "Description de l’environnement de travail et des logiciels utilisées",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "Training framework and requirements",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Operating system and software associated</span>"
     ]
   },
   {
-    "objectID": "pages/references.html",
-    "href": "pages/references.html",
+    "objectID": "pages/02_r_packages_overview.html",
+    "href": "pages/02_r_packages_overview.html",
+    "title": "2  Overview of R packages used",
+    "section": "",
+    "text": "Description of R packages used",
+    "crumbs": [
+      "Training framework and requirements",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Overview of R packages used</span>"
+    ]
+  },
+  {
+    "objectID": "pages/_references.html",
+    "href": "pages/_references.html",
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "pages/appendices/a_do_define.html",
+    "href": "pages/appendices/a_do_define.html",
+    "title": "Appendix A — Not define yet",
+    "section": "",
+    "text": "Appendice a",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Not define yet</span>"
     ]
   }
 ]
