@@ -4,4 +4,4 @@ Welcome to the online support to learn how to organise your R code through the c
 
 All this website and material associated if free to use, licenced under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/){.external target="_blank"} licence. At least you will find below several training sessions available if you want a guided explanation for R package creation.
 
-To conclude, this support was developed according to the book "[R Packages (2e)](https://r-pkgs.org/){.external target="_blank"}" written by [Hadley Wickham](http://hadley.nz) and [Jennifer Bryan](http://jennybryan.org/). An online version is available through this [link](https://r-pkgs.org/){.external target="_blank"}, don't hesitate to take a look.
+To conclude, this support was developed according to the book *R Packages (2e)* @r_packages_hadley_2023 written by [Hadley Wickham](http://hadley.nz) and [Jennifer Bryan](http://jennybryan.org/). An online version is available through this [link](https://r-pkgs.org/){.external target="_blank"}, don't hesitate to take a look.

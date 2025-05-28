@@ -36,7 +36,8 @@ book:
       - text: "UMR MARBEC website"
         href: https://umr-marbec.fr/
 
-bibliography: references.bib
+bibliography: references/references.bib
+csl: references/diabetologia.csl
 
 format:
   html:
