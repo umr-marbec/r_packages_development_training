@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R packages development training",
     "section": "",
-    "text": "Welcome!\nWelcome to the online support to learn how to organise your R code through the creation of an R package. You will find that this process is easier than you can imagine and with a little bit of pratiques you will be able to create your own package. In addition, you will discover that this way open you the field to develop reproducible code, documented faster and simply your processes at many levels and learn how other people can download and use it.\nAll this website and material associated if free to use, licenced under the CC BY-NC-ND 4.0 licence. At least you will find below several training sessions available if you want a guided explanation for R package creation.\nTo conclude, this support was developed according to the book “R Packages (2e)” written by Hadley Wickham and Jennifer Bryan. An online version is available through this link, don’t hesitate to take a look.",
+    "text": "Welcome!\nWelcome to the online support to learn how to organise your R code through the creation of an R package. You will find that this process is easier than you can imagine and with a little bit of pratiques you will be able to create your own package. In addition, you will discover that this way open you the field to develop reproducible code, documented faster and simply your processes at many levels and learn how other people can download and use it.\nAll this website and material associated if free to use, licenced under the CC BY-NC-ND 4.0 licence. At least you will find below several training sessions available if you want a guided explanation for R package creation.\nTo conclude, this support was developed according to the book R Packages (2e) [1] written by Hadley Wickham and Jennifer Bryan. An online version is available through this link, don’t hesitate to take a look.\n\n\n\n\n1. Wickham H, Bryan J (2023) R packages: Organize, test, document, and share your code (2nd edition). O’Reilly Media",
     "crumbs": [
       "Welcome!"
     ]
@@ -14,7 +14,7 @@
     "href": "pages/_introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "Cover Knuth (1984)\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "To do",
     "crumbs": [
       "Introduction"
     ]
@@ -22,12 +22,34 @@
   {
     "objectID": "pages/01_os_software.html",
     "href": "pages/01_os_software.html",
-    "title": "1  Operating system and software associated",
+    "title": "1  Operating system and working environment associated",
     "section": "",
-    "text": "Description de l’environnement de travail et des logiciels utilisées",
+    "text": "1.1 Requirements software\nBefore going into the fun of R package development, take a moment to setup our working environment and overview some interesting software which can simplify our life.\nFirst, all the training and test that we will do among this book will be executed with Windows Operating System (OS). When you develop your package, one of the aims could be to share or propose your work to other peoples and you have to take into account about the variability of the processes among OS, software for example R dependencies. We will put in place several processes to support us in our task but keep in your mind that processes that work on an OS could not work in the same pattern in another one. Futermore, one of our tasks among the lifecycle of our package will be to maintain a maximum of compatibility, for example through integration of update or evolution in our code.\nDeveloping R packages assume that you have a little experience with the R software and not start from scratch with it. Even if you see that R package development is not so hard that it looks like, you will find a lot of resources on the internet to support you if you want to start with R and develop your skills in it.\nUnder Windows OS, it’s necessary to install the RTools software. This is a toolchains for building R and R packages from source on Windows. And don’t need it on macOS and Linux because theses OS have usually pre-installed compilation tools. You can download it from the offical link.Be aware that you need to take the correct version according to our R version installated (for this training it would be the RTools 4.5).",
     "crumbs": [
       "Training framework and requirements",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Operating system and software associated</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Operating system and working environment associated</span>"
+    ]
+  },
+  {
+    "objectID": "pages/01_os_software.html#requirements-software",
+    "href": "pages/01_os_software.html#requirements-software",
+    "title": "1  Operating system and working environment associated",
+    "section": "",
+    "text": "For the training we will use the R version 4.5.0 for Windows available through the web page of The Comprehensive R Archive Network. You will find also precompiled binary distributions for Linux and macOS.\n\n\n\n\n\n\n\n\n\n\nIn addition, we will use the Integrated Development Environment (IDE) RStudio. Today this software is one of the most used in the R communities and includes a lot of things like a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. Furthermore, recent evolution like the creation of Posit compagny make the software ecosystem more friendly connected with R and Python. For the training we will use the RStudio version 2025.05.0+496 “Mariposa Orchid” for Windows OS. You can download the one for your configuration throught the Posit download webpage.\n\n\n\n\n\n\n\n\n\n\n\nAt least, we will using Git, for version control system, to host our R package and apply several processes of Continuous Integration (CI), most of them already prepare by the R communities. Today, this is a very precious tool that helps developers track changes in their code, collaborate efficiently, and manage different versions of a project. During this training we will use one of them. You can download the software on the offical website throught this link.",
+    "crumbs": [
+      "Training framework and requirements",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Operating system and working environment associated</span>"
+    ]
+  },
+  {
+    "objectID": "pages/01_os_software.html#additional-software",
+    "href": "pages/01_os_software.html#additional-software",
+    "title": "1  Operating system and working environment associated",
+    "section": "1.2 Additional software",
+    "text": "1.2 Additional software\nSeveral software are not necessary to create your own R package but bring you a lot of improvement and at leave simplify you life.\n\n\n\n\n\n\n\n\nThe first one is Visual Studio Code (or VS Code) which is a free, lightweight, extensible code editor developed by Microsoft. He supports a wide variety of programming languages such as R, JavaScript, Python, C++, Java, HTML/CSS. In addition is cross-platform compatibility, support Git and other version control systems and one of his best advantages is to provide extensions to add functionality and customize the environment. If you want you can download it from this offical website and if it’s possible according to your configuration prefer a system installer version. For this training I will use the version 1.100.2 on Windows OS.\n\n\n\n\n\n\n\n\n\n\nAccording to the use of Git, we will use one of them call GitHub. You will see that a loot of processes were developed for work natively with GitHub and facilitate your R package creation. If you want to use another one, like a GitLab hosted by your company for example, you can of course but you will have to modify and adapted by yourself several processes propose during this training. In addition we will use here a Graphical User Interface (GUI) for managing Git repositories called GitHub Desktop. This is a free, open-source application which simplifies current Git operations, making it easier for developers to clone repositories, commit changes, create branches, and push updates without using the command line. Like its name suggests is working natively with GitHub repositories but you can also use it for connection with other Git like GitLab. Officially is available for Windows and MacOS but you can also find adapted version for Linux on the internet. For download it goes through the following link.",
+    "crumbs": [
+      "Training framework and requirements",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Operating system and working environment associated</span>"
     ]
   },
   {
@@ -46,7 +68,7 @@
     "href": "pages/_references.html",
     "title": "References",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1. Wickham H, Bryan J (2023) R packages: Organize,\ntest, document, and share your code (2nd edition). O’Reilly Media",
     "crumbs": [
       "References"
     ]

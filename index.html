@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -141,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pages/01_os_software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operating system and software associated</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Operating system and working environment associated</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -227,9 +246,14 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="unnumbered">Welcome!</h1><p><img src="images/cover.png" title="R packages development training" class="quarto-cover-image nolightbox img-fluid"></p>
 <p>Welcome to the online support to learn how to organise your R code through the creation of an R package. You will find that this process is easier than you can imagine and with a little bit of pratiques you will be able to create your own package. In addition, you will discover that this way open you the field to develop reproducible code, documented faster and simply your processes at many levels and learn how other people can download and use it.</p>
 <p>All this website and material associated if free to use, licenced under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="external" target="_blank">CC BY-NC-ND 4.0</a> licence. At least you will find below several training sessions available if you want a guided explanation for R package creation.</p>
-<p>To conclude, this support was developed according to the book “<a href="https://r-pkgs.org/" class="external" target="_blank">R Packages (2e)</a>” written by <a href="http://hadley.nz">Hadley Wickham</a> and <a href="http://jennybryan.org/">Jennifer Bryan</a>. An online version is available through this <a href="https://r-pkgs.org/" class="external" target="_blank">link</a>, don’t hesitate to take a look.</p>
+<p>To conclude, this support was developed according to the book <em>R Packages (2e)</em> <span class="citation" data-cites="r_packages_hadley_2023">[<a href="pages/_references.html#ref-r_packages_hadley_2023" role="doc-biblioref">1</a>]</span> written by <a href="http://hadley.nz">Hadley Wickham</a> and <a href="http://jennybryan.org/">Jennifer Bryan</a>. An online version is available through this <a href="https://r-pkgs.org/" class="external" target="_blank">link</a>, don’t hesitate to take a look.</p>
 
 
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-r_packages_hadley_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H, Bryan J (2023) R packages: Organize, test, document, and share your code (2nd edition). O’Reilly Media</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
