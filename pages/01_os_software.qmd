@@ -8,53 +8,58 @@ Developing R packages assume that you have a little experience with the R softwa
 
 ## Requirements software
 
-::: columns
+::::: columns
 ::: {.column width="15%"}
-![](../images/r_logo.png){width="50%" fig-align=center}
+![](../images/logo_r.png){width="50%" fig-align="center"}
 :::
+
 ::: {.column width="85%"}
 For the training we will use the *R* version 4.5.0 for Windows available through the web page of [The Comprehensive R Archive Network](https://cran.r-project.org/){.external target="_blank"}. You will find also precompiled binary distributions for Linux and macOS.
 :::
+:::::
+
+::::: columns
+::: {.column width="15%"}
+![](../images/logo_rstudio.png){width="45%" fig-align="center"}
 :::
 
-::: columns
-::: {.column width="15%"}
-![](../images/rstudio_logo.png){width="45%" fig-align=center}
-:::
 ::: {.column width="85%"}
 In addition, we will use the Integrated Development Environment (IDE) *RStudio*. Today this software is one of the most used in the R communities and includes a lot of things like a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. Furthermore, recent evolution like the creation of [Posit](https://posit.co/){.external target="_blank"} compagny make the software ecosystem more friendly connected with R and Python. For the training we will use the RStudio version 2025.05.0+496 "Mariposa Orchid" for Windows OS. You can download the one for your configuration throught the [Posit download webpage](https://posit.co/downloads/){.external target="_blank"}.
 :::
-:::
+:::::
 
 Under Windows OS, it's necessary to install the [RTools](https://cran.rstudio.com/bin/windows/Rtools/rtools44/rtools.html){.external target="_blank"} software. This is a toolchains for building R and R packages from source on Windows. And don't need it on macOS and Linux because theses OS have usually pre-installed compilation tools. You can download it from the [offical link](https://cran.r-project.org/bin/windows/Rtools/){.external target="_blank"}.Be aware that you need to take the correct version according to our R version installated (for this training it would be the RTools 4.5).
 
-::: columns
+::::: columns
 ::: {.column width="15%"}
-![](../images/git_logo.png){width="50%" fig-align=center}
+![](../images/logo_git.png){width="50%" fig-align="center"}
 :::
+
 ::: {.column width="85%"}
 At least, we will using Git, for version control system, to host our R package and apply several processes of Continuous Integration (CI), most of them already prepare by the R communities. Today, this is a very precious tool that helps developers track changes in their code, collaborate efficiently, and manage different versions of a project. During this training we will use one of them. You can download the software on the offical website throught this [link](https://git-scm.com/){.external target="_blank"}.
 :::
-:::
+:::::
 
 ## Additional software
 
 Several software are not necessary to create your own R package but bring you a lot of improvement and at leave simplify you life.
 
-::: columns
+::::: columns
 ::: {.column width="15%"}
-![](../images/vscode_logo.png){width="40%" fig-align=center}
+![](../images/logo_vscode.png){width="40%" fig-align="center"}
 :::
+
 ::: {.column width="85%"}
 The first one is [Visual Studio Code](https://code.visualstudio.com/){.external target="_blank"} (or VS Code) which is a free, lightweight, extensible code editor developed by Microsoft. He supports a wide variety of programming languages such as R, JavaScript, Python, C++, Java, HTML/CSS. In addition is cross-platform compatibility, support Git and other version control systems and one of his best advantages is to provide extensions to add functionality and customize the environment. If you want you can download it from this [offical website](https://code.visualstudio.com/Download){.external target="_blank"} and if it's possible according to your configuration prefer a system installer version. For this training I will use the version 1.100.2 on Windows OS.
 :::
+:::::
+
+::::: columns
+::: {.column width="15%"}
+![](../images/logo_github_desktop.png){width="45%" fig-align="center"}
 :::
 
-::: columns
-::: {.column width="15%"}
-![](../images/github_desktop_logo.png){width="45%" fig-align=center}
-:::
 ::: {.column width="85%"}
 According to the use of Git, we will use one of them call [GitHub](https://github.com/){.external target="_blank"}. You will see that a loot of processes were developed for work natively with GitHub and facilitate your R package creation. If you want to use another one, like a GitLab hosted by your company for example, you can of course but you will have to modify and adapted by yourself several processes propose during this training. In addition we will use here a Graphical User Interface (GUI) for managing Git repositories called GitHub Desktop. This is a free, open-source application which simplifies current Git operations, making it easier for developers to clone repositories, commit changes, create branches, and push updates without using the command line. Like its name suggests is working natively with GitHub repositories but you can also use it for connection with other Git like GitLab. Officially is available for Windows and MacOS but you can also find adapted version for Linux on the internet. For download it goes through the following [link](https://desktop.github.com/download/){.external target="_blank"}.
 :::
-:::
+:::::
