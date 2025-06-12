@@ -1,0 +1,13 @@
+# - Before go down the rabbit hole
+
+Before we start to developing our first R package, let's talk briefly about the aim to organise your code into a package and in fact why we consume time to develop this kind of structure. 
+
+When you use R, a package is the fundamental unit of shareable codes and brings a lot of advantage, like regroup in one place all the stuff (code, data, documentation for example), improve the standardisation of your process and the sharing them easier. In fact, build an R package is nothing more than a way of organising things that you have already done by another way and facilitate at the end the life cycle of your processes.
+
+Furthermore, you will see quickly that you can use a lot of processes already developed ,and update in time, by the R communauties. There are package that make package, processes that allow to automated tasks and the tidyverse philosophy explain in the previous section help a lot.
+
+To summarise:
+
+- don't worry, you will see that all this process is painless and you will be able to create very great thing in brief time,
+- in addition, you will save time! you will follow a template and automate a lot of processes with the rule "anything that can be automated, should be automated",
+- to conclude, you will use standardised conventions that open to you the path a several free and evolving standardised tools.

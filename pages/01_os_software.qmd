@@ -1,4 +1,4 @@
-# Operating system and working environment associated
+# - Operating system and working environment associated
 
 Before going into the fun of R package development, take a moment to setup our working environment and overview some interesting software which can simplify our life.
 

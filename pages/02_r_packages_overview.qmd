@@ -1,4 +1,4 @@
-# Overview of R packages used
+# - Overview of R packages used
 
 This section aim to introduce brively which R packages environment we will use. Since several years, the R communities evolve in many interesting ways and today if you want to write your own package there are a lot of support that you can find.
 

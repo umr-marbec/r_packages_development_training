@@ -1,0 +1,5 @@
+# - Creation of the package structure
+
+## Initiation the global architecture
+
+Now you have an working environnement correctly configured, the first step is to initiate your new package from an active R session. You don't have to take care about your working directory or the configuration of your local session because the function associated will be create a clean new project for your package.

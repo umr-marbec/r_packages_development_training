@@ -1,0 +1,25 @@
+# - Before create anything
+
+Before starting playing with functions and create the global structure of your package, the best thing to do is to think a little bit about what you want to create. The idea is not to spend a very long time to do that, but if you take this time (especially is it's the first time) you will see that at the end you will gain. The majority of the package component can be modified after definition, but some update could be heavy and painful and sometimes it's simple to avoid that by taking a moment of reflection.
+
+## First reflexion, the perimeter
+
+The aim here is to answer the question, what I want to put into my package or what I want my package will do? You don't have to be exhaustive (if you can it's better) but try to explore several fields like:
+
+- If I have several functions already developed (even partially), it's logical to put all of them into a single structure?
+- If my package will be used by other users, does the process of use if relevant and logical for users?
+- If I think bigger, do you think my package could be placed in specific environment and maybe interact with other packages? A good example of that is if a package interact with other packages and each one has a specific purpose (for example one dedicates to the controls and another dedicates to the graphic display).
+
+You can image other cases and again it's normal if your perimeter evolve with time regarding the maturity of your work. A good solution could be to design flux diagrams for example explain (even for you) the process and maybe associated one. In addition, these kinds of figures could be useful for the documentation process. A quick research on the internet will be displaying several software, free and paid, for doing that.
+
+## Second reflexion, the name
+
+Now you know globally the purpose of my package. The next step is to define is named. It's an important moment because the name is one of the first things that you and the others will see. At a time where the referencing (like the SEO or Search Engine Optimisation) and visibility is important items regarding the life of your work, it could be bad to lose points at this moment just because the name is not very clear and friendly.
+
+Globably, I advise you to follow several good praticals:
+
+- the name has to be **simple** and **clearness**. What's better than a name that's easy to understand and remember and ideally allows a reading to understand what it does.
+- avoid **special caracters**, like the accents or dot, and prefer use convention like Snake Case (each word is separated by and underscore character) or at least Camel Case (start with the first word with lowercase and capitalize the first letter of each word that follows withou space).
+- insure the **compatibilty** of the name with package respositories like the CRAN ([Comprehensive R Archive Network](https://cran.r-project.org/){.external target="_blank"}) or [Bioconductor](https://www.bioconductor.org/){.external target="_blank"}.
+
+To support you in this step, you can use functions of two R packages, [pak](https://pak.r-lib.org/){.external target="_blank"} @pak and [available](https://r-lib.github.io/available/){.external target="_blank"} @available.

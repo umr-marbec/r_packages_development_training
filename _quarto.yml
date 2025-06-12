@@ -22,6 +22,11 @@ book:
     chapters:
     - pages/01_os_software.qmd
     - pages/02_r_packages_overview.qmd
+    - pages/03_get_ready.qmd
+  - part: "First part - R package architecture"
+    chapters:
+    - pages/04_before_creation.qmd
+    - pages/05_create_package_architecture.qmd
 
   - pages/_references.qmd
 
