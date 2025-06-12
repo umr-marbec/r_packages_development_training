@@ -8,7 +8,7 @@
 
 <meta name="description" content="Training and material for learning to create your own R package, maintain and distribute it.">
 
-<title>2&nbsp; - Overview of R packages used – R packages development training</title>
+<title>3&nbsp; - Before go down the rabbit hole – R packages development training</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +31,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../pages/03_get_ready.html" rel="next">
-<link href="../pages/01_os_software.html" rel="prev">
+<link href="../pages/04_before_creation.html" rel="next">
+<link href="../pages/02_r_packages_overview.html" rel="prev">
 <link href="../images/cover.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -103,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/01_os_software.html">Training framework and requirements</a></li><li class="breadcrumb-item"><a href="../pages/02_r_packages_overview.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/01_os_software.html">Training framework and requirements</a></li><li class="breadcrumb-item"><a href="../pages/03_get_ready.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">- Before go down the rabbit hole</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,13 +146,13 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/02_r_packages_overview.html" class="sidebar-item-text sidebar-link active">
+  <a href="../pages/02_r_packages_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/03_get_ready.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/03_get_ready.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">- Before go down the rabbit hole</span></span></a>
   </div>
 </li>
@@ -234,9 +215,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/01_os_software.html">Training framework and requirements</a></li><li class="breadcrumb-item"><a href="../pages/02_r_packages_overview.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/01_os_software.html">Training framework and requirements</a></li><li class="breadcrumb-item"><a href="../pages/03_get_ready.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">- Before go down the rabbit hole</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">- Before go down the rabbit hole</span></h1>
 </div>
 
 
@@ -253,94 +234,17 @@ div.csl-indent {
 </header>
 
 
-<p>This section aim to introduce brively which R packages environment we will use. Since several years, the R communities evolve in many interesting ways and today if you want to write your own package there are a lot of support that you can find.</p>
-<div class="columns">
-<div class="column" style="width:25%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_tidyverse.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</div><div class="column" style="width:75%;">
-<p>First of all, it’s difficult to talk about package whithout talk about the <a href="https://www.tidyverse.org/" class="external" target="_blank">tidyverse</a> approach. Tidyverse is a <a href="https://www.tidyverse.org/packages/" class="external" target="_blank">collection of R packages</a> designed for data science. They share an underlying design philosophy, grammar, and data structures. If you use R, it’s allmost sure that you have allready use this kind of packages, maybe even without knowing them. Even if there are none mandatary for R use, theses packages bring a lot of benefices and at the end make data science easier, faster, and more fun (yes, you will see).</p>
-</div>
-</div>
-<p>So far we don’t go deeper into all the useful R packages of the tidyverse collection, but only focusing on theses related to the R packages developement.</p>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_devtools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>The first one is called <a href="https://devtools.r-lib.org/" class="external" target="_blank">devtools</a> <span class="citation" data-cites="devtools">[<a href="_references.html#ref-devtools" role="doc-biblioref">1</a>]</span>. The aim of this package is to make R package development easier by providing R functions that simplify and expedite common tasks. In practical, if you use the Rstudio IDE you will not interact directly with this package because the majority of common processes will be integrated automatically in the Rstudio environment and become “click button” processes.</p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_usethis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>The second one is the sub-package you are most likely to interact with directly. It be called <a href="https://usethis.r-lib.org/" class="external" target="_blank">usethis</a> <span class="citation" data-cites="usethis">[<a href="_references.html#ref-usethis" role="doc-biblioref">2</a>]</span> and is aim is to automates repetitive tasks that arise during project setup and development. The idea is to, if it’s possible, use functions available by the package, rather that modify directely the code, to reduce error and be sure to have the last version of process strucutre.</p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_roxygen2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_pkgdown.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>There are two more important packages related to design of the documentation: <a href="https://roxygen2.r-lib.org/" class="external" target="_blank">roxygen2</a> <span class="citation" data-cites="roxygen2">[<a href="_references.html#ref-roxygen2" role="doc-biblioref">3</a>]</span> and <a href="https://pkgdown.r-lib.org/" class="external" target="_blank">pkgdown</a> <span class="citation" data-cites="pkgdown">[<a href="_references.html#ref-pkgdown" role="doc-biblioref">4</a>]</span>. With the first one throught the use of tags, the code and the documentation are adjacent and dynamically inspects the objects that it’s documenting. We will go back to them into the following sections but keep in your mind that theses two tools simplify and automate the documentation creation and evolution.</p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_testthat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>The last one is called <a href="https://testthat.r-lib.org/" class="external" target="_blank">testthat</a> <span class="citation" data-cites="testthat">[<a href="_references.html#ref-testthat" role="doc-biblioref">5</a>]</span> and focusing on the field of testing your code, which can be painful and tedious, but it greatly increases the quality of your code.</p>
-</div>
-</div>
-<p>In addition we will use or talk about several other packages, for example <a href="https://lintr.r-lib.org/" class="external" target="_blank">lintr</a> <span class="citation" data-cites="lintr">[<a href="_references.html#ref-lintr" role="doc-biblioref">6</a>]</span> or <a href="https://rstudio.github.io/renv/" class="external" target="_blank">renv</a> <span class="citation" data-cites="renv">[<a href="_references.html#ref-renv" role="doc-biblioref">7</a>]</span>, but it’s more a case-by-case utilisation and we will discuss them when the time comes.</p>
+<p>Before we start to developing our first R package, let’s talk briefly about the aim to organise your code into a package and in fact why we consume time to develop this kind of structure.</p>
+<p>When you use R, a package is the fundamental unit of shareable codes and brings a lot of advantage, like regroup in one place all the stuff (code, data, documentation for example), improve the standardisation of your process and the sharing them easier. In fact, build an R package is nothing more than a way of organising things that you have already done by another way and facilitate at the end the life cycle of your processes.</p>
+<p>Furthermore, you will see quickly that you can use a lot of processes already developed ,and update in time, by the R communauties. There are package that make package, processes that allow to automated tasks and the tidyverse philosophy explain in the previous section help a lot.</p>
+<p>To summarise:</p>
+<ul>
+<li>don’t worry, you will see that all this process is painless and you will be able to create very great thing in brief time,</li>
+<li>in addition, you will save time! you will follow a template and automate a lot of processes with the rule “anything that can be automated, should be automated”,</li>
+<li>to conclude, you will use standardised conventions that open to you the path a several free and evolving standardised tools.</li>
+</ul>
 
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
-<div id="ref-devtools" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H, Hester J, Chang W, Bryan J (2022) <a href="https://doi.org/10.32614/CRAN.package.devtools">Devtools: Tools to make developing r packages easier</a></div>
-</div>
-<div id="ref-usethis" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Wickham H, Bryan J, Barrett M, Teucher A (2024) <a href="https://doi.org/10.32614/CRAN.package.usethis">Usethis: Automate package and project setup</a></div>
-</div>
-<div id="ref-roxygen2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Wickham H, Danenberg P, Csárdi G, Eugster M (2024) <a href="https://doi.org/10.32614/CRAN.package.roxygen2">roxygen2: In-line documentation for r</a></div>
-</div>
-<div id="ref-pkgdown" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Wickham H, Hesselberth J, Salmon M, Roy O, Brüggemann S (2025) <a href="https://doi.org/10.32614/CRAN.package.pkgdown">Pkgdown: Make static HTML documentation for a package</a></div>
-</div>
-<div id="ref-testthat" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">Wickham H (2011) <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf">Testthat: Get started with testing</a>. The R Journal 3:5–10</div>
-</div>
-<div id="ref-lintr" class="csl-entry" role="listitem">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline">Hester J, Angly F, Hyde R, et al (2025) <a href="https://doi.org/10.32614/CRAN.package.lintr">Lintr: A ’linter’ for r code</a></div>
-</div>
-<div id="ref-renv" class="csl-entry" role="listitem">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline">Ushey K, Wickham H (2025) <a href="https://doi.org/10.32614/CRAN.package.renv">Renv: Project environments</a></div>
-</div>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -744,13 +648,13 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../pages/01_os_software.html" class="pagination-link" aria-label="- Operating system and working environment associated">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">- Operating system and working environment associated</span></span>
+      <a href="../pages/02_r_packages_overview.html" class="pagination-link" aria-label="- Overview of R packages used">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../pages/03_get_ready.html" class="pagination-link" aria-label="- Before go down the rabbit hole">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">- Before go down the rabbit hole</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../pages/04_before_creation.html" class="pagination-link" aria-label="- Before create anything">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">- Before create anything</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

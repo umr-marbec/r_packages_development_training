@@ -2,30 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/index.html</loc>
-    <lastmod>2025-06-10T14:49:19.648Z</lastmod>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/_introduction.html</loc>
-    <lastmod>2025-06-10T14:49:19.648Z</lastmod>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/01_os_software.html</loc>
-    <lastmod>2025-06-10T14:49:19.648Z</lastmod>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/02_r_packages_overview.html</loc>
-    <lastmod>2025-06-10T14:49:19.648Z</lastmod>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
+  </url>
+  <url>
+    <loc>https://umr-marbec.github.io/r_packages_development_training/pages/03_get_ready.html</loc>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
+  </url>
+  <url>
+    <loc>https://umr-marbec.github.io/r_packages_development_training/pages/04_before_creation.html</loc>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
+  </url>
+  <url>
+    <loc>https://umr-marbec.github.io/r_packages_development_training/pages/05_create_package_architecture.html</loc>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/_references.html</loc>
-    <lastmod>2025-06-10T14:49:19.648Z</lastmod>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/appendices/a_do_define.html</loc>
-    <lastmod>2025-06-10T14:49:19.648Z</lastmod>
+    <lastmod>2025-06-12T14:35:01.535Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/R-packages-development-training.pdf</loc>
-    <lastmod>2025-06-10T14:53:29.999Z</lastmod>
+    <lastmod>2025-06-12T14:42:33.917Z</lastmod>
   </url>
 </urlset>
