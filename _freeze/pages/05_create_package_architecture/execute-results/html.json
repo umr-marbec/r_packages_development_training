@@ -1,0 +1,15 @@
+{
+  "hash": "ff1a3f2e5fc380b7101b5c9b3a43220b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# - Creation of the package structure\n\n## Initiation the global architecture\n\nNow you have an working environment correctly configured and we have taken a few moment to thing about our package aim. We can go deeper and initiate the structure of our new package from an active R session. You don't have to take care about your working directory or the configuration of your local session because the function associated will be create a clean new project for your package. First, load the [devtools](https://devtools.r-lib.org/){.external target=\"_blank\"} and by association is friend [usethis](https://usethis.r-lib.org/){.external target=\"_blank\"}.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(devtools)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nLe chargement a nécessité le package : usethis\n```\n\n\n:::\n:::\n\n\n\nNow launch the following command to initiate the global architecture of your package. For the training, my awesome new R package name will be \"mcflyr\". \n\n\n::: {.cell}\n\n```{.r .cell-code}\ncreate_package(path = \"~path/to/mcflyr\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

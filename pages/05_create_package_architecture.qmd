@@ -2,4 +2,19 @@
 
 ## Initiation the global architecture
 
-Now you have an working environnement correctly configured, the first step is to initiate your new package from an active R session. You don't have to take care about your working directory or the configuration of your local session because the function associated will be create a clean new project for your package.
+Now you have an working environment correctly configured and we have taken a few moment to thing about our package aim. We can go deeper and initiate the structure of our new package from an active R session. You don't have to take care about your working directory or the configuration of your local session because the function associated will be create a clean new project for your package. First, load the [devtools](https://devtools.r-lib.org/){.external target="_blank"} and by association is friend [usethis](https://usethis.r-lib.org/){.external target="_blank"}.
+
+```{r}
+#| label: load-devtools-and-usethis
+#| echo: true
+library(devtools)
+```
+
+
+Now launch the following command to initiate the global architecture of your package. For the training, my awesome new R package name will be "mcflyr". 
+
+```{r}
+#| eval: false
+#| include: true
+create_package(path = "~path/to/mcflyr")
+```
