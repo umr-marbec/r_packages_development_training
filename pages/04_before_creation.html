@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -62,7 +97,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d111b7b8c82715d97f4c443a6ee52113.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-95f6fd6f27ac79bcba6619de8226a74b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -235,6 +270,7 @@ div.csl-indent {
   <ul>
   <li><a href="#first-reflexion-the-perimeter" id="toc-first-reflexion-the-perimeter" class="nav-link active" data-scroll-target="#first-reflexion-the-perimeter"><span class="header-section-number">4.1</span> First reflexion, the perimeter</a></li>
   <li><a href="#second-reflexion-the-name" id="toc-second-reflexion-the-name" class="nav-link" data-scroll-target="#second-reflexion-the-name"><span class="header-section-number">4.2</span> Second reflexion, the name</a></li>
+  <li><a href="#third-reflexion-the-logo" id="toc-third-reflexion-the-logo" class="nav-link" data-scroll-target="#third-reflexion-the-logo"><span class="header-section-number">4.3</span> Third reflexion, the logo</a></li>
   </ul>
 </nav>
     </div>
@@ -280,15 +316,70 @@ div.csl-indent {
 <li>avoid <strong>special caracters</strong>, like the accents or dot, and prefer use convention like Snake Case (each word is separated by and underscore character) or at least Camel Case (start with the first word with lowercase and capitalize the first letter of each word that follows withou space).</li>
 <li>insure the <strong>compatibilty</strong> of the name with package respositories like the CRAN (<a href="https://cran.r-project.org/" class="external" target="_blank">Comprehensive R Archive Network</a>) or <a href="https://www.bioconductor.org/" class="external" target="_blank">Bioconductor</a>.</li>
 </ul>
-<p>To support you in this step, you can use functions of two R packages, <a href="https://pak.r-lib.org/" class="external" target="_blank">pak</a> <span class="citation" data-cites="pak">[<a href="_references.html#ref-pak" role="doc-biblioref">1</a>]</span> and <a href="https://r-lib.github.io/available/" class="external" target="_blank">available</a> <span class="citation" data-cites="available">[<a href="_references.html#ref-available" role="doc-biblioref">2</a>]</span>.</p>
+<p>To support you in this step, you can use functions of the R package, <a href="https://pak.r-lib.org/" class="external" target="_blank">pak</a> <span class="citation" data-cites="pak">[<a href="_references.html#ref-pak" role="doc-biblioref">1</a>]</span>.</p>
+<p>This package is a modern alternative to the R standard function, <code>install.packages()</code>. Is goal is make package installation faster and more reliable. In particular, it performs all HTTP operations in parallel, so metadata resolution and package downloads are fast. In addtion, he has a dependency solver, so it finds version conflicts before performing the installation. Futhermore, he supports CRAN, ‘Bioconductor’ and ‘GitHub’ packages as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>package_name <span class="ot">&lt;-</span> <span class="st">"lightning"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pak)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_name_check</span>(<span class="at">name =</span> package_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>╔══════════════════════════════════════════════════════════════════════════════╗
+║                               –*– lightning –*–                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ✔  valid name      ✔  CRAN            ✔  Bioconductor    ✔  not a profanity  │
+└──────────────────────────────────────────────────────────────────────────────┘
+┌ Wikipedia ───────────────────────────────────────────────────────────────────┐
+│ Lightning Lightning is a natural phenomenon consisting of electrostatic      │
+│ discharges occurring through the atmosphere between two electrically         │
+│ charged regions. One or both regions are within the atmosphere, with the     │
+│ second region sometimes occurring on the ground. Following the lightning,    │
+│ the regions become partially or wholly electrically neutralized.             │
+│                                                                              │
+│ …                                                                            │
+└───────────────────────────────────── https://en.wikipedia.org/wiki/Lightning ┘
+┌ Wiktionary ──────────────────────────────────────────────────────────────────┐
+│ lightning Wikiversity                                                        │
+│ Etymology: From light(e)n +‎ -ing.  Doublet of lightening.                    │
+│ Noun: lightning (usually uncountable, plural lightnings)                     │
+│ A flash of light produced by short-duration, high-voltage discharge of       │
+│ electricity within a cloud, between clouds, or between a cloud and the       │
+│ earth.                                                                       │
+│ …                                                                            │
+└──────────────────────────────────── https://en.wiktionary.org/wiki/lightning ┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Sentiment: :| (0)                                                            │
+└──────────────────────────────────────────────────────────────────────────────┘</code></pre>
+</div>
+</div>
+</section>
+<section id="third-reflexion-the-logo" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="third-reflexion-the-logo"><span class="header-section-number">4.3</span> Third reflexion, the logo</h2>
+<p>Even if it’s not mandatory, what is more fun than you have your own package logo. If you are familiar with the tidyverse R package communities, you should see that each package has its own logo with some similar structure of hex stickers.</p>
+<p>If you want to design your own logo:</p>
+<ul>
+<li>the convention use for tidyverse package is to orient the logo with a vertex at the top and bottom, with flat vertical sides.</li>
+<li>take of look on the <a href="http://hexb.in/" class="external" target="_blank">hexbin</a> community website when you have a lot of hexagon stickers and some recommendation for the <a href="http://hexb.in/sticker.html" class="external" target="_blank">“best sticker size”</a> (<a href="#figure1">figure 1</a>).</li>
+</ul>
+<figure id="figure1" class="figure">
+<p><img src="../images/hex_image_size.png" alt="Figure 1: Standard dimensions of a hex sticker" class="resized-img figure-img" width="25%"></p>
+<figcaption class="figcaption-center">
+<p>Figure 1: Standard dimensions of a hex sticker</p>
+</figcaption>
+</figure>
+<ul>
+<li>The <a href="https://github.com/GuangchuangYu/hexSticker" class="external" target="_blank">hexSticker</a> package <span class="citation" data-cites="hexsticker">[<a href="_references.html#ref-hexsticker" role="doc-biblioref">2</a>]</span> helps you make your logo from within the comfort of R.</li>
+<li>Another good solution is to use an AI image generator. Without open the field of which one you have to select, according to several considerations like the integrity of the processes and the ecological impact of that, this kind of software be able to generate your logo easily according to your preference.</li>
+</ul>
+<p>If you have one at the moment, keep it closely and we will see how to integrate it in our package structure. If not don’t worry, you can go back to this process further.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
 <div id="ref-pak" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Csárdi G, Hester J (2025) <a href="https://doi.org/10.32614/CRAN.package.pak">Pak: Another approach to package installation</a></div>
 </div>
-<div id="ref-available" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Ganz C, Csárdi G, Hester J, Lewis M, Tatman R (2022) <a href="https://doi.org/10.32614/CRAN.package.available">Available: Check if the title of a package is available, appropriate and interesting</a></div>
+<div id="ref-hexsticker" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Yu G (2020) <a href="https://doi.org/10.32614/CRAN.package.hexSticker">hexSticker: Create hexagon sticker in r</a></div>
 </div>
 </div>
 </section>
