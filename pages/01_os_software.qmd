@@ -28,8 +28,6 @@ In addition, we will use the Integrated Development Environment (IDE) *RStudio*.
 :::
 :::::
 
-Under Windows OS, it's necessary to install the [RTools](https://cran.rstudio.com/bin/windows/Rtools/rtools44/rtools.html){.external target="_blank"} software. This is a toolchains for building R and R packages from source on Windows. And don't need it on macOS and Linux because theses OS have usually pre-installed compilation tools. You can download it from the [offical link](https://cran.r-project.org/bin/windows/Rtools/){.external target="_blank"}.Be aware that you need to take the correct version according to our R version installated (for this training it would be the RTools 4.5).
-
 ::::: columns
 ::: {.column width="15%"}
 ![](../images/logo_git.png){width="50%" fig-align="center"}
@@ -39,6 +37,10 @@ Under Windows OS, it's necessary to install the [RTools](https://cran.rstudio.co
 At least, we will using Git, for version control system, to host our R package and apply several processes of Continuous Integration (CI), most of them already prepare by the R communities. Today, this is a very precious tool that helps developers track changes in their code, collaborate efficiently, and manage different versions of a project. During this training we will use one of them. You can download the software on the offical website throught this [link](https://git-scm.com/){.external target="_blank"}.
 :::
 :::::
+
+::: callout-important
+Under Windows OS, it's necessary to install the [RTools](https://cran.rstudio.com/bin/windows/Rtools/rtools44/rtools.html){.external target="_blank"} software. This is a toolchains for building R and R packages from source on Windows. And don't need it on macOS and Linux because theses OS have usually pre-installed compilation tools. You can download it from the [offical link](https://cran.r-project.org/bin/windows/Rtools/){.external target="_blank"}.Be aware that you need to take the correct version according to our R version installated (for this training it would be the RTools 4.5).
+:::
 
 ## Additional software
 

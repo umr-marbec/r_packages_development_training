@@ -3,6 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: inline
 ---
+
 # - Creation of the package structure
 
 ## Initiation the global architecture
@@ -23,10 +24,14 @@ Now launch the following command to initiate the global architecture of your pac
 create_package(path = "~/macfly")
 ```
 
-Another solution with RStudio is to use the interface through the *file* menu, *New Project...*, *New Directory*, *R Package*, file the field "Package name:", click on "Open in new session" and finish with *Create Project". Even is the approach is similar, the click-button interface create in addition a template function with a proposal for the documentation associated. In opposite, the command line creation include by default a .gitignore file (for Git use). It's not true important but it could be a bit better to use the command line because we will learn how to create a R function template later and in your developer life it could be very rare (and dangerous) when you don't use a Git associated to your work.
-
-For your information, you will find in the [usethis](https://usethis.r-lib.org/index.html){.external target="_blank"} package a function [`create_tidy_package()`](https://usethis.r-lib.org/reference/tidyverse.html){.external target="_blank"} that  extends `create_package()` by applying many of the tidyverse development conventions as possible. I don't recommend using that way, instead of you know exactly what you do and to save time in the future, because it's better to really understand each step of the package creation.
-
-At least, you could see sometime a function call `package.skeleton` from the [utils](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/package.skeleton){.external target="_blank"} R package. Even if this function create a package structure it's an "old way" to do and you should have some trouble if you use it, especially with you want to use the tidyverse philosophy.
+Another solution with RStudio is to use the interface through the *file* menu, *New Project...*, *New Directory*, *R Package*, file the field "Package name:", click on "Open in new session" and finish with \*Create Project". Even is the approach is similar, the click-button interface create in addition a template function with a proposal for the documentation associated. In opposite, the command line creation include by default a .gitignore file (for Git use). It's not true important but it could be a bit better to use the command line because we will learn how to create a R function template later and in your developer life it could be very rare (and dangerous) when you don't use a Git associated to your work.
 
 By default, RStudio open a fresh session associated to the R environment of your package and you should need to call again `library(devtools)`.
+
+::: callout-note
+For your information, you will find in the [usethis](https://usethis.r-lib.org/index.html){.external target="_blank"} package a function [`create_tidy_package()`](https://usethis.r-lib.org/reference/tidyverse.html){.external target="_blank"} that extends `create_package()` by applying many of the tidyverse development conventions as possible. I don't recommend using that way, instead of you know exactly what you do and to save time in the future, because it's better to really understand each step of the package creation.
+:::
+
+::: callout-important
+At least, you could see sometime a function call `package.skeleton` from the [utils](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/package.skeleton){.external target="_blank"} R package. Even if this function create a package structure it's an "old way" to do and you should have some trouble if you use it, especially with you want to use the tidyverse philosophy.
+:::
