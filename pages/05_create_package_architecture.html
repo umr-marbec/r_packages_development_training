@@ -308,9 +308,33 @@ RoxygenNote: 7.3.2</code></pre>
 </div>
 </div>
 <p>Another solution with RStudio is to use the interface through the <em>file</em> menu, <em>New Project…</em>, <em>New Directory</em>, <em>R Package</em>, file the field “Package name:”, click on “Open in new session” and finish with *Create Project”. Even is the approach is similar, the click-button interface create in addition a template function with a proposal for the documentation associated. In opposite, the command line creation include by default a .gitignore file (for Git use). It’s not true important but it could be a bit better to use the command line because we will learn how to create a R function template later and in your developer life it could be very rare (and dangerous) when you don’t use a Git associated to your work.</p>
-<p>For your information, you will find in the <a href="https://usethis.r-lib.org/index.html" class="external" target="_blank">usethis</a> package a function <a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external" target="_blank"><code>create_tidy_package()</code></a> that extends <code>create_package()</code> by applying many of the tidyverse development conventions as possible. I don’t recommend using that way, instead of you know exactly what you do and to save time in the future, because it’s better to really understand each step of the package creation.</p>
-<p>At least, you could see sometime a function call <code>package.skeleton</code> from the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/package.skeleton" class="external" target="_blank">utils</a> R package. Even if this function create a package structure it’s an “old way” to do and you should have some trouble if you use it, especially with you want to use the tidyverse philosophy.</p>
 <p>By default, RStudio open a fresh session associated to the R environment of your package and you should need to call again <code>library(devtools)</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For your information, you will find in the <a href="https://usethis.r-lib.org/index.html" class="external" target="_blank">usethis</a> package a function <a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external" target="_blank"><code>create_tidy_package()</code></a> that extends <code>create_package()</code> by applying many of the tidyverse development conventions as possible. I don’t recommend using that way, instead of you know exactly what you do and to save time in the future, because it’s better to really understand each step of the package creation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At least, you could see sometime a function call <code>package.skeleton</code> from the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/package.skeleton" class="external" target="_blank">utils</a> R package. Even if this function create a package structure it’s an “old way” to do and you should have some trouble if you use it, especially with you want to use the tidyverse philosophy.</p>
+</div>
+</div>
 
 
 </section>
