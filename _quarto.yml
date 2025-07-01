@@ -27,6 +27,7 @@ book:
     chapters:
     - pages/04_before_creation.qmd
     - pages/05_create_package_architecture.qmd
+    - pages/06_package_states.qmd
 
   - pages/_references.qmd
 

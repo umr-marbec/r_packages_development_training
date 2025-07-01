@@ -66,10 +66,10 @@ If you follow the previous step, you should have the opening of a new RStudio se
 
 ### The package directory
 
-Inside the package directory you should saw 7 elements.
+Inside the package directory, you should see 8 elements (the `.Rhistory` file is normally generated when you close for the first time in your RStudio session, but his generation depends on your personal configuration).
 
 ::: callout-note
-If you show less than 7 elements without change anything in the command line below, maybe it's because you don't have unlock the hidden files. In order to remedy you can go in the setting directory option (normaly and can access to that directely in any directory on Windows) and in the parameters apply the visiblity of hidden elements. In RStudio to see hidden files in the *files* panel, go to *More* (gear symbol) the tick *Show Hidden Files*.
+If you show a number or kinds of elements different than below without change anything in the command line below, maybe it's because you don't have to unlock the hidden files. In order to remedy you can go in the setting directory option (normaly and can access to that directely in any directory on Windows) and in the parameters apply the visiblity of hidden elements. In RStudio to see hidden files in the *files* panel, go to *More* (gear symbol) the tick *Show Hidden Files*.
 
 In addition, if highly recommend displaying file extension in your file explorer (on Windows, it's normally near the option for hidden elements). By default this display is hidden and could be a little bit strange when you activated it, but it's very important to sensitize the user of what kind of file you will open. Furthermore, be aware the "clothes don't make the man" and the extension is only a shortcut for the system to know how to deal with that but don't make any guarantee of what you have inside. In accordance with rules of good practice (especially link to the security), take a moment to think about what you're about to open and display the extension is a good first step to begging.
 :::
@@ -85,13 +85,14 @@ fs::dir_info(all = TRUE) %>%
   knitr::kable()
 ```
 
-- *.gitignore*, we will see in the next step (put here section id) how to connect our local package directory to a git. This file indicates which files or directories have to be ignored for the git commits.
-- *.Rbuildignore*, in the same way that the *.gitignore*, this file indicate which elements have to be excluded during the package compilation.
-- *.Rproj.user*, this directory is normaly hidden and used internally by RStudio.
-- *DESCRIPTION*, this is an important file that provides metadata about your package, like the authors, the package description and the dependencies.
-- *macfly.Rproj*, this file, dedicate to RStudio, aims to organize your work through define the working directory of your project, memorize parameters specifics and able to open directly the project in RStudio by double click on it.
-- *NAMESPACE*, this file aims to declares functions "used" among your package (through external and internal ways).
-- *R*, this directory will contains all the functions developed in your package.
+-   *.gitignore*, we will see in the next step (put here section id) how to connect our local package directory to a git. This file indicates which files or directories have to be ignored for the git commits.
+-   *.Rbuildignore*, in the same way that the *.gitignore*, this file indicate which elements have to be excluded during the package compilation.
+- *.Rhistory*, by default this file keeps tracks of every command you've typed into the R console. When you close R, it often saves this file automatically. Be aware of that process, because this file may contain sensitive data (access to local files, credentials, etc.). You will see later that when we make connection with Git, we will ignore this file through the *.gitignore* file. If you don't want to generate and keep this file, in RStudio *Global Options*, section *General* you can disable "Always save history (even when not saving .RData)".
+-   *.Rproj.user*, this directory is normaly hidden and used internally by RStudio.
+-   *DESCRIPTION*, this is an important file that provides metadata about your package, like the authors, the package description and the dependencies.
+-   *macfly.Rproj*, this file, dedicate to RStudio, aims to organize your work through define the working directory of your project, memorize parameters specifics and able to open directly the project in RStudio by double click on it.
+-   *NAMESPACE*, this file aims to declares functions "used" among your package (through external and internal ways).
+-   *R*, this directory will contains all the functions developed in your package.
 
 ## RStudio package environment
 
@@ -110,6 +111,5 @@ Figure 1: RStudio Build panel
 </figure>
 
 ::: callout-note
-In preparation for the documentation generation, the only thing to do now is to go to the *Configure Build Tools* options (click on *More* (gear symbol) and *Configure Build Tools*). In the *Project Options* menu, *Build Tools* section, click on the *Configure* button near *Generate document with Roxygen*.
-In the new windows, fill all the proposals. This process will create and update documentation automatically when you launch several packages processes. Sometimes, it may justify not filled all is if you have a really huge documentation or a specific rule for documentation generations.
+In preparation for the documentation generation, the only thing to do now is to go to the *Configure Build Tools* options (click on *More* (gear symbol) and *Configure Build Tools*). In the *Project Options* menu, *Build Tools* section, click on the *Configure* button near *Generate document with Roxygen*. In the new windows, fill all the proposals. This process will create and update documentation automatically when you launch several packages processes. Sometimes, it may justify not filled all is if you have a really huge documentation or a specific rule for documentation generations.
 :::
