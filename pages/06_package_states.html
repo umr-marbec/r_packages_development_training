@@ -8,7 +8,7 @@
 
 <meta name="description" content="Training and material for learning to create your own R package, maintain and distribute it.">
 
-<title>Appendix A — Not define yet – R packages development training</title>
+<title>6&nbsp; - Package states – R packages development training</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,28 +21,48 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../pages/_references.html" rel="prev">
-<link href="../../images/cover.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-48436a43deb20168de6898d7b12256e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../pages/_references.html" rel="next">
+<link href="../pages/05_create_package_architecture.html" rel="prev">
+<link href="../images/cover.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-48436a43deb20168de6898d7b12256e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -83,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/appendices/a_do_define.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../pages/appendices/a_do_define.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Not define yet</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/04_before_creation.html">First part - R package architecture</a></li><li class="breadcrumb-item"><a href="../pages/06_package_states.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -98,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">R packages development training</a> 
+      <a href="../">R packages development training</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/umr-marbec/r_packages_development_training" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -118,13 +138,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/_introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/_introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -139,19 +159,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/01_os_software.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/01_os_software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">- Operating system and working environment associated</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/02_r_packages_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/02_r_packages_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/03_get_ready.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/03_get_ready.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">- Before go down the rabbit hole</span></span></a>
   </div>
 </li>
@@ -168,19 +188,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/04_before_creation.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/04_before_creation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">- Before create anything</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/05_create_package_architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/05_create_package_architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/06_package_states.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/06_package_states.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></span></a>
   </div>
 </li>
@@ -188,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/_references.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/_references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -203,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/appendices/a_do_define.html" class="sidebar-item-text sidebar-link active">
+  <a href="../pages/appendices/a_do_define.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Not define yet</span></span></a>
   </div>
 </li>
@@ -214,15 +234,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#source-package" id="toc-source-package" class="nav-link active" data-scroll-target="#source-package"><span class="header-section-number">6.1</span> Source package</a></li>
+  <li><a href="#bundled-package" id="toc-bundled-package" class="nav-link" data-scroll-target="#bundled-package"><span class="header-section-number">6.2</span> Bundled package</a></li>
+  <li><a href="#binary-package" id="toc-binary-package" class="nav-link" data-scroll-target="#binary-package"><span class="header-section-number">6.3</span> Binary package</a></li>
+  <li><a href="#installed-package" id="toc-installed-package" class="nav-link" data-scroll-target="#installed-package"><span class="header-section-number">6.4</span> Installed package</a></li>
+  <li><a href="#in-memory-package" id="toc-in-memory-package" class="nav-link" data-scroll-target="#in-memory-package"><span class="header-section-number">6.5</span> In-memory package</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/appendices/a_do_define.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../pages/appendices/a_do_define.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Not define yet</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/04_before_creation.html">First part - R package architecture</a></li><li class="breadcrumb-item"><a href="../pages/06_package_states.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix A — Not define yet</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></h1>
 </div>
 
 
@@ -239,9 +269,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Appendice a</p>
+<p>Now we have created our package structure, it’s important to take a moment to understand exactly the different states that your package can have and in addition make a link with all the things that you already do, like use the <code>install.packages()</code> function, maybe without knowing what is behind that. There are five different package states that we will explain below.</p>
+<section id="source-package" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="source-package"><span class="header-section-number">6.1</span> Source package</h2>
+<p>When we create our package in section 5, we create a source structure package. This is not the comment form you are most familiar with but to summarize it’s just a directory with files and subdirectories, grouped in a specific structure. If you have already interact with packages developed through a Git (the majority of packages have a Git repository dedicate), the structure associated with it is a source package.</p>
+<p>General, the source package is the most updated form of a package but be aware because it’s mean not necessary the most stable one. To conclud, keep in our mind that this state is not associated to any OS, it’s just element with a particular organisation.</p>
+</section>
+<section id="bundled-package" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="bundled-package"><span class="header-section-number">6.2</span> Bundled package</h2>
+<p>A bundled package is just a package compressed into a single file. By convention, R package extension is <code>.tar.gz</code>. The first one (<code>.tar</code>) is for the reduction in one single file, and the second one (<code>.gz</code>) is compressed with <a href="https://gzip.org/" class="external" target="_blank">gzip</a>. Like the previous state, it’s again not associated to any OS and it’s more a means of transportation for your package. If you are familiar with the package available on CRAN, you should see in a package description page on the CRAN website the item <em>Package source</em> with an associated <code>.tar.gz</code> file, which is the bundle version of the package.</p>
+<p>If you decompress a bundle, you will find 3 differences with a source package structure:</p>
+<ul>
+<li>If you have vignettes (we will discuss that during the section of the documentation), they have been rendered an appear below the repositories <code>inst/doc/</code> with an index in the <code>build</code> repository.</li>
+<li>During the development phase, you can use temporary files for example increase the compilation time. These files are never found in a bundle.</li>
+<li>To finish, all the files listed into the <code>.Rbuildignore</code> of a source package is not included in the bundle because by definition there are excluded from the package compilation.</li>
+</ul>
+</section>
+<section id="binary-package" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="binary-package"><span class="header-section-number">6.3</span> Binary package</h2>
+<p>This next state is the first one where you have the integration of the OS specification. If you want to share your package without any package development tools mandatory for the user, you need to provide it with a binary package. Like a bundled package, a binary package is a single file but as a user you have to choose the correct one for your OS. Normally you should find two kinds of binary package extensions, one <code>.tgz</code> for macOS and another <code>.zip</code> for Windows. On Linux, you have to install tools necessary to <code>.tar.gz</code> files but some recent resource like <a href="https://packagemanager.posit.co/" class="external" target="_blank">Posit Public Package Manager</a> provide to Linux user access to binary packages just like the other OS.</p>
+<p>We don’t go deeper into the internal structure of a binary package but be aware that is structure is very different than a source and bundled packages and if you want to go deeper you can find a very nice comparative between the three <a href="https://r-pkgs.org/structure.html#fig-package-files" class="external" target="_blank">here</a>.</p>
+</section>
+<section id="installed-package" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="installed-package"><span class="header-section-number">6.4</span> Installed package</h2>
+<p>An installed package is a binary package that’s been decompressed into a package library (see section below). This is what happens when you use the function <code>install.packages()</code>. At this moment and it’s practically sure that you have already some troubles in the past, it could be complicated to reinstall a package already used in the current R session. Sometime you have popups associated to “need of compilation”, restart a fresh session or again question related to take a package from sources because the version is more updated that the one that you have selected. There don’t have a perfect solution by when troubleshooting, Windows users should strive to install packages in a clean R session, with as few packages loaded as possible. Regarding the popup question of taking the package from the source because the version is higher, I suggest doing that only if you know what you are doing, for example if you want a specific process or function developed so far only on the source.</p>
+<p>If you have a lot of troubles with packages installations and update, remind of the <a href="https://pak.r-lib.org/" class="external" target="_blank">pak</a> <span class="citation" data-cites="pak">[<a href="_references.html#ref-pak" role="doc-biblioref">1</a>]</span> package. We used it before to check our package name, but he provides a good and powerful alternative to <code>install.packages()</code>. Use it with caution because it is a relative newcomer, but we are certainly using it more and more in our personal workflows (in the GitHub action that we see after for example).</p>
+</section>
+<section id="in-memory-package" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="in-memory-package"><span class="header-section-number">6.5</span> In-memory package</h2>
+<p>Everyone how used R used this state all the time, thought the command <code>library()</code>. When you use that, you loaded the package associated into the memory (and for the R session) and in addition, attached the package to the search path. We will see after the difference between loading and attaching package when we talk about the “hell” of dependencies (it’s a very important thing when you writing package).</p>
+<p>To conclude this part, did not confuse the word <em>library</em> and <em>package</em>. Sometime people talk about a package as a library with for example “I use the library <code>DBI</code> to dealing with my database”. A library is just like if the name suggests an element which containing installed packages, just like a library “in the world” contain books. Most of the time it is not a problem because people will understand anyway, but the distinction is important and useful as you develop package.</p>
 
 
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-pak" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Csárdi G, Hester J (2025) <a href="https://doi.org/10.32614/CRAN.package.pak">Pak: Another approach to package installation</a></div>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -645,11 +710,14 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../pages/_references.html" class="pagination-link" aria-label="References">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
+      <a href="../pages/05_create_package_architecture.html" class="pagination-link" aria-label="- Creation of the package structure">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../pages/_references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

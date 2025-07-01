@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../pages/_references.html" rel="next">
+<link href="../pages/06_package_states.html" rel="next">
 <link href="../pages/04_before_creation.html" rel="prev">
 <link href="../images/cover.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -212,6 +212,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../pages/05_create_package_architecture.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/06_package_states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></span></a>
   </div>
 </li>
       </ul>
@@ -375,7 +381,7 @@ Important
 <p>If you follow the previous step, you should have the opening of a new RStudio session and the creation of a new directory on your local drive called just like your package name. Let take a moment that.</p>
 <section id="the-package-directory" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="the-package-directory"><span class="header-section-number">5.2.1</span> The package directory</h3>
-<p>Inside the package directory you should saw 7 elements.</p>
+<p>Inside the package directory, you should see 8 elements (the <code>.Rhistory</code> file is normally generated when you close for the first time in your RStudio session, but his generation depends on your personal configuration).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -386,7 +392,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you show less than 7 elements without change anything in the command line below, maybe it’s because you don’t have unlock the hidden files. In order to remedy you can go in the setting directory option (normaly and can access to that directely in any directory on Windows) and in the parameters apply the visiblity of hidden elements. In RStudio to see hidden files in the <em>files</em> panel, go to <em>More</em> (gear symbol) the tick <em>Show Hidden Files</em>.</p>
+<p>If you show a number or kinds of elements different than below without change anything in the command line below, maybe it’s because you don’t have to unlock the hidden files. In order to remedy you can go in the setting directory option (normaly and can access to that directely in any directory on Windows) and in the parameters apply the visiblity of hidden elements. In RStudio to see hidden files in the <em>files</em> panel, go to <em>More</em> (gear symbol) the tick <em>Show Hidden Files</em>.</p>
 <p>In addition, if highly recommend displaying file extension in your file explorer (on Windows, it’s normally near the option for hidden elements). By default this display is hidden and could be a little bit strange when you activated it, but it’s very important to sensitize the user of what kind of file you will open. Furthermore, be aware the “clothes don’t make the man” and the extension is only a shortcut for the system to know how to deal with that but don’t make any guarantee of what you have inside. In accordance with rules of good practice (especially link to the security), take a moment to think about what you’re about to open and display the extension is a good first step to begging.</p>
 </div>
 </div>
@@ -439,6 +445,7 @@ Note
 <ul>
 <li><em>.gitignore</em>, we will see in the next step (put here section id) how to connect our local package directory to a git. This file indicates which files or directories have to be ignored for the git commits.</li>
 <li><em>.Rbuildignore</em>, in the same way that the <em>.gitignore</em>, this file indicate which elements have to be excluded during the package compilation.</li>
+<li><em>.Rhistory</em>, by default this file keeps tracks of every command you’ve typed into the R console. When you close R, it often saves this file automatically. Be aware of that process, because this file may contain sensitive data (access to local files, credentials, etc.). You will see later that when we make connection with Git, we will ignore this file through the <em>.gitignore</em> file. If you don’t want to generate and keep this file, in RStudio <em>Global Options</em>, section <em>General</em> you can disable “Always save history (even when not saving .RData)”.</li>
 <li><em>.Rproj.user</em>, this directory is normaly hidden and used internally by RStudio.</li>
 <li><em>DESCRIPTION</em>, this is an important file that provides metadata about your package, like the authors, the package description and the dependencies.</li>
 <li><em>macfly.Rproj</em>, this file, dedicate to RStudio, aims to organize your work through define the working directory of your project, memorize parameters specifics and able to open directly the project in RStudio by double click on it.</li>
@@ -880,8 +887,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../pages/_references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../pages/06_package_states.html" class="pagination-link" aria-label="- Package states">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
