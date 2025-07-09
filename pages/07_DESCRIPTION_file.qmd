@@ -2,7 +2,7 @@
 
 ```{r}
 #| label: setup
-source("common.R")
+source("../common.R")
 ```
 
 The file creates initially when we launch the creation of our package structure contains the major metadata information. You will find fields like the name of the package, the title and description associated, version or authors. The format of this file is DCF (Debian Control Format). It looks like the YAML on several points, each line consists of a field name and a value, separated by a colon. When you have a value display on multiple lines, like the field `Description`, the line following the first one needs to be indented (you will see that in the example below). It's a plain text file and like another one you can open it through a text editor (like NotePad or Visual Studio Code). 
