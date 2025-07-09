@@ -4,7 +4,8 @@ The file creates initially when we launch the creation of our package structure 
 
 ```{r}
 #| label: setup
-#| echo: false
+#| eval: false
+#| include: false
 knitr::opts_knit$set(root.dir = "~/macfly")
 ```
 
