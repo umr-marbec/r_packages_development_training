@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/index.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.938Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/_introduction.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.939Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/01_os_software.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.938Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/02_r_packages_overview.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.938Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/03_get_ready.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.938Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/04_before_creation.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.938Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/05_create_package_architecture.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.938Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/06_package_states.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.939Z</lastmod>
+  </url>
+  <url>
+    <loc>https://umr-marbec.github.io/r_packages_development_training/pages/07_DESCRIPTION_file.html</loc>
+    <lastmod>2025-07-09T15:47:02.939Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/_references.html</loc>
-    <lastmod>2025-07-01T09:45:49.906Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.939Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/appendices/a_do_define.html</loc>
-    <lastmod>2025-07-01T09:45:49.907Z</lastmod>
+    <lastmod>2025-07-09T15:47:02.939Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/R-packages-development-training.pdf</loc>
-    <lastmod>2025-07-01T09:49:45.060Z</lastmod>
+    <lastmod>2025-07-09T16:05:46.425Z</lastmod>
   </url>
 </urlset>
