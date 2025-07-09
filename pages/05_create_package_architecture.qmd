@@ -1,17 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: inline
----
-
-```{r}
-#| label: setup
-#| include: false
-library(fs)
-library(dplyr)
-library(knitr)
-```
-
 # - Creation of the package structure
 
 ## Initiation the global architecture
