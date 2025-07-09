@@ -23,11 +23,18 @@ book:
     - pages/01_os_software.qmd
     - pages/02_r_packages_overview.qmd
     - pages/03_get_ready.qmd
-  - part: "First part - R package architecture"
+  - part: "First part - Global package architecture"
     chapters:
     - pages/04_before_creation.qmd
     - pages/05_create_package_architecture.qmd
     - pages/06_package_states.qmd
+  - part: "Second part - Package metadata"
+    chapters:
+    - pages/07_DESCRIPTION_file.qmd
+  - part: "Third part - Adding code"
+  - part: "Fourth part - Tests and checking"
+  - part: "Fifth part - Documentation"
+  - part: "Sixth part - Current management"
 
   - pages/_references.qmd
 

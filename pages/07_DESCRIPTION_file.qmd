@@ -1,0 +1,44 @@
+# - The DESCRIPTION file
+
+The file creates initially when we launch the creation of our package structure contains the major metadata information. You will find fields like the name of the package, the title and description associated, version or authors. The format of this file is DCF (Debian Control Format). It looks like the YAML on several points, each line consists of a field name and a value, separated by a colon. When you have a value display on multiple lines, like the field `Description`, the line following the first one needs to be indented (you will see that in the example below). It's a plain text file and like another one you can open it through a text editor (like NotePad or Visual Studio Code). 
+
+```{r}
+#| label: setup
+#| echo: false
+knitr::opts_knit$set(root.dir = "~/macfly")
+```
+
+For our package created before, this is the initial DESCRIPTION file.
+
+```{cat, code = readLines(fs::path("DESCRIPTION")), class.source = "yaml"}
+```
+
+To update this file you have two possibilities, open the file and modify it by hand or use the R package [desc](https://desc.r-lib.org/){.external target="_blank"} @desc to manipulate it by command lines. In the following part, we will use functions of this package to reduce as possible typing error.
+
+## Fields `Title` and `Description`
+
+Like name suggest, `Title` is one line description of the package. It should be plain text (no markup), capitalized like a title, and not end in a period. Shorter is better and anyway, listings will often truncate the title to 65 characters.
+
+`Description` field is one (and only one) paragraph more detailed than the `Title` field. You can use multiple sentences and it's recommended to use multiple lines. Each line must be no more than 80 characters wide and indent the new line with 4 spaces.
+
+It's important to find a good title and description because it's soemthing that people see in first, especially if you submit your package on CRAN (it's display on the package CRAN website).
+
+For our example, I used the code below. You can modify it according to our needs.
+
+```{r}
+#| label: desc-title-description
+#| eval: false
+#| include: true
+library(desc)
+# By default the function read the DESCRIPTION file of the current working directory
+description_file <- desc()
+# For modify the title 
+description_file$set(Title = "My Anwesone paCkage For Learning with Yearning",
+                     Description = "An example of R package development with functions and all the stuff around to increase the joy of writing our own processes.")
+```
+
+You will find at the end of this page, the full render of my DESCRIPTION file.
+
+## Field `Author`
+
+
