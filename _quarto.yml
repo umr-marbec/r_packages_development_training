@@ -26,7 +26,7 @@ book:
   - part: "First part - Global package architecture"
     chapters:
     - pages/04_before_creation.qmd
-    - pages/05_create_package_architecture.qmd
+    - pages/05_create_package_structure.qmd
     - pages/06_package_states.qmd
   - part: "Second part - Package metadata"
     chapters:

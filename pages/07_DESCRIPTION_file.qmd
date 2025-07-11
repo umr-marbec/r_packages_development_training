@@ -2,10 +2,11 @@
 
 ```{r}
 #| label: setup
+#| include: false
 source("../common.R")
 ```
 
-The file creates initially when we launch the creation of our package structure contains the major metadata information. You will find fields like the name of the package, the title and description associated, version or authors. The format of this file is DCF (Debian Control Format). It looks like the YAML on several points, each line consists of a field name and a value, separated by a colon. When you have a value display on multiple lines, like the field `Description`, the line following the first one needs to be indented (you will see that in the example below). It's a plain text file and like another one you can open it through a text editor (like NotePad or Visual Studio Code). 
+The file creates initially when we launch the creation of our package structure contains the major metadata information. You will find fields like the name of the package, the title and description associated, version or authors. The format of this file is DCF (Debian Control Format). It looks like the YAML on several points, each line consists of a field name and a value, separated by a colon. When you have a value display on multiple lines, like the field `Description`, the line following the first one needs to be indented (you will see that in the example below). It's a plain text file and like another one you can open it through a text editor (like NotePad or Visual Studio Code).
 
 For our package created before, this is the initial DESCRIPTION file.
 
@@ -39,5 +40,14 @@ description_file$set(Title = "My Anwesone paCkage For Learning with Yearning",
 You will find at the end of this page, the full render of my DESCRIPTION file.
 
 ## Field `Author`
+
+The field `Authors@R` inside the DESCRIPTION file identify package's authors and contributors. This is a very important information because with that you know whom to contact if you are any troubles with the package. In comparaison with the other field, this one contains executable R code rather than plain text. You could find also a declaration of authors like below.
+
+```yaml
+Author: FirstName LastName [aut, cre]
+```
+
+It's the classic way but I highly recommend using the modern one with `Authors@R` because you will be able to increase the amount of information inside, like the affiliations or the ORCID number. Furthermore, it's the format recommended by CRAN. In addition, it integrate the function `person()` which hold information about individuals such as their name and email address and display them in the proper way in R.
+
 
 

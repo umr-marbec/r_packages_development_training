@@ -30,7 +30,6 @@ create_package(path = "~/macfly")
 ```{r}
 #| label: create-package
 #| echo: false
-library(dplyr)
 create_package(path = path.expand("~/macfly"))
 knitr::opts_knit$set(root.dir = "~/macfly")
 ```
@@ -62,6 +61,12 @@ In addition, if highly recommend displaying file extension in your file explorer
 :::
 
 ```{r}
+#| label: load-dplyr
+#| include: false
+library(dplyr)
+```
+
+```{r}
 #| label: directory-files
 #| echo: false
 fs::dir_info(all = TRUE) %>%
@@ -74,7 +79,7 @@ fs::dir_info(all = TRUE) %>%
 
 -   *.gitignore*, we will see in the next step (put here section id) how to connect our local package directory to a git. This file indicates which files or directories have to be ignored for the git commits.
 -   *.Rbuildignore*, in the same way that the *.gitignore*, this file indicate which elements have to be excluded during the package compilation.
-- *.Rhistory*, by default this file keeps tracks of every command you've typed into the R console. When you close R, it often saves this file automatically. Be aware of that process, because this file may contain sensitive data (access to local files, credentials, etc.). You will see later that when we make connection with Git, we will ignore this file through the *.gitignore* file. If you don't want to generate and keep this file, in RStudio *Global Options*, section *General* you can disable "Always save history (even when not saving .RData)".
+-   *.Rhistory*, by default this file keeps tracks of every command you've typed into the R console. When you close R, it often saves this file automatically. Be aware of that process, because this file may contain sensitive data (access to local files, credentials, etc.). You will see later that when we make connection with Git, we will ignore this file through the *.gitignore* file. If you don't want to generate and keep this file, in RStudio *Global Options*, section *General* you can disable "Always save history (even when not saving .RData)".
 -   *.Rproj.user*, this directory is normaly hidden and used internally by RStudio.
 -   *DESCRIPTION*, this is an important file that provides metadata about your package, like the authors, the package description and the dependencies.
 -   *macfly.Rproj*, this file, dedicate to RStudio, aims to organize your work through define the working directory of your project, memorize parameters specifics and able to open directly the project in RStudio by double click on it.
