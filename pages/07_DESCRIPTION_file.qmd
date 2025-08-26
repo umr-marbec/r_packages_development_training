@@ -15,7 +15,9 @@ For our package created before, this is the initial DESCRIPTION file.
 
 To update this file you have two possibilities, open the file and modify it by hand or use the R package [desc](https://desc.r-lib.org/){.external target="_blank"} @desc to manipulate it by command lines. In the following part, we will use functions of this package to reduce as possible typing error.
 
-## Fields `Title` and `Description`
+## Fields `Package`, `Title` and `Description`
+
+The first line in the description file is the `Package` field and refer to the name of the package that we define before (@sec-name). You don't have anything to modify in this field.
 
 Like name suggest, `Title` is one line description of the package. It should be plain text (no markup), capitalized like a title, and not end in a period. Shorter is better and anyway, listings will often truncate the title to 65 characters.
 
@@ -27,7 +29,8 @@ For our example, I used the code below. You can modify it according to our needs
 
 ```{r}
 #| label: desc-title-description
-#| eval: false
+#| eval: true
+#| message: false
 #| include: true
 library(desc)
 # By default the function read the DESCRIPTION file of the current working directory
@@ -37,17 +40,89 @@ description_file$set(Title = "My Anwesone paCkage For Learning with Yearning",
                      Description = "An example of R package development with functions and all the stuff around to increase the joy of writing our own processes.")
 ```
 
-You will find at the end of this page, the full render of my DESCRIPTION file.
+## Field `Version`
+
+This field is a very important way to indicate the state of your package and evolving across the time and more precisely is lifecycle. We will go deeper into this in the [section to define].
 
 ## Field `Author`
 
-The field `Authors@R` inside the DESCRIPTION file identify package's authors and contributors. This is a very important information because with that you know whom to contact if you are any troubles with the package. In comparaison with the other field, this one contains executable R code rather than plain text. You could find also a declaration of authors like below.
+The field `Authors@R` inside the DESCRIPTION file identify package's authors and contributors. This is a very important information because with that you know whom to contact if you are any troubles with the package. In comparison with the other field, this one contains executable R code rather than plain text. You could find also a declaration of authors like below.
 
-```yaml
+``` yaml
 Author: FirstName LastName [aut, cre]
 ```
 
 It's the classic way but I highly recommend using the modern one with `Authors@R` because you will be able to increase the amount of information inside, like the affiliations or the ORCID number. Furthermore, it's the format recommended by CRAN. In addition, it integrate the function `person()` which hold information about individuals such as their name and email address and display them in the proper way in R.
 
+You can use several `person()` function's arguments (take a look in the documentation to have a full overview) but you will find below the most useful and common:
 
+- `given` and `family` specify respectively the first name and the last name. For a non-person entity, like your research unit, use only `given` and omit the `family` (except for special purpose, like if you want to have the acronym of your unit and the full name),
+- `email` is very important because it's the logical way to contact for the user is he has any question on your package and processes associated. It field is in relation to the `role` below and condition if it is a mandatory information or not,
+- the `role` field indicate the contribution and the implication of each author in the package development and life. In practice you can have multiple role for one person and you can choose between theses:
+  - the `cre` is the creator or the maintainer of the package. You can have only one and it's the person of the entity that you have ton contact is you have troubles. In relation with comment before, this field has to be associated with a valid email. Furthermore, despite the name, this role is used for the current maintainer of the pacakge even if it's not the initial creator of the package,
+  - `aut` is for authors and indicate peoples which have significant contributions to the package,
+  - `ctb` is for contributors like people which made smaller contributions like patches or reviewers,
+  - `cph` is copyright holder. Typically your research unity should be a copyright holder.
+  - Sometime you can have the `fnd` role for funder, which is like the name suggest, people or organizations that have provided financial support to the package.
+- `comment` is the last one useful because it let you the opportunity to included your [ORCID identifiers](https://orcid.org/){.external target="_blank"}.
 
+At least, you package should have one author and one maintainer (it could be the same person), with the last one associated to a valid email. In addition, you can list multiple arguments (like several roles for one person) or multiple authors with a `c()`.
+
+According to the section before, you will find below an example for update the field `Author` of the package training exemple:
+
+```{r}
+#| label: desc-authors
+#| eval: true
+#| include: true
+# Removing default "Author" field
+description_file$del("Authors@R")
+# Adding authors
+description_file$add_author(given = "Mathieu",
+                            family = "Depetris",
+                            email = "mathieu.depetris@cnrs.fr",
+                            role = c("cre", "aut"),
+                            orcid = "0000-0001-8080-0531")
+description_file$add_author(given = "UMR MARBEC",
+                            family = "MARine Biodiversity Exploitation & Conservation",
+                            role = c("cph"))
+```
+
+At least, theses fields are used to generate basic citation for our package and you can use the function `citation()` for display it. You can find below the exemple of citation for the package [dplyr](https://dplyr.tidyverse.org/){.external target="_blank"}.
+
+```{r}
+#| label: citation-dplyr
+#| echo: false
+citation("dplyr")
+```
+
+So far, we don't modify any other lines in the DESCRIPTION file. The next modifications will be appear directly in the file when you will launch the r functions associated. So the last thing to do is to save the DESCRIPTION file modifications by erasing the previous one. Use the following command line do doing that.
+
+```{r}
+#| label: update-description-file
+#| eval: true
+#| message: false
+#| include: true
+# Update, by remplacement, the DESCRIPTION file (in the current working directory)
+description_file$write()
+# Bonus, this function standardize the DESCRIPTION file (ordering fields and dependencies)
+usethis::use_tidy_description()
+```
+
+```{cat, code = readLines(fs::path("DESCRIPTION")), class.source = "yaml"}
+```
+
+## Field `License`
+
+This field is mandatory and reflect your package's license. To simplify the thing, the license will inform users of your package what they can do, or not, when the use or manipulate your package. This is an important task and you have to ask yourself about several question to take the better descision according to your needs. You can find a deeper reflexion on this aspect in the [section to define].
+
+## Field `Encoding`
+
+If you have special characters or diacritical marks like accents in your data, you have already dealing before with the encoding, to avoid text warp. By default the field `Encoding` is UTF-8 as this is the most common encoding in use today. Normally you don't have to modify.  
+
+## Roxygen fields
+
+By using the function `create_package()` before, two fields related to documentation will be added in the description file, `Roxygen` and `RoxygenNote`. We will see later (section to define) what they are connected to but there are in relation to the [roxygen2](https://roxygen2.r-lib.org/){.external target="_blank"} package, your best ally to simplify the documenting production and icing on the cake theses fields will be updated automatically in the DESCRITPION according to actions initiate during the package development and lifecycle.
+
+## Futures fields
+
+You will that several new fields will be added in the DESCRIPTION file, like `URL`, `BugReports`, `Imports` or `VignetteBuilder`. We will discuss these fields in dedicated sections, but you can have an overview of them [here](https://r-pkgs.org/description.html#other-fields){.external target="_blank"} if you are curious. For information, you can also create custom fields to add additional metadata. So far, I never have the utility to doing that but if it's relevant according to your needs, you will find some guidelines [over there](https://r-pkgs.org/description.html#sec-description-custom-fields){.external target="_blank"}.

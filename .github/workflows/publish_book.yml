@@ -24,6 +24,7 @@ jobs:
             any::rmarkdown
             any::devtools
             any::desc
+            any::usethis
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

@@ -12,7 +12,7 @@ The aim here is to answer the question, what I want to put into my package or wh
 
 You can image other cases and again it's normal if your perimeter evolve with time regarding the maturity of your work. A good solution could be to design flux diagrams for example explain (even for you) the process and maybe associated one. In addition, these kinds of figures could be useful for the documentation process. A quick research on the internet will be displaying several software, free and paid, for doing that.
 
-## Second reflexion, the name
+## Second reflexion, the name {#sec-name}
 
 Now you know globally the purpose of my package. The next step is to define is named. It's an important moment because the name is one of the first things that you and the others will see. At a time where the referencing (like the SEO or Search Engine Optimisation) and visibility is important items regarding the life of your work, it could be bad to lose points at this moment just because the name is not very clear and friendly.
 
