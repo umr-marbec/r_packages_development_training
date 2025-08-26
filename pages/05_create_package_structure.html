@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,10 +75,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-48436a43deb20168de6898d7b12256e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-af6dbb72a40f91ff04166e7243f1c1f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -325,35 +325,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: le package 'devtools' a été compilé avec la version R 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
 <pre><code>Le chargement a nécessité le package : usethis</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: le package 'usethis' a été compilé avec la version R 4.4.2</code></pre>
 </div>
 </div>
 <p>Just to be sure that you have everything you need to develop R package you can launch the following command line to display a report of the package development situation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── R ───────────────────────────────────────────────────────────────────────────
-• version: 4.4.1
-• path: 'C:/Program Files/R/R-4.4.1/'</code></pre>
+• version: 4.5.0
+• path: 'C:/Program Files/R/R-4.5.0/'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>• R is out of date (4.4.1 vs 4.5.1)</code></pre>
+<pre><code>• R is out of date (4.5.0 vs 4.5.1)</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Rtools ──────────────────────────────────────────────────────────────────────
-• path: 'C:/rtools44/usr/bin/'
+• path: 
 ── devtools ────────────────────────────────────────────────────────────────────
 • version: 2.4.5</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>• devtools or its dependencies out of date:
-  'purrr', 'commonmark', 'pillar', 'Rcpp', 'shiny'
+  'xml2', 'curl', 'xfun', 'later'
   Update them with `devtools::update_packages("devtools")`</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -364,11 +358,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>If everything rock’s, launch the next command to initiate the global architecture of your package. For the training, my new R package will have the acronym “macfly” for “My Anwesone paCkage For Learning with Yearning”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to "C:/Users/mdepe/Documents/macfly".</code></pre>
+<pre><code>✔ Setting active project to "C:/Users/mdepetri/Documents/macfly".</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Leaving 'DESCRIPTION' unchanged.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Package: macfly
@@ -455,26 +452,22 @@ Note
 <td style="text-align: left;">file</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">.Rhistory</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">.Rproj.user</td>
 <td style="text-align: left;">directory</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">DESCRIPTION</td>
 <td style="text-align: left;">file</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">macfly.Rproj</td>
 <td style="text-align: left;">file</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">NAMESPACE</td>
 <td style="text-align: left;">file</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">R</td>
 <td style="text-align: left;">directory</td>
 </tr>

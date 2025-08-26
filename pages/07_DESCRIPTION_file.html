@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,10 +94,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-48436a43deb20168de6898d7b12256e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-af6dbb72a40f91ff04166e7243f1c1f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -307,8 +307,13 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fields-title-and-description" id="toc-fields-title-and-description" class="nav-link active" data-scroll-target="#fields-title-and-description"><span class="header-section-number">7.1</span> Fields <code>Title</code> and <code>Description</code></a></li>
-  <li><a href="#field-author" id="toc-field-author" class="nav-link" data-scroll-target="#field-author"><span class="header-section-number">7.2</span> Field <code>Author</code></a></li>
+  <li><a href="#fields-package-title-and-description" id="toc-fields-package-title-and-description" class="nav-link active" data-scroll-target="#fields-package-title-and-description"><span class="header-section-number">7.1</span> Fields <code>Package</code>, <code>Title</code> and <code>Description</code></a></li>
+  <li><a href="#field-version" id="toc-field-version" class="nav-link" data-scroll-target="#field-version"><span class="header-section-number">7.2</span> Field <code>Version</code></a></li>
+  <li><a href="#field-author" id="toc-field-author" class="nav-link" data-scroll-target="#field-author"><span class="header-section-number">7.3</span> Field <code>Author</code></a></li>
+  <li><a href="#field-license" id="toc-field-license" class="nav-link" data-scroll-target="#field-license"><span class="header-section-number">7.4</span> Field <code>License</code></a></li>
+  <li><a href="#field-encoding" id="toc-field-encoding" class="nav-link" data-scroll-target="#field-encoding"><span class="header-section-number">7.5</span> Field <code>Encoding</code></a></li>
+  <li><a href="#roxygen-fields" id="toc-roxygen-fields" class="nav-link" data-scroll-target="#roxygen-fields"><span class="header-section-number">7.6</span> Roxygen fields</a></li>
+  <li><a href="#futures-fields" id="toc-futures-fields" class="nav-link" data-scroll-target="#futures-fields"><span class="header-section-number">7.7</span> Futures fields</a></li>
   </ul>
 </nav>
     </div>
@@ -338,20 +343,25 @@ div.csl-indent {
 <p>For our package created before, this is the initial DESCRIPTION file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> macfly</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> What the Package Does (One Line, Title Case)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> My Anwesone paCkage For Learning with Yearning</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.0.9000</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> What the package does (one paragraph).</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> c(</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    person("Mathieu", "Depetris", , "mathieu.depetris@cnrs.fr", role = c("cre", "aut"),</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">           comment = c(ORCID = "0000-0001-8080-0531")),</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    person("UMR MARBEC", "MARine Biodiversity Exploitation &amp; Conservation", role = "cph")</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  )</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> An example of R package development with functions and all</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    the stuff around to increase the joy of writing our own processes.</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To update this file you have two possibilities, open the file and modify it by hand or use the R package <a href="https://desc.r-lib.org/" class="external" target="_blank">desc</a> <span class="citation" data-cites="desc">[<a href="_references.html#ref-desc" role="doc-biblioref">1</a>]</span> to manipulate it by command lines. In the following part, we will use functions of this package to reduce as possible typing error.</p>
-<section id="fields-title-and-description" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="fields-title-and-description"><span class="header-section-number">7.1</span> Fields <code>Title</code> and <code>Description</code></h2>
+<section id="fields-package-title-and-description" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="fields-package-title-and-description"><span class="header-section-number">7.1</span> Fields <code>Package</code>, <code>Title</code> and <code>Description</code></h2>
+<p>The first line in the description file is the <code>Package</code> field and refer to the name of the package that we define before (<a href="04_before_creation.html#sec-name" class="quarto-xref"><span>Section 4.2</span></a>). You don’t have anything to modify in this field.</p>
 <p>Like name suggest, <code>Title</code> is one line description of the package. It should be plain text (no markup), capitalized like a title, and not end in a period. Shorter is better and anyway, listings will often truncate the title to 65 characters.</p>
 <p><code>Description</code> field is one (and only one) paragraph more detailed than the <code>Title</code> field. You can use multiple sentences and it’s recommended to use multiple lines. Each line must be no more than 80 characters wide and indent the new line with 4 spaces.</p>
 <p>It’s important to find a good title and description because it’s soemthing that people see in first, especially if you submit your package on CRAN (it’s display on the package CRAN website).</p>
@@ -364,13 +374,107 @@ div.csl-indent {
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>description_file<span class="sc">$</span><span class="fu">set</span>(<span class="at">Title =</span> <span class="st">"My Anwesone paCkage For Learning with Yearning"</span>,</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Description =</span> <span class="st">"An example of R package development with functions and all the stuff around to increase the joy of writing our own processes."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You will find at the end of this page, the full render of my DESCRIPTION file.</p>
 </section>
-<section id="field-author" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="field-author"><span class="header-section-number">7.2</span> Field <code>Author</code></h2>
-<p>The field <code>Authors@R</code> inside the DESCRIPTION file identify package’s authors and contributors. This is a very important information because with that you know whom to contact if you are any troubles with the package. In comparaison with the other field, this one contains executable R code rather than plain text. You could find also a declaration of authors like below.</p>
+<section id="field-version" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="field-version"><span class="header-section-number">7.2</span> Field <code>Version</code></h2>
+<p>This field is a very important way to indicate the state of your package and evolving across the time and more precisely is lifecycle. We will go deeper into this in the [section to define].</p>
+</section>
+<section id="field-author" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="field-author"><span class="header-section-number">7.3</span> Field <code>Author</code></h2>
+<p>The field <code>Authors@R</code> inside the DESCRIPTION file identify package’s authors and contributors. This is a very important information because with that you know whom to contact if you are any troubles with the package. In comparison with the other field, this one contains executable R code rather than plain text. You could find also a declaration of authors like below.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Author</span><span class="kw">:</span><span class="at"> FirstName LastName [aut, cre]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It’s the classic way but I highly recommend using the modern one with <code>Authors@R</code> because you will be able to increase the amount of information inside, like the affiliations or the ORCID number. Furthermore, it’s the format recommended by CRAN. In addition, it integrate the function <code>person()</code> which hold information about individuals such as their name and email address and display them in the proper way in R.</p>
+<p>You can use several <code>person()</code> function’s arguments (take a look in the documentation to have a full overview) but you will find below the most useful and common:</p>
+<ul>
+<li><code>given</code> and <code>family</code> specify respectively the first name and the last name. For a non-person entity, like your research unit, use only <code>given</code> and omit the <code>family</code> (except for special purpose, like if you want to have the acronym of your unit and the full name),</li>
+<li><code>email</code> is very important because it’s the logical way to contact for the user is he has any question on your package and processes associated. It field is in relation to the <code>role</code> below and condition if it is a mandatory information or not,</li>
+<li>the <code>role</code> field indicate the contribution and the implication of each author in the package development and life. In practice you can have multiple role for one person and you can choose between theses:
+<ul>
+<li>the <code>cre</code> is the creator or the maintainer of the package. You can have only one and it’s the person of the entity that you have ton contact is you have troubles. In relation with comment before, this field has to be associated with a valid email. Furthermore, despite the name, this role is used for the current maintainer of the pacakge even if it’s not the initial creator of the package,</li>
+<li><code>aut</code> is for authors and indicate peoples which have significant contributions to the package,</li>
+<li><code>ctb</code> is for contributors like people which made smaller contributions like patches or reviewers,</li>
+<li><code>cph</code> is copyright holder. Typically your research unity should be a copyright holder.</li>
+<li>Sometime you can have the <code>fnd</code> role for funder, which is like the name suggest, people or organizations that have provided financial support to the package.</li>
+</ul></li>
+<li><code>comment</code> is the last one useful because it let you the opportunity to included your <a href="https://orcid.org/" class="external" target="_blank">ORCID identifiers</a>.</li>
+</ul>
+<p>At least, you package should have one author and one maintainer (it could be the same person), with the last one associated to a valid email. In addition, you can list multiple arguments (like several roles for one person) or multiple authors with a <code>c()</code>.</p>
+<p>According to the section before, you will find below an example for update the field <code>Author</code> of the package training exemple:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing default "Author" field</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>description_file<span class="sc">$</span><span class="fu">del</span>(<span class="st">"Authors@R"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding authors</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>description_file<span class="sc">$</span><span class="fu">add_author</span>(<span class="at">given =</span> <span class="st">"Mathieu"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">family =</span> <span class="st">"Depetris"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">email =</span> <span class="st">"mathieu.depetris@cnrs.fr"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">role =</span> <span class="fu">c</span>(<span class="st">"cre"</span>, <span class="st">"aut"</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">orcid =</span> <span class="st">"0000-0001-8080-0531"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>description_file<span class="sc">$</span><span class="fu">add_author</span>(<span class="at">given =</span> <span class="st">"UMR MARBEC"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">family =</span> <span class="st">"MARine Biodiversity Exploitation &amp; Conservation"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">role =</span> <span class="fu">c</span>(<span class="st">"cph"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>At least, theses fields are used to generate basic citation for our package and you can use the function <code>citation()</code> for display it. You can find below the exemple of citation for the package <a href="https://dplyr.tidyverse.org/" class="external" target="_blank">dplyr</a>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Pour citer le package 'dplyr' dans une publication, utilisez :
+
+  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A
+  Grammar of Data Manipulation_. doi:10.32614/CRAN.package.dplyr
+  &lt;https://doi.org/10.32614/CRAN.package.dplyr&gt;, R package version
+  1.1.4, &lt;https://CRAN.R-project.org/package=dplyr&gt;.
+
+Une entrée BibTeX pour les utilisateurs LaTeX est
+
+  @Manual{,
+    title = {dplyr: A Grammar of Data Manipulation},
+    author = {Hadley Wickham and Romain François and Lionel Henry and Kirill Müller and Davis Vaughan},
+    year = {2023},
+    note = {R package version 1.1.4},
+    url = {https://CRAN.R-project.org/package=dplyr},
+    doi = {10.32614/CRAN.package.dplyr},
+  }</code></pre>
+</div>
+</div>
+<p>So far, we don’t modify any other lines in the DESCRIPTION file. The next modifications will be appear directly in the file when you will launch the r functions associated. So the last thing to do is to save the DESCRIPTION file modifications by erasing the previous one. Use the following command line do doing that.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update, by remplacement, the DESCRIPTION file (in the current working directory)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>description_file<span class="sc">$</span><span class="fu">write</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Bonus, this function standardize the DESCRIPTION file (ordering fields and dependencies)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_tidy_description</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> macfly</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> My Anwesone paCkage For Learning with Yearning</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.0.9000</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> c(</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">    person("Mathieu", "Depetris", , "mathieu.depetris@cnrs.fr", role = c("cre", "aut"),</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">           comment = c(ORCID = "0000-0001-8080-0531")),</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    person("UMR MARBEC", "MARine Biodiversity Exploitation &amp; Conservation", role = "cph")</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">  )</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> An example of R package development with functions and all</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">    the stuff around to increase the joy of writing our own processes.</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="field-license" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="field-license"><span class="header-section-number">7.4</span> Field <code>License</code></h2>
+<p>This field is mandatory and reflect your package’s license. To simplify the thing, the license will inform users of your package what they can do, or not, when the use or manipulate your package. This is an important task and you have to ask yourself about several question to take the better descision according to your needs. You can find a deeper reflexion on this aspect in the [section to define].</p>
+</section>
+<section id="field-encoding" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="field-encoding"><span class="header-section-number">7.5</span> Field <code>Encoding</code></h2>
+<p>If you have special characters or diacritical marks like accents in your data, you have already dealing before with the encoding, to avoid text warp. By default the field <code>Encoding</code> is UTF-8 as this is the most common encoding in use today. Normally you don’t have to modify.</p>
+</section>
+<section id="roxygen-fields" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="roxygen-fields"><span class="header-section-number">7.6</span> Roxygen fields</h2>
+<p>By using the function <code>create_package()</code> before, two fields related to documentation will be added in the description file, <code>Roxygen</code> and <code>RoxygenNote</code>. We will see later (section to define) what they are connected to but there are in relation to the <a href="https://roxygen2.r-lib.org/" class="external" target="_blank">roxygen2</a> package, your best ally to simplify the documenting production and icing on the cake theses fields will be updated automatically in the DESCRITPION according to actions initiate during the package development and lifecycle.</p>
+</section>
+<section id="futures-fields" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="futures-fields"><span class="header-section-number">7.7</span> Futures fields</h2>
+<p>You will that several new fields will be added in the DESCRIPTION file, like <code>URL</code>, <code>BugReports</code>, <code>Imports</code> or <code>VignetteBuilder</code>. We will discuss these fields in dedicated sections, but you can have an overview of them <a href="https://r-pkgs.org/description.html#other-fields" class="external" target="_blank">here</a> if you are curious. For information, you can also create custom fields to add additional metadata. So far, I never have the utility to doing that but if it’s relevant according to your needs, you will find some guidelines <a href="https://r-pkgs.org/description.html#sec-description-custom-fields" class="external" target="_blank">over there</a>.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
