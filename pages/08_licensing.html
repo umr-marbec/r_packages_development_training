@@ -8,7 +8,7 @@
 
 <meta name="description" content="Training and material for learning to create your own R package, maintain and distribute it.">
 
-<title>5&nbsp; - Creation of the package structure – R packages development training</title>
+<title>8&nbsp; - Licensing – R packages development training</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../pages/06_package_states.html" rel="next">
-<link href="../pages/04_before_creation.html" rel="prev">
+<link href="../pages/_references.html" rel="next">
+<link href="../pages/07_DESCRIPTION_file.html" rel="prev">
 <link href="../images/cover.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -119,7 +84,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/04_before_creation.html">First part - Global package architecture</a></li><li class="breadcrumb-item"><a href="../pages/05_create_package_structure.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/07_DESCRIPTION_file.html">Second part - Package metadata</a></li><li class="breadcrumb-item"><a href="../pages/08_licensing.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">- Licensing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -210,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/05_create_package_structure.html" class="sidebar-item-text sidebar-link active">
+  <a href="../pages/05_create_package_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></span></a>
   </div>
 </li>
@@ -239,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/08_licensing.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/08_licensing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">- Licensing</span></span></a>
   </div>
 </li>
@@ -294,21 +259,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#initiation-the-global-architecture" id="toc-initiation-the-global-architecture" class="nav-link active" data-scroll-target="#initiation-the-global-architecture"><span class="header-section-number">5.1</span> Initiation the global architecture</a></li>
-  <li><a href="#overview-of-the-package-strucutre" id="toc-overview-of-the-package-strucutre" class="nav-link" data-scroll-target="#overview-of-the-package-strucutre"><span class="header-section-number">5.2</span> Overview of the package strucutre</a>
-  <ul class="collapse">
-  <li><a href="#the-package-directory" id="toc-the-package-directory" class="nav-link" data-scroll-target="#the-package-directory"><span class="header-section-number">5.2.1</span> The package directory</a></li>
-  </ul></li>
-  <li><a href="#rstudio-package-environment" id="toc-rstudio-package-environment" class="nav-link" data-scroll-target="#rstudio-package-environment"><span class="header-section-number">5.3</span> RStudio package environment</a></li>
+  <li><a href="#global-overview" id="toc-global-overview" class="nav-link active" data-scroll-target="#global-overview"><span class="header-section-number">8.1</span> Global overview</a></li>
+  <li><a href="#software-development-licenses" id="toc-software-development-licenses" class="nav-link" data-scroll-target="#software-development-licenses"><span class="header-section-number">8.2</span> Software development licenses</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/04_before_creation.html">First part - Global package architecture</a></li><li class="breadcrumb-item"><a href="../pages/05_create_package_structure.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/07_DESCRIPTION_file.html">Second part - Package metadata</a></li><li class="breadcrumb-item"><a href="../pages/08_licensing.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">- Licensing</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">- Creation of the package structure</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">- Licensing</span></h1>
 </div>
 
 
@@ -325,196 +286,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="initiation-the-global-architecture" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="initiation-the-global-architecture"><span class="header-section-number">5.1</span> Initiation the global architecture</h2>
-<p>Now you have an working environment correctly configured and we have taken a few moment to thing about our package aim. We can go deeper and initiate the structure of our new package from an active R session. You don’t have to take care about the configuration of your local session because the function associated will be create a clean new project for your package. First, load the <a href="https://devtools.r-lib.org/" class="external" target="_blank">devtools</a> and by association is friend <a href="https://usethis.r-lib.org/" class="external" target="_blank">usethis</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Le chargement a nécessité le package : usethis</code></pre>
-</div>
-</div>
-<p>Just to be sure that you have everything you need to develop R package you can launch the following command line to display a report of the package development situation.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>── R ───────────────────────────────────────────────────────────────────────────
-• version: 4.5.0
-• path: 'C:/Program Files/R/R-4.5.0/'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• R is out of date (4.5.0 vs 4.5.1)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>── Rtools ──────────────────────────────────────────────────────────────────────
-• path: 
-── devtools ────────────────────────────────────────────────────────────────────
-• version: 2.4.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• devtools or its dependencies out of date:
-  'xml2', 'curl', 'xfun', 'later'
-  Update them with `devtools::update_packages("devtools")`</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>── dev package ─────────────────────────────────────────────────────────────────
-• package: &lt;unset&gt;
-• path: &lt;unset&gt;</code></pre>
-</div>
-</div>
-<p>If everything rock’s, launch the next command to initiate the global architecture of your package. For the training, my new R package will have the acronym “macfly” for “My Anwesone paCkage For Learning with Yearning”.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to "C:/Users/mdepetri/Documents/macfly".</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Leaving 'DESCRIPTION' unchanged.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Package: macfly
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R (parsed):
-    * First Last &lt;first.last@example.com&gt; [aut, cre]
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to "&lt;no active project&gt;".</code></pre>
-</div>
-</div>
-<p>Another solution with RStudio is to use the interface through the <em>file</em> menu, <em>New Project…</em>, <em>New Directory</em>, <em>R Package</em>, file the field “Package name:”, click on “Open in new session” and finish with *Create Project”. Even is the approach is similar, the click-button interface create in addition a template function with a proposal for the documentation associated. In opposite, the command line creation include by default a .gitignore file (for Git use). It’s not true important but it could be a bit better to use the command line because we will learn how to create a R function template later and in your developer life it could be very rare (and dangerous) when you don’t use a Git associated to your work.</p>
-<p>By default, RStudio open a fresh session associated to the R environment of your package and you should need to call again <code>library(devtools)</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For your information, you will find in the <a href="https://usethis.r-lib.org/index.html" class="external" target="_blank">usethis</a> package a function <a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external" target="_blank"><code>create_tidy_package()</code></a> that extends <code>create_package()</code> by applying many of the tidyverse development conventions as possible. I don’t recommend using that way, instead of you know exactly what you do and to save time in the future, because it’s better to really understand each step of the package creation.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>At least, you could see sometime a function call <code>package.skeleton</code> from the <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/package.skeleton" class="external" target="_blank">utils</a> R package. Even if this function create a package structure it’s an “old way” to do and you should have some trouble if you use it, especially with you want to use the tidyverse philosophy.</p>
-</div>
-</div>
+<p>Choose your licence for your package allows you to declare how you want your code to be used and an important step if you use or include code written by someone else, to respect his work and license associated. You don’t need, thankfully, to be an expert and you just need to follow several guidelines. If you have any doubt or if you are in a specific case, like if selling your package, don’t hesitate to consult juridic service of your company/institute or for example a lawyer.</p>
+<section id="global-overview" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="global-overview"><span class="header-section-number">8.1</span> Global overview</h2>
+<p>There are 3 main kind of licenses when you talk about software development: the open source, proprietary and source-available licenses. If we go beyond software development, you can find other families of licences in relation to the kind of creation. We can mention <a href="https://creativecommons.org/share-your-work/cclicenses/" class="external" target="_blank">Creative Commons</a> (CC) family for creative works (art, photography, music, …), <a href="https://opendatacommons.org/licenses/" class="external" target="_blank">Open Data Commons</a> (ODC) licences for data and databases licences or the <a href="https://www.gnu.org/licenses/licenses.fr.html#FDL" class="external" target="_blank">GNU Free Documentation License</a> for Documentation and Educational Content Licenses for manuals, textbooks, tutorials, and academic materials. Here we are just focusing our reflection on software development family (with a little shortcut for licences dedicated to data) because we only deal in our example with an R package.</p>
 </section>
-<section id="overview-of-the-package-strucutre" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="overview-of-the-package-strucutre"><span class="header-section-number">5.2</span> Overview of the package strucutre</h2>
-<p>If you follow the previous step, you should have the opening of a new RStudio session and the creation of a new directory on your local drive called just like your package name. Let take a moment that.</p>
-<section id="the-package-directory" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="the-package-directory"><span class="header-section-number">5.2.1</span> The package directory</h3>
-<p>Inside the package directory, you should see 8 elements (the <code>.Rhistory</code> file is normally generated when you close for the first time in your RStudio session, but his generation depends on your personal configuration).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you show a number or kinds of elements different than below without change anything in the command line below, maybe it’s because you don’t have to unlock the hidden files. In order to remedy you can go in the setting directory option (normaly and can access to that directely in any directory on Windows) and in the parameters apply the visiblity of hidden elements. In RStudio to see hidden files in the <em>files</em> panel, go to <em>More</em> (gear symbol) the tick <em>Show Hidden Files</em>.</p>
-<p>In addition, if highly recommend displaying file extension in your file explorer (on Windows, it’s normally near the option for hidden elements). By default this display is hidden and could be a little bit strange when you activated it, but it’s very important to sensitize the user of what kind of file you will open. Furthermore, be aware the “clothes don’t make the man” and the extension is only a shortcut for the system to know how to deal with that but don’t make any guarantee of what you have inside. In accordance with rules of good practice (especially link to the security), take a moment to think about what you’re about to open and display the extension is a good first step to begging.</p>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Element name</th>
-<th style="text-align: left;">Type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">.gitignore</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">.Rbuildignore</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">.Rproj.user</td>
-<td style="text-align: left;">directory</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">DESCRIPTION</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">macfly.Rproj</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">NAMESPACE</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">directory</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<ul>
-<li><em>.gitignore</em>, we will see in the next step (put here section id) how to connect our local package directory to a git. This file indicates which files or directories have to be ignored for the git commits.</li>
-<li><em>.Rbuildignore</em>, in the same way that the <em>.gitignore</em>, this file indicate which elements have to be excluded during the package compilation.</li>
-<li><em>.Rhistory</em>, by default this file keeps tracks of every command you’ve typed into the R console. When you close R, it often saves this file automatically. Be aware of that process, because this file may contain sensitive data (access to local files, credentials, etc.). You will see later that when we make connection with Git, we will ignore this file through the <em>.gitignore</em> file. If you don’t want to generate and keep this file, in RStudio <em>Global Options</em>, section <em>General</em> you can disable “Always save history (even when not saving .RData)”.</li>
-<li><em>.Rproj.user</em>, this directory is normaly hidden and used internally by RStudio.</li>
-<li><em>DESCRIPTION</em>, this is an important file that provides metadata about your package, like the authors, the package description and the dependencies.</li>
-<li><em>macfly.Rproj</em>, this file, dedicate to RStudio, aims to organize your work through define the working directory of your project, memorize parameters specifics and able to open directly the project in RStudio by double click on it.</li>
-<li><em>NAMESPACE</em>, this file aims to declares functions “used” among your package (through external and internal ways).</li>
-<li><em>R</em>, this directory will contains all the functions developed in your package.</li>
-</ul>
-</section>
-</section>
-<section id="rstudio-package-environment" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="rstudio-package-environment"><span class="header-section-number">5.3</span> RStudio package environment</h2>
-<p>If you take a look at the panel <em>Build</em> in the Rstudio environment you should see several new sections, like <em>Install</em> or <em>Check</em> (<a href="#figure1">figure 1</a>). We will take a look after in each of one, but keep in our mind that this sections is a shorcut way to apply processes on your package.</p>
-<figure id="figure1" class="figure">
-<p><img src="../images/rstudio_package_environment.png" alt="Figure 1: RStudio Build panel" class="resized-img figure-img" width="50%"></p>
-<figcaption class="figcaption-center">
-<p>Figure 1: RStudio Build panel</p>
-</figcaption>
-</figure>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In preparation for the documentation generation, the only thing to do now is to go to the <em>Configure Build Tools</em> options (click on <em>More</em> (gear symbol) and <em>Configure Build Tools</em>). In the <em>Project Options</em> menu, <em>Build Tools</em> section, click on the <em>Configure</em> button near <em>Generate document with Roxygen</em>. In the new windows, fill all the proposals. This process will create and update documentation automatically when you launch several packages processes. Sometimes, it may justify not filled all is if you have a really huge documentation or a specific rule for documentation generations.</p>
-</div>
-</div>
+<section id="software-development-licenses" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="software-development-licenses"><span class="header-section-number">8.2</span> Software development licenses</h2>
+<p>Focusing on this kind of creation, three major families were available.</p>
+<p>The first one is open source licences. These licenses allow users to access, modify and redistribute the source code freely. They promote transparency, collaboration, and innovation.</p>
+<p>The second one is proprietary licences. These kind restrict access to the source code and limit how the software can be used, modified or distributed. The aims under that could be protection of commercial interests and maintain control over the software.</p>
+<p>The last one is source-available licenses. These one make the source code visible but do not grant full open source freedoms like we could have with open source licences. This allow transparency while preserving business models or ethical boundaries.</p>
+<p>For our use here, we mainly talk about open source licences because we will use the guideline of the <a href="https://www.go-fair.org/fair-principles/" class="external" target="_blank">FAIR principles</a> to rule our work. We will see below how to specify a proprietary licence if necessary but I let you go deeper into these licences, and the source-available licenses, if you think your work needs one of them.</p>
 
 
 </section>
@@ -921,13 +704,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../pages/04_before_creation.html" class="pagination-link" aria-label="- Before create anything">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">- Before create anything</span></span>
+      <a href="../pages/07_DESCRIPTION_file.html" class="pagination-link" aria-label="- The DESCRIPTION file">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">- The DESCRIPTION file</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../pages/06_package_states.html" class="pagination-link" aria-label="- Package states">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">- Package states</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../pages/_references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

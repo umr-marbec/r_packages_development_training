@@ -295,6 +295,28 @@
     ]
   },
   {
+    "objectID": "pages/08_licensing.html",
+    "href": "pages/08_licensing.html",
+    "title": "8  - Licensing",
+    "section": "",
+    "text": "8.1 Global overview\nChoose your licence for your package allows you to declare how you want your code to be used and an important step if you use or include code written by someone else, to respect his work and license associated. You don’t need, thankfully, to be an expert and you just need to follow several guidelines. If you have any doubt or if you are in a specific case, like if selling your package, don’t hesitate to consult juridic service of your company/institute or for example a lawyer.\nThere are 3 main kind of licenses when you talk about software development: the open source, proprietary and source-available licenses. If we go beyond software development, you can find other families of licences in relation to the kind of creation. We can mention Creative Commons (CC) family for creative works (art, photography, music, …), Open Data Commons (ODC) licences for data and databases licences or the GNU Free Documentation License for Documentation and Educational Content Licenses for manuals, textbooks, tutorials, and academic materials. Here we are just focusing our reflection on software development family (with a little shortcut for licences dedicated to data) because we only deal in our example with an R package.",
+    "crumbs": [
+      "Second part - Package metadata",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>- Licensing</span>"
+    ]
+  },
+  {
+    "objectID": "pages/08_licensing.html#software-development-licenses",
+    "href": "pages/08_licensing.html#software-development-licenses",
+    "title": "8  - Licensing",
+    "section": "8.2 Software development licenses",
+    "text": "8.2 Software development licenses\nFocusing on this kind of creation, three major families were available.\nThe first one is open source licences. These licenses allow users to access, modify and redistribute the source code freely. They promote transparency, collaboration, and innovation.\nThe second one is proprietary licences. These kind restrict access to the source code and limit how the software can be used, modified or distributed. The aims under that could be protection of commercial interests and maintain control over the software.\nThe last one is source-available licenses. These one make the source code visible but do not grant full open source freedoms like we could have with open source licences. This allow transparency while preserving business models or ethical boundaries.\nFor our use here, we mainly talk about open source licences because we will use the guideline of the FAIR principles to rule our work. We will see below how to specify a proprietary licence if necessary but I let you go deeper into these licences, and the source-available licenses, if you think your work needs one of them.",
+    "crumbs": [
+      "Second part - Package metadata",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>- Licensing</span>"
+    ]
+  },
+  {
     "objectID": "pages/_references.html",
     "href": "pages/_references.html",
     "title": "References",
