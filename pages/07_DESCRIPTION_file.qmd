@@ -42,7 +42,7 @@ description_file$set(Title = "My Anwesone paCkage For Learning with Yearning",
 
 ## Field `Version`
 
-This field is a very important way to indicate the state of your package and evolving across the time and more precisely is lifecycle. We will go deeper into this in the [section to define].
+This field is a very important way to indicate the state of your package and evolving across the time and more precisely is lifecycle. We will go deeper into this in the \[section to define\].
 
 ## Field `Author`
 
@@ -56,15 +56,15 @@ It's the classic way but I highly recommend using the modern one with `Authors@R
 
 You can use several `person()` function's arguments (take a look in the documentation to have a full overview) but you will find below the most useful and common:
 
-- `given` and `family` specify respectively the first name and the last name. For a non-person entity, like your research unit, use only `given` and omit the `family` (except for special purpose, like if you want to have the acronym of your unit and the full name),
-- `email` is very important because it's the logical way to contact for the user is he has any question on your package and processes associated. It field is in relation to the `role` below and condition if it is a mandatory information or not,
-- the `role` field indicate the contribution and the implication of each author in the package development and life. In practice you can have multiple role for one person and you can choose between theses:
-  - the `cre` is the creator or the maintainer of the package. You can have only one and it's the person of the entity that you have ton contact is you have troubles. In relation with comment before, this field has to be associated with a valid email. Furthermore, despite the name, this role is used for the current maintainer of the pacakge even if it's not the initial creator of the package,
-  - `aut` is for authors and indicate peoples which have significant contributions to the package,
-  - `ctb` is for contributors like people which made smaller contributions like patches or reviewers,
-  - `cph` is copyright holder. Typically your research unity should be a copyright holder.
-  - Sometime you can have the `fnd` role for funder, which is like the name suggest, people or organizations that have provided financial support to the package.
-- `comment` is the last one useful because it let you the opportunity to included your [ORCID identifiers](https://orcid.org/){.external target="_blank"}.
+-   `given` and `family` specify respectively the first name and the last name. For a non-person entity, like your research unit, use only `given` and omit the `family` (except for special purpose, like if you want to have the acronym of your unit and the full name),
+-   `email` is very important because it's the logical way to contact for the user is he has any question on your package and processes associated. It field is in relation to the `role` below and condition if it is a mandatory information or not,
+-   the `role` field indicate the contribution and the implication of each author in the package development and life. In practice you can have multiple role for one person and you can choose between theses:
+    -   the `cre` is the creator or the maintainer of the package. You can have only one and it's the person of the entity that you have ton contact is you have troubles. In relation with comment before, this field has to be associated with a valid email. Furthermore, despite the name, this role is used for the current maintainer of the pacakge even if it's not the initial creator of the package,
+    -   `aut` is for authors and indicate peoples which have significant contributions to the package,
+    -   `ctb` is for contributors like people which made smaller contributions like patches or reviewers,
+    -   `cph` is copyright holder. Typically your research unity should be a copyright holder.
+    -   Sometime you can have the `fnd` role for funder, which is like the name suggest, people or organizations that have provided financial support to the package.
+-   `comment` is the last one useful because it let you the opportunity to included your [ORCID identifiers](https://orcid.org/){.external target="_blank"}.
 
 At least, you package should have one author and one maintainer (it could be the same person), with the last one associated to a valid email. In addition, you can list multiple arguments (like several roles for one person) or multiple authors with a `c()`.
 
@@ -111,13 +111,13 @@ usethis::use_tidy_description()
 ```{cat, code = readLines(fs::path("DESCRIPTION")), class.source = "yaml"}
 ```
 
-## Field `License`
+## Field `License` {#sec-license}
 
-This field is mandatory and reflect your package's license. To simplify the thing, the license will inform users of your package what they can do, or not, when the use or manipulate your package. This is an important task and you have to ask yourself about several question to take the better descision according to your needs. You can find a deeper reflexion on this aspect in the [section to define].
+This field is mandatory and reflect your package's license. To simplify the thing, the license will inform users of your package what they can do, or not, when the use or manipulate your package. This is an important task and you have to ask yourself about several question to take the better descision according to your needs. You can find a deeper reflexion on this aspect in the @sec-licensing.
 
 ## Field `Encoding`
 
-If you have special characters or diacritical marks like accents in your data, you have already dealing before with the encoding, to avoid text warp. By default the field `Encoding` is UTF-8 as this is the most common encoding in use today. Normally you don't have to modify.  
+If you have special characters or diacritical marks like accents in your data, you have already dealing before with the encoding, to avoid text warp. By default the field `Encoding` is UTF-8 as this is the most common encoding in use today. Normally you don't have to modify.
 
 ## Roxygen fields
 

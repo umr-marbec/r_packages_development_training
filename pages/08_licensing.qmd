@@ -1,12 +1,20 @@
-# - Licensing
+# - Licensing {#sec-licensing}
 
 Choose your licence for your package allows you to declare how you want your code to be used and an important step if you use or include code written by someone else, to respect his work and license associated. You don't need, thankfully, to be an expert and you just need to follow several guidelines. If you have any doubt or if you are in a specific case, like if selling your package, don't hesitate to consult juridic service of your company/institute or for example a lawyer.
 
+::: callout-note
+In this section we will just give you basic rules to ask you the good question and if necessary go deeper in the subject. Regarding that, you will find materials like this website for [open-source license comparisons](https://choosealicense.com/){.external target="_blank"}, the [chapter 12](https://r-pkgs.org/license.html){.external target="_blank"} of the R Packages book @r_packages_hadley_2023 which describes a good overview of the license topic, another book [Licensing R](https://thinkr-open.github.io/licensing-r/){.external target="_blank"} write by Colin Fay @licensing_r_2019 or at least the section [1.1.2](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Licensing){.external target="_blank"} of the R manual "Writing R Extensions".
+:::
+
 ## Global overview
 
-There are 3 main kind of licenses when you talk about software development:  the open source, proprietary and source-available licenses. If we go beyond software development, you can find other families of licences in relation to the kind of creation. We can mention [Creative Commons](https://creativecommons.org/share-your-work/cclicenses/){.external target="_blank"} (CC) family for creative works (art, photography, music, ...), [Open Data Commons](https://opendatacommons.org/licenses/){.external target="_blank"} (ODC) licences for data and databases licences or the [GNU Free Documentation License](https://www.gnu.org/licenses/licenses.fr.html#FDL){.external target="_blank"} for Documentation and Educational Content Licenses for manuals, textbooks, tutorials, and academic materials. Here we are just focusing our reflection on software development family (with a little shortcut for licences dedicated to data) because we only deal in our example with an R package.
+There are 3 main kind of licenses when you talk about software development: the open source, proprietary and source-available licenses. If we go beyond software development, you can find other families of licences in relation to the kind of creation. We can mention [Creative Commons](https://creativecommons.org/share-your-work/cclicenses/){.external target="_blank"} (CC) family for creative works (art, photography, music, ...), [Open Data Commons](https://opendatacommons.org/licenses/){.external target="_blank"} (ODC) licences for data and databases licences or the [GNU Free Documentation License](https://www.gnu.org/licenses/licenses.fr.html#FDL){.external target="_blank"} for Documentation and Educational Content Licenses for manuals, textbooks, tutorials, and academic materials. Here we are just focusing our reflection on software development family (with a little shortcut for licences dedicated to data) because we only deal in our example with an R package.
 
-## Software development licenses 
+::: callout-important
+Keep in our mind that defines a license is an important step to do, and skip it is a possibility but if you are doing that, the default copyright laws apply: no one is allowed to make a copy of your code without your express permission.
+:::
+
+## Software development licenses
 
 Focusing on this kind of creation, three major families were available.
 
@@ -17,3 +25,68 @@ The second one is proprietary licences. These kind restrict access to the source
 The last one is source-available licenses. These one make the source code visible but do not grant full open source freedoms like we could have with open source licences. This allow transparency while preserving business models or ethical boundaries.
 
 For our use here, we mainly talk about open source licences because we will use the guideline of the [FAIR principles](https://www.go-fair.org/fair-principles/){.external target="_blank"} to rule our work. We will see below how to specify a proprietary licence if necessary but I let you go deeper into these licences, and the source-available licenses, if you think your work needs one of them.
+
+### Open source licences
+
+In the family of open sources licences for software developement we find two major kind of licences :
+
+- The permissive licenses are the most simply to use. With this kind of license you can freely copied code, modified or published it and the only restriction is that the license must be preserved. For example, mainly of resources associated with the tidyverse field is under [MIT](https://choosealicense.com/licenses/mit/){.external target="blank"} license. If you go deeper into the question of license on tidyverse, you will find that a discussion occurred in 2021 regarding the [selection of the best license](https://www.tidyverse.org/blog/2021/12/relicensing-packages/){.external target="_blank"} for it. This brings to the table that no license if perfect and under the process of selection you have to be caution what keeps the compatibility of licenses already applied (we discuss that later in the section to define). As an example, you should also find license like [Apache](https://choosealicense.com/licenses/apache-2.0/){.external target="_blank"} which is another mainly used currently permissive license.
+- Copyleft licenses are stricter. One of the most popular is the [General Public License](https://choosealicense.com/licenses/gpl-3.0/){.external target="_blank"}, in the last version 3.0, which allows you to freely copy and modify the code for personal use, but if you publish modified versions or bundle with other code, the modified version or complete bundle must also be licensed with the GPL. With this kind of licences you ensures that software remains free and open in all its future versions.
+
+You will find below a quick summarise of theses two kinds of licenses (<a href="#table1">table 1</a>).
+
+<figcaption id="table1" class="figcaption-center">
+
+Table 1: Comparison copyleft versus permissive licenses
+
+</figcaption>
+
+| Aspect | Copyleft License | Permissive License |
+| --- | --- | --- |
+| Freedom to modify | Yes, but derivatives must keep the same license | Yes with no obligation to keep the same license |
+| Redistribution rules | Must include source code and remain open | Can be redistributed as closed-source (associated to proprietary licences for example) |
+| Protection of openness | Strong, prevents privatization of derivatives | Weak, allows integration into proprietary software |
+| Commercial flexibility | Less flexible for companies | Highly flexible, widely adopted in industry |
+| Legal complexity | More restrictive, requires careful compliance | Simple and lightweight |
+| Philosophy | Preserve freedom for all users | Maximize adoption, even in closed environments |
+
+## Location of a R package license
+
+When you develop a R package and you want to add a license, the information associated is located at 3 or 4 location in your source package state.
+
+The first location is in the `DESCRIPTION` file in the `License` field (@sec-license). This name has to be in a standard form for example pass the `R CMD check` (we will see that in the section to define). Briefly, you can have these forms :
+
+  - a name and a version specification, for example `GLP (>= 2)` or `Apache License (== 2.0)`. Related to the version, be aware of the licenses compatibility between them (check @sec-licensing-code-write),
+  - a standard abbreviation, for example `GPL-2` or `MIT`,
+  - a name of the license "template" and a file associated (located at the root of the source package state, see the next location point). For example, in the `License` field you could find `MIT + file LICENSE` or for example `GPL (>= 3) + file LICENSE`.
+  - Pointer to the full text of a non-standard license (for example in the case of a proprietary licence), with `file LICENSE` in the `License` field (associated like before with a file `LICENSE`).
+  
+Hopefully, in the majority of case you will use the form `License_name_version + file LICENSE` in `License` field of the `DESCRIPTION` file but be aware that you can also have some complicated specification, with an associated with several licenses for you package (if you bundle code from another R package for example). Take a look in the section [1.1.2](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Licensing){.external target="_blank"} of the R manual "Writing R Extensions" for concrete examples.
+
+In relation to the first location, the second is related to the `LICENSE` file specifies before. This file could be a template required additional details to be complete (at the end you will have inside the year and copyright holder), or can also contain the full text of non-standard and non-open source licenses. 
+
+::: callout-important
+If your license is a standard license, you are not permitted to include the license full text associated in the `LICENSE` file.
+:::
+
+The third location of the license information is in a `LICENSE.md` file. This file includes a copy of the full text of the license (in opposition to the `LICENSE` file of the second location where you are not allowed to include the license full text, except in the case of a non-standard or non-open source licenses). In the majority of open sources licenses, you have the obligation to include a copy of the full text license when you distribute your software. For example, in the [MIT](https://choosealicense.com/licenses/mit/){.external target="blank"} you will find the following sentence: 
+
+*"The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.”*. 
+
+The only problem is if you want to publish your package on the CRAN, this one doesn't permit you to include a copy of standard licenses in your package. To correct that, we will use the `.Rbuildignore` file (see @sec-licensing-example-application below) to make sure this file is not sent to CRAN.
+
+The last location of license information is optional, but could occur in a `LICENSE.note` file. We will develop this case in the @sec-licensing-bundle below, but just to summarize, this could happen when you bundle code in your package from other packages and you need to keep the licenses associated with the source packages.
+
+## Application cases
+
+### For the code you write {#sec-licensing-code-write}
+
+### For the code given to you
+
+### For the code you bundle {#sec-licensing-bundle}
+
+### For the code you use
+
+## Relicensing
+
+## Application for my package example {#sec-licensing-example-application}
