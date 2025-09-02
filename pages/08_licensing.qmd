@@ -28,16 +28,16 @@ For our use here, we mainly talk about open source licences because we will use 
 
 ## Open source licences
 
-In the family of open sources licences for software developement we find two major kind of licences :
+In the family of open sources licences for software development we find two major kind of licences :
 
 -   The permissive licenses are the most simply to use. With this kind of license you can freely copied code, modified or published it and the only restriction is that the license must be preserved. For example, mainly of resources associated with the tidyverse field is under [MIT](https://choosealicense.com/licenses/mit/){.external target="blank"} license. If you go deeper into the question of license on tidyverse, you will find that a discussion occurred in 2021 regarding the [selection of the best license](https://www.tidyverse.org/blog/2021/12/relicensing-packages/){.external target="_blank"} for it. This brings to the table that no license if perfect and under the process of selection you have to be caution what keeps the compatibility of licenses already applied (we discuss that later in the section to define). As an example, you should also find license like [Apache](https://choosealicense.com/licenses/apache-2.0/){.external target="_blank"} which is another mainly used currently permissive license.
--   Copyleft licenses are stricter. One of the most popular is the [General Public License](https://choosealicense.com/licenses/gpl-3.0/){.external target="_blank"}, in the last version 3.0, which allows you to freely copy and modify the code for personal use, but if you publish modified versions or bundle with other code, the modified version or complete bundle must also be licensed with the GPL. With this kind of licences you ensures that software remains free and open in all its future versions.
+-   Copyleft licenses are stricter. One of the most popular is the [General Public License](https://www.gnu.org/licenses/licenses.html#GPL){.external target="_blank"}, in the last version 3.0, which allows you to freely copy and modify the code for personal use, but if you publish modified versions or bundle with other code, the modified version or complete bundle must also be licensed with the GPL. With this kind of licences you ensures that software remains free and open in all its future versions.
 
 You will find below a quick summarise of theses two kinds of licenses (<a href="#table1">table 1</a>).
 
 <figcaption id="table1" class="figcaption-center">
 
-Table 1: Comparison copyleft versus permissive licenses
+Table 1: Comparison copyleft versus permissive licenses.
 
 </figcaption>
 
@@ -83,34 +83,164 @@ Due to the difficulty to have a full overview of all licenses (it really links t
 
 ### For the code you write {#sec-licensing-code-write}
 
-In a natural way, we will start with the code that you write. It's not an exautive list but you should have material to make you'r first move.
+In a natural way, we will start with the code that you write. It's not an exhaustive list but you should have material to make your first move. You will find at the end of the section a comparative table with [usethis](https://usethis.r-lib.org/){.external target="_blank"} functions to create license resources in your package repository.  
 
-- MIT
+One of the most popular licenses in the world of open source license is the [MIT](https://choosealicense.com/licenses/mit/){.external target="blank"} license. This is a permissive license created in the late 1980s by the Massachusetts Institute of Technology. Globally you are allowed to use it for personal or commercial projects, modify the code however you like, distribute original or modified versions and even sell the software associated or include it in the proprietary products. Furthermore, the license is short and easy to understand, compatible with other licenses and encourages collaboration and reuse. As example, the majority of tidyverse R package were under MIT license.
 
-- GPL
+Another popular open source license is the [GPL](https://www.gnu.org/licenses/licenses.html#GPL){.external target="_blank"} (for General Public License). Created by Richard Stallman in 1989 as part of the GNU Project, unlike MIT license, GPL is a copyleft license. That mean that software, and any derivation work, remains free and open. If you distribute a modified version of the software, you must release your changes under the GPL license. You're allowed to use the software freely, modify the source code and share the original or modified version, but you can't make it proprietary. In addition, there are two major versions, [GPL version 2](https://choosealicense.com/licenses/gpl-2.0/){.external target="_blank"} and [GPL version 3](https://choosealicense.com/licenses/gpl-3.0/){.external target="_blank"}. In summary, the GPL version 3 is an update of the version 2, more in line with the modern way. The last one is more complete, have better protection for users and developers against patent lawsuits and hardware restrictions (like [tivoization](https://www.gnu.org/philosophy/tivoization.html){.external target="_blank"} or DRM/Digital Rights Management).
 
-- CC0
+::: callout-important
+Be careful because the two licenses are not compatible (you can’t bundle GPLv2 and GPLv3 code in the same project). To solve that, it’s generally recommended to license your package as GPL >=2 or GPL >= 3 so that future versions of the GPL license also apply to your code.
+:::
 
-- CC BY
+[Apache 2.0](https://choosealicense.com/licenses/apache-2.0/){.external target="_blank"} is a permissive open source license created by the Apache Software Foundation. Similar to the MIT licence, this one is longer and more detailed and includes an explicit patent grant. Be careful because he is only compatible with GPv3, not deal with the question hardware restrictions. Basically, it gives you freedom with responsibility, ideal for businesses and developers who want flexibility without the copyleft obligations of GPL. It's a license very used in the world of Android OS.
 
-- Apache
+[LGPL v3](https://choosealicense.com/licenses/lgpl-3.0/){.external target="_blank"} license, for Lesser General Public License, is an alternative between strict copyleft licences, like GPL, and permissive licences like MIT or Apache. Created by the Free Software Foundation, this one allow developers to use open source libraries inside proprietary software, without forcing the entire application to be open source. It's just like a weak copyleft designed mainly for software libraries. Concretely, you can use this license in proprietary or open source applications, you are not obliged to open your code but you have to link it to the library dynamically or provide resources with the modified version. At least if you modify and distribute the library, you have to release it under the LGPL license.
 
-- LGPL
+The [AGPL v3](https://choosealicense.com/licenses/agpl-3.0/){.external target="_blank"} (GNU Affero General Public License) is a license with a stronger copyleft. It's based on the GPl version 3 license but cover one breach of this one, using your software over a network, like SaaS or Software as a Service platforms (deployment of an R Shiny application on a web server is a SaaS). With a AGPL license, demand source code sharing even for remote use. In addition, you have to keep the software under the AGLP license if you distribute or deploy it.
 
-- AGPL
+If your package share only data the previous licenses not fit well because they are designed specially to apply on source code. In this case, you can take a look on two [Creative Commons](https://creativecommons.org/){.external target="_blank"} licences.  
 
-- Proprietary license
+The first one is [CC0](https://choosealicense.com/licenses/cc0-1.0/){.external target="_blank"} license for Creative Commons Zero. It's a permissive license equivalent to the MIT license, but applies to data. You don't have any restrictions, you may copy, modify, distribute, and use the work without attribution, even for commercial purposes. In addition, you don't need to cite the author (unless required by local law, as in France). Globally, the CC0 retains no rights. It is a radical alternative that aims to facilitate sharing and reuse without constraints.
+
+The second one is the [CC-BY](https://choosealicense.com/licenses/cc-by-4.0/){.external target="_blank"} license (the last one is the Creative Commons Attribution 4.0 International). With this one, you can copy and redistribute, but also remix, transform, and build upon the material for any purpose, even commercially. The only requirement is to give appropriate credit to the original creator, with naming the author, providing link to the license and indicating if changes were made. In clear, it's if you want to require attention when someone else uses your data.
+
+To conclude this section, you will find below two comparatives tables to support your license choose (<a href="#table2">table 2</a> and <a href="#table3">table 3</a>). In addition, you can visit the [following website](https://choosealicense.com/appendix/){.external target="_blank"} which give you additional support.
+
+<figcaption id="table2" class="figcaption-center">
+
+Table 2: Comparison between "classic" open source software development licences.
+
+</figcaption>
+
+| License | Type | Commercial use | Source code publication | Patent/network use protection | Hardware restrictions | Sharing licences | Other licences compatibility | [usethis](https://usethis.r-lib.org/reference/licenses.html?q=license#null){.external target="blank"} function |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| [MIT](https://choosealicense.com/licenses/mit/){.external target="blank"} | Permissive | Allowed | Not required | No/No | Not adressed | Free | Highly | `use_mit_license()` |
+| [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/){.external target="_blank"} | Permissive | Allowed | Not required | Yes/No | Not adressed | Free | Compatible with GPLv3 | `use_apache_license()` |
+| [LGPL v3](https://choosealicense.com/licenses/lgpl-3.0/){.external target="_blank"} | Weak copyleft | Allowed | Required if modified and distributed | Yes/No | Prohibited | Under LGPL or GPLv3 | Compatible with GPLv3 | `use_lgpl_license()` |
+| [GPL v3](https://choosealicense.com/licenses/gpl-3.0/){.external target="_blank"} | Strong copyleft | Allowed | Required if distributed | Yes/No | Prohibited | Under GPLv3 | Not with GPLv2, compatible with Apache 2.0, LGPL v3, AGPL v3 | `use_gpl_license()` |
+| [AGPL v3](https://choosealicense.com/licenses/agpl-3.0/){.external target="_blank"} | Very strong copyleft | Allowed | Required even for network use | Yes/Yes | Prohibited | Under AGPL v3 | Compatible with GPLv3 | `use_agpl_license()` | 
+
+<figcaption id="table3" class="figcaption-center">
+
+Table 3: Comparison between CC0 and CC-BY licences (focus on data).
+
+</figcaption>
+
+| Licence | Commercial use | Sharing and modification | Legal Protection | Other licences compatibility | Revocation Possible | [usethis](https://usethis.r-lib.org/reference/licenses.html?q=license#null){.external target="blank"} function |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| [CC0 v1](https://choosealicense.com/licenses/cc0-1.0/) | Allowed | Free with no attribution required | Low (rights waived) | Very high | No, irreversible | `use_cc0_license()` |
+| [CC-BY v4](https://choosealicense.com/licenses/cc-by-4.0/){.external target="_blank"} | Allowed | Free with attribution | Moderate (rights retained except attribution) | High, but attribution must be preserved | Yes, author may relicense | `use_ccby_license()` |
+
+::: callout-note
+If you need to define a proprietary license (not open source), you can use the function `use_proprietary_license()` available in the usethis package. 
+:::
 
 ### For the code given to you
 
+In many case in your package life, you will include in code not written by you. The first possibility if where people inject code into your package, for example through a git pull request. 
+
+In most of cases, when someone contributes code to your package he license that content under the same terms that your package and we assume have the right to licence that content under those terms. If you use GitHub it's very clear in the [GitHub terms of service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#6-contributions-under-repository-license){.external target="_blank"} page.
+
+However, it's important to keep in mind that the author of the code retains copyright of their code, which means that you can’t change the license without their permission (we discuss that in @sec-relicensing). If you want to keep the possibility to change the license without any needs from the author, you need an CLA (Contributor License Agreement) where the author explicitly reassigns the copyright.
+
+In best practices it's also important to acknowledge the contributors (it's very nice to received this kind of feedback). For that, you have several options, depending of what you prefer :
+
+- During section regarding the documentation of your package (**put section here**) we will introduce a file called `NEWS.md`. In this file, you release changes and updates of your package, and it's a good place to indicate and acknowledge the contribution to your package,
+- Another option is to use the `Author` field in the `DESCRIPTION` file with the role `cph`. It could be hard at the end if you integrate all the contributors to the `DESCRIPTION` file, in terms of display of this one, but it's a possibility.   
+
 ### For the code you bundle {#sec-licensing-bundle}
 
-#### Licence compatibility
+The second form of integration of external code in your package could be if you bundle code. This could happen for example if you copied a piece of R code directly from another package to avoid taking dependency of it (@sec-dependencies). This kind of action has to be done with caution, because indeed you avoid dependency with another package (and in addition you reduce the complexity of your package and the management associated), but the code associated will is not updated automatically (for example in case of a bug fixes) and you have to deal with the licences compatibility (@sec-licence-compatibility). In fact, it's really useful when you need only a very small part of the code from a big package, or if the package is no longer updated.
+
+#### License compatibility {#sec-licence-compatibility}
+
+We begin to discuss that in the <a href="#table2">table 2</a> and <a href="#table3">table 3</a>, through the column "Other licences compatibility". Before bundle someone else's code into your package, you have to check licenses compatibility between your package license and the source package. Keep in your mind that you can add additional restrictions, but you can't remove restrictions. Which means that license compatibility is not symmetric.
+
+In addition to the previous information in the tables, you can consider the following case to support you:
+
+- If your license and their license are the same, it’s OK to bundle,
+- If their license is MIT or Apache, it’s OK to bundle,
+- If their code has a copyleft license and your code has a permissive license, you can’t bundle their code (the copyleft impose on you to keep the software open source),
+- If the code comes from [Stack Overflow](https://stackoverflow.com/){.external target="_blank"}, it’s licensed with the Creative Common [CC BY-SA](https://choosealicense.com/licenses/cc-by-sa-4.0/){.external target="_blank"} license, which is only compatible with GPLv3. 
+
+If you are none of any one of these previous cases, you have to do little research. You will find on the internet several diagrams of compatibility between licenses and you have to deal with terms like permissive compatibility, copyleft compatibility, collective work compatibility or again derivative work compatibility.
+
+If your package isn’t open source, things are more complicated and the best option could be to check with your legal department first.
 
 #### How to include in your package
 
+If all the licenses associated to your package are compatible, you can bring the code into your package. Now it's important to follow the next steps:
+
+- if you're including little piece of code, the best practices is to put in its own file and ensure that the file has copyright statement and license description at the top,
+- if you including multiple files, put them in a directory and put a `LICENCE` file in that directory,
+- you need to update the `Author` field in the `DESCRIPTION` file and used the role `cph` to declare them. In addition, you can use the `comment` field to describing what they're the author of. You could find a example [here](https://github.com/r-lib/diffviewer/blob/main/DESCRIPTION){.external target="_blank"} for a package named `diffviewer`,
+- if you plan to submitting your package on CRAN and bundled code has different license, you have to include a `LICENSE.note` file that describes the overall license of the package and the specific licenses of each individual component. Take a look on the [file](https://github.com/r-lib/diffviewer/blob/main/LICENSE.note){.external target="_blank"} from the package `diffviewer` for example.
+
 ### For the code you use
 
-## Relicensing
+The last application case is directly related to the use of R. The fact is R is licensed under GPL license version 2 superior or equal. 
+
+So the question is does my code write through R has to licensing under a GPL => 2 license?
+
+To be clear, this question has been discussed before by the [R foundation](https://stat.ethz.ch/pipermail/r-devel/2009-May/053248.html){.external target="_blank"} and you can have a similar approch in the [R package book](https://r-pkgs.org/license.html#code-you-use){.external target="_blank"} written by Hadley Wickham and Jennifer Bryan (@r_packages_hadley_2023). To really understand the subject is important to be clear of what is a redistribution or not of the R's code. This point is crucial because is you redistribution even a small portion of the R code, you have to follow the compatibility licence rule, associated to the one of R (in this case GPL). Basically, you have redistribution when you :
+
+- copy an R function into your own package (even partially) and share your package,
+- you modify an R function and redistribute it,
+- you integrate R source files into your own project and share it.
+
+When you work on R and use the R functions associated (or associated to R package), you use R as an environment (an API or Application Programming Interface). You use the system but you don't redistribute the core. In that case you can choose the license that you desire.
+
+One concret example is for the R package [ggplot2](https://ggplot2.tidyverse.org/){.external target="_blank"}. This one uses R’s base functions like `data.frame()` or `plot()`, but it does not include their source code. It interacts with R through its public API, which is allowed without triggering GPL obligations. Therefore, `ggplot2` is (and can be) licensed under MIT, even though R is under GPL, because it’s not redistributing or modifying R’s code.
+
+The answer and the justification is subtle but make all the difference for your developments. You will find below a brief table to summaries the topic (<a href="#table4">table 4</a>).
+
+<figcaption id="table4" class="figcaption-center">
+
+Table 4: Support for perimeter of R GPL licence obligation
+
+</figcaption>
+
+| Action | Redistributes R’s code? | License impact |
+| ---- | ---- | ---- |
+| Calling R/packages functions | No | No GPL obligation |
+| Copying/modifying R source code | Yes | Must use GPLv2 or later |
+| Bundling R with your software | Yes | Must comply with GPLv2 or later |
+| Writing a package that runs on R | No | Free to choose license |
+
+## Relicensing {#sec-relicensing}
+
+This last point focusing on the relicensing of your package. Even if choose the best license for your purpose if better, sometime it's possible that you need to changing it during your package lifecyle. If you are in this case, and it could [happen even to the big](https://www.tidyverse.org/blog/2021/12/relicensing-packages/){.external target="_blank"}, you could use these following step to support in this work:
+
+- first take a look into the `Author` field in the `DESCRIPTION` file and list all the contributors (with role `cph`),
+- if your package is hosted on a Git, take a look at the Git history or the contributors display (for GitHub). If you have done the thing right, you could also find this information in the `NEWS.md` file,
+- make a clean if necessary in the contributions and remove people who only contributed typo fixes and similar,
+- remove also people whom you have a CLA (Contributor License Agreement), because you don't need their validation for the relicensing (you can inform them, of course, about the process),
+- the last step is to inform all the contributors about your wails to change the license. If you have Git connection with your package, you could create an issue and make a list ask them.
+
+When you have all the validation, you can change your license. 
 
 ## Application for my package example {#sec-licensing-example-application}
+
+If you are here, that mean that you are an expert in license :)
+
+Now we will just define a license for our R package example called "macfly". After a very hard debate in my mind, I choose to use a GPL v3 license. Behind that choose I like the idea to keep all the future production associated with my package (and there will be because my package name contains the word awesome) free and open. In the discussion the MIT license was at the top of the list and I also think about the AGPL linked to the potential network use of my package (if I decided to add R Shiny for example), but we stay simple here. It's a joke but it is the kind of discussion that you should have and could avoid pain if you add to change your license in the middle of the life of your package.
+
+Focusing on my want, to define a license to my package, I've to launch the following command line in the working directory of my package.
+
+```{r}
+#| label: setup
+#| include: false
+source("../common.R")
+```
+
+```{r}
+#| label: define-gpl3
+#| include: true
+#| eval: true
+library(usethis)
+use_gpl_license(version = 3,
+                include_future = TRUE)
+```
+
+

@@ -62,7 +62,7 @@ You can use several `person()` function's arguments (take a look in the document
     -   the `cre` is the creator or the maintainer of the package. You can have only one and it's the person of the entity that you have ton contact is you have troubles. In relation with comment before, this field has to be associated with a valid email. Furthermore, despite the name, this role is used for the current maintainer of the pacakge even if it's not the initial creator of the package,
     -   `aut` is for authors and indicate peoples which have significant contributions to the package,
     -   `ctb` is for contributors like people which made smaller contributions like patches or reviewers,
-    -   `cph` is copyright holder. Typically your research unity should be a copyright holder.
+    -   `cph` is copyright holder. Typically your research unity should be a copyright holder or someone who gives you code for your package.
     -   Sometime you can have the `fnd` role for funder, which is like the name suggest, people or organizations that have provided financial support to the package.
 -   `comment` is the last one useful because it let you the opportunity to included your [ORCID identifiers](https://orcid.org/){.external target="_blank"}.
 
