@@ -349,20 +349,16 @@ div.csl-indent {
 <p>For our package created before, this is the initial DESCRIPTION file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> macfly</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> My Anwesone paCkage For Learning with Yearning</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> What the Package Does (One Line, Title Case)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.0.9000</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> c(</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    person("Mathieu", "Depetris", , "mathieu.depetris@cnrs.fr", role = c("cre", "aut"),</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">           comment = c(ORCID = "0000-0001-8080-0531")),</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    person("UMR MARBEC", "MARine Biodiversity Exploitation &amp; Conservation", role = "cph")</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  )</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> An example of R package development with functions and all</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    the stuff around to increase the joy of writing our own processes.</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> What the package does (one paragraph).</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To update this file you have two possibilities, open the file and modify it by hand or use the R package <a href="https://desc.r-lib.org/" class="external" target="_blank">desc</a> <span class="citation" data-cites="desc">[<a href="_references.html#ref-desc" role="doc-biblioref">1</a>]</span> to manipulate it by command lines. In the following part, we will use functions of this package to reduce as possible typing error.</p>
 <section id="fields-package-title-and-description" class="level2" data-number="7.1">
@@ -399,7 +395,7 @@ div.csl-indent {
 <li>the <code>cre</code> is the creator or the maintainer of the package. You can have only one and it’s the person of the entity that you have ton contact is you have troubles. In relation with comment before, this field has to be associated with a valid email. Furthermore, despite the name, this role is used for the current maintainer of the pacakge even if it’s not the initial creator of the package,</li>
 <li><code>aut</code> is for authors and indicate peoples which have significant contributions to the package,</li>
 <li><code>ctb</code> is for contributors like people which made smaller contributions like patches or reviewers,</li>
-<li><code>cph</code> is copyright holder. Typically your research unity should be a copyright holder.</li>
+<li><code>cph</code> is copyright holder. Typically your research unity should be a copyright holder or someone who gives you code for your package.</li>
 <li>Sometime you can have the <code>fnd</code> role for funder, which is like the name suggest, people or organizations that have provided financial support to the package.</li>
 </ul></li>
 <li><code>comment</code> is the last one useful because it let you the opportunity to included your <a href="https://orcid.org/" class="external" target="_blank">ORCID identifiers</a>.</li>
@@ -422,13 +418,14 @@ div.csl-indent {
 <p>At least, theses fields are used to generate basic citation for our package and you can use the function <code>citation()</code> for display it. You can find below the exemple of citation for the package <a href="https://dplyr.tidyverse.org/" class="external" target="_blank">dplyr</a>.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>Pour citer le package 'dplyr' dans une publication, utilisez :
+<pre><code>To cite package 'dplyr' in publications use:
 
   Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A
-  Grammar of Data Manipulation_. R package version 1.1.4,
-  &lt;https://CRAN.R-project.org/package=dplyr&gt;.
+  Grammar of Data Manipulation_. doi:10.32614/CRAN.package.dplyr
+  &lt;https://doi.org/10.32614/CRAN.package.dplyr&gt;, R package version
+  1.1.4, &lt;https://CRAN.R-project.org/package=dplyr&gt;.
 
-Une entrée BibTeX pour les utilisateurs LaTeX est
+A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {dplyr: A Grammar of Data Manipulation},
@@ -436,6 +433,7 @@ Une entrée BibTeX pour les utilisateurs LaTeX est
     year = {2023},
     note = {R package version 1.1.4},
     url = {https://CRAN.R-project.org/package=dplyr},
+    doi = {10.32614/CRAN.package.dplyr},
   }</code></pre>
 </div>
 </div>
