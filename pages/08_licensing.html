@@ -455,7 +455,7 @@ Important
 <ul>
 <li>a name and a version specification, for example <code>GLP (&gt;= 2)</code> or <code>Apache License (== 2.0)</code>. Related to the version, be aware of the licenses compatibility between them (check <a href="#sec-licensing-code-write" class="quarto-xref"><span>Section 8.5.1</span></a>),</li>
 <li>a standard abbreviation, for example <code>GPL-2</code> or <code>MIT</code>,</li>
-<li>a name of the license “template” and a file associated (located at the root of the source package state, see the next location point). For example, in the <code>License</code> field you could find <code>MIT + file LICENSE</code> or for example <code>GPL (&gt;= 3) + file LICENSE</code>.</li>
+<li>a name of the license “template” and a file associated (located at the root of the source package state, see the next location point). For example, in the <code>License</code> field you could find <code>MIT + file LICENSE</code>. This kind of form is only necessary for several licenses but not for all. If you apply a GPL license to your package, the mention <code>+ file LICENSE</code> is not necessary because CRAN can automaticelly identifiy the license. For simplify your life, use the <a href="https://usethis.r-lib.org/reference/licenses.html?q=license#null" class="external" target="blank">usethis</a> functions associated to each license to add them in your package (the correct form and file(s) associated will be added automatically),</li>
 <li>Pointer to the full text of a non-standard license (for example in the case of a proprietary licence), with <code>file LICENSE</code> in the <code>License</code> field (associated like before with a file <code>LICENSE</code>).</li>
 </ul>
 <p>Hopefully, in the majority of case you will use the form <code>License_name_version + file LICENSE</code> in <code>License</code> field of the <code>DESCRIPTION</code> file but be aware that you can also have some complicated specification, with an associated with several licenses for you package (if you bundle code from another R package for example). Take a look in the section <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Licensing" class="external" target="_blank">1.1.2</a> of the R manual “Writing R Extensions” for concrete examples.</p>
@@ -741,12 +741,9 @@ Note
 <p>Now we will just define a license for our R package example called “macfly”. After a very hard debate in my mind, I choose to use a GPL v3 license. Behind that choose I like the idea to keep all the future production associated with my package (and there will be because my package name contains the word awesome) free and open. In the discussion the MIT license was at the top of the list and I also think about the AGPL linked to the potential network use of my package (if I decided to add R Shiny for example), but we stay simple here. It’s a joke but it is the kind of discussion that you should have and could avoid pain if you add to change your license in the middle of the life of your package.</p>
 <p>Focusing on my want, to define a license to my package, I’ve to launch the following command line in the working directory of my package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: le package 'usethis' a été compilé avec la version R 4.4.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_gpl_license</span>(<span class="at">version =</span> <span class="dv">3</span>,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">include_future =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_gpl_license</span>(<span class="at">version =</span> <span class="dv">3</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">include_future =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Setting active project to "C:/Users/mdepe/Documents/macfly".</code></pre>
 </div>
@@ -760,6 +757,12 @@ Note
 <pre><code>✔ Adding "^LICENSE\\.md$" to '.Rbuildignore'.</code></pre>
 </div>
 </div>
+<p>In the output R console you should see something like the lines above:</p>
+<ul>
+<li>in the case of my code, if you take a look into the <code>DESCRIPTION</code> file, you should an update of the field <code>License</code> with the mention <code>GPL (&gt;= 3)</code>. Specify argument <code>include_future = TRUE</code> create a name compatible with the future version of the license, a future version 4 of the GPL license will be compatible with the current selected version 3,</li>
+<li>in the package directory you have the creation of the file <code>LICENSE.md</code>. This contains the full license text. Like we say before, this is an obligation to add to your software the full license text (remember it’s something specify in the license), but CRAN doesn’t allow this file when you check your package regarding CRAN standard (and in addition if you want to submit it on CRAN).</li>
+<li>to correct that, the next added <code>^LICENSE\.md$</code> to the <code>.Rbuildignore</code>. We will know more about this file when we start to build our package, but the idea is to avoid specific elements when you build your package. Just to clarify, the text added is aregex expression which means at the start of the string if you find the exact word <code>LICENCE.md</code> and the end of the string after, avoid this file when you build my package.</li>
+</ul>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
