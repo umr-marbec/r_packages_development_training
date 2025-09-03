@@ -741,14 +741,23 @@ Note
 <p>Now we will just define a license for our R package example called “macfly”. After a very hard debate in my mind, I choose to use a GPL v3 license. Behind that choose I like the idea to keep all the future production associated with my package (and there will be because my package name contains the word awesome) free and open. In the discussion the MIT license was at the top of the list and I also think about the AGPL linked to the potential network use of my package (if I decided to add R Shiny for example), but we stay simple here. It’s a joke but it is the kind of discussion that you should have and could avoid pain if you add to change your license in the middle of the life of your package.</p>
 <p>Focusing on my want, to define a license to my package, I’ve to launch the following command line in the working directory of my package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_gpl_license</span>(<span class="at">version =</span> <span class="dv">3</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">include_future =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to "C:/Users/mdepetri/Documents/macfly".</code></pre>
+<pre><code>Warning: le package 'usethis' a été compilé avec la version R 4.4.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_gpl_license</span>(<span class="at">version =</span> <span class="dv">3</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">include_future =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Setting active project to "C:/Users/mdepe/Documents/macfly".</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>ℹ Leaving 'LICENSE.md' unchanged.</code></pre>
+<pre><code>✔ Adding "GPL (&gt;= 3)" to 'License'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Writing 'LICENSE.md'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Adding "^LICENSE\\.md$" to '.Rbuildignore'.</code></pre>
 </div>
 </div>
 

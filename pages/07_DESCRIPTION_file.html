@@ -354,11 +354,10 @@ div.csl-indent {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> What the package does (one paragraph).</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> GPL (&gt;= 3)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To update this file you have two possibilities, open the file and modify it by hand or use the R package <a href="https://desc.r-lib.org/" class="external" target="_blank">desc</a> <span class="citation" data-cites="desc">[<a href="_references.html#ref-desc" role="doc-biblioref">1</a>]</span> to manipulate it by command lines. In the following part, we will use functions of this package to reduce as possible typing error.</p>
 <section id="fields-package-title-and-description" class="level2" data-number="7.1">
@@ -418,14 +417,13 @@ div.csl-indent {
 <p>At least, theses fields are used to generate basic citation for our package and you can use the function <code>citation()</code> for display it. You can find below the exemple of citation for the package <a href="https://dplyr.tidyverse.org/" class="external" target="_blank">dplyr</a>.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>To cite package 'dplyr' in publications use:
+<pre><code>Pour citer le package 'dplyr' dans une publication, utilisez :
 
   Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A
-  Grammar of Data Manipulation_. doi:10.32614/CRAN.package.dplyr
-  &lt;https://doi.org/10.32614/CRAN.package.dplyr&gt;, R package version
-  1.1.4, &lt;https://CRAN.R-project.org/package=dplyr&gt;.
+  Grammar of Data Manipulation_. R package version 1.1.4,
+  &lt;https://CRAN.R-project.org/package=dplyr&gt;.
 
-A BibTeX entry for LaTeX users is
+Une entrée BibTeX pour les utilisateurs LaTeX est
 
   @Manual{,
     title = {dplyr: A Grammar of Data Manipulation},
@@ -433,7 +431,6 @@ A BibTeX entry for LaTeX users is
     year = {2023},
     note = {R package version 1.1.4},
     url = {https://CRAN.R-project.org/package=dplyr},
-    doi = {10.32614/CRAN.package.dplyr},
   }</code></pre>
 </div>
 </div>
@@ -455,11 +452,10 @@ A BibTeX entry for LaTeX users is
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">  )</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> An example of R package development with functions and all</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">    the stuff around to increase the joy of writing our own processes.</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> `use_mit_license()`, `use_gpl3_license()` or friends to pick a</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">    license</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> GPL (&gt;= 3)</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Roxygen</span><span class="kw">:</span><span class="at"> list(markdown = TRUE)</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">7.3.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sec-license" class="level2" data-number="7.4">
