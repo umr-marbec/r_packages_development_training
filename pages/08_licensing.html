@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -85,19 +85,20 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../pages/_references.html" rel="next">
+<link href="../pages/09_dependencies.html" rel="next">
 <link href="../pages/07_DESCRIPTION_file.html" rel="prev">
 <link href="../images/cover.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-583a30da5fb27e7c358e5c9bb481203a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d7b0051c0af90ebcb69d015c2209d41c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -260,6 +261,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="../pages/08_licensing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">- Licensing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pages/09_dependencies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">- Dependencies</span></span></a>
   </div>
 </li>
       </ul>
@@ -644,7 +651,7 @@ Note
 </section>
 <section id="sec-licensing-bundle" class="level3" data-number="8.5.3">
 <h3 data-number="8.5.3" class="anchored" data-anchor-id="sec-licensing-bundle"><span class="header-section-number">8.5.3</span> For the code you bundle</h3>
-<p>The second form of integration of external code in your package could be if you bundle code. This could happen for example if you copied a piece of R code directly from another package to avoid taking dependency of it (<span class="quarto-unresolved-ref">?sec-dependencies</span>). This kind of action has to be done with caution, because indeed you avoid dependency with another package (and in addition you reduce the complexity of your package and the management associated), but the code associated will is not updated automatically (for example in case of a bug fixes) and you have to deal with the licences compatibility (<a href="#sec-licence-compatibility" class="quarto-xref"><span>Section 8.5.3.1</span></a>). In fact, it’s really useful when you need only a very small part of the code from a big package, or if the package is no longer updated.</p>
+<p>The second form of integration of external code in your package could be if you bundle code. This could happen for example if you copied a piece of R code directly from another package to avoid taking dependency of it (<a href="09_dependencies.html" class="quarto-xref"><span>Chapter 9</span></a>). This kind of action has to be done with caution, because indeed you avoid dependency with another package (and in addition you reduce the complexity of your package and the management associated), but the code associated will is not updated automatically (for example in case of a bug fixes) and you have to deal with the licences compatibility (<a href="#sec-licence-compatibility" class="quarto-xref"><span>Section 8.5.3.1</span></a>). In fact, it’s really useful when you need only a very small part of the code from a big package, or if the package is no longer updated.</p>
 <section id="sec-licence-compatibility" class="level4" data-number="8.5.3.1">
 <h4 data-number="8.5.3.1" class="anchored" data-anchor-id="sec-licence-compatibility"><span class="header-section-number">8.5.3.1</span> License compatibility</h4>
 <p>We begin to discuss that in the <a href="#table2">table 2</a> and <a href="#table3">table 3</a>, through the column “Other licences compatibility”. Before bundle someone else’s code into your package, you have to check licenses compatibility between your package license and the source package. Keep in your mind that you can add additional restrictions, but you can’t remove restrictions. Which means that license compatibility is not symmetric.</p>
@@ -741,9 +748,9 @@ Note
 <p>Now we will just define a license for our R package example called “macfly”. After a very hard debate in my mind, I choose to use a GPL v3 license. Behind that choose I like the idea to keep all the future production associated with my package (and there will be because my package name contains the word awesome) free and open. In the discussion the MIT license was at the top of the list and I also think about the AGPL linked to the potential network use of my package (if I decided to add R Shiny for example), but we stay simple here. It’s a joke but it is the kind of discussion that you should have and could avoid pain if you add to change your license in the middle of the life of your package.</p>
 <p>Focusing on my want, to define a license to my package, I’ve to launch the following command line in the working directory of my package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_gpl_license</span>(<span class="at">version =</span> <span class="dv">3</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">include_future =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">include_future =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Setting active project to "C:/Users/mdepe/Documents/macfly".</code></pre>
 </div>
@@ -761,7 +768,7 @@ Note
 <ul>
 <li>in the case of my code, if you take a look into the <code>DESCRIPTION</code> file, you should an update of the field <code>License</code> with the mention <code>GPL (&gt;= 3)</code>. Specify argument <code>include_future = TRUE</code> create a name compatible with the future version of the license, a future version 4 of the GPL license will be compatible with the current selected version 3,</li>
 <li>in the package directory you have the creation of the file <code>LICENSE.md</code>. This contains the full license text. Like we say before, this is an obligation to add to your software the full license text (remember it’s something specify in the license), but CRAN doesn’t allow this file when you check your package regarding CRAN standard (and in addition if you want to submit it on CRAN).</li>
-<li>to correct that, the next added <code>^LICENSE\.md$</code> to the <code>.Rbuildignore</code>. We will know more about this file when we start to build our package, but the idea is to avoid specific elements when you build your package. Just to clarify, the text added is aregex expression which means at the start of the string if you find the exact word <code>LICENCE.md</code> and the end of the string after, avoid this file when you build my package.</li>
+<li>to correct that, the next added <code>^LICENSE\.md$</code> to the <code>.Rbuildignore</code>. We will know more about this file when we start to build our package (<strong>put section here</strong>), but the idea is to avoid specific elements when you build your package. Just to clarify, the text added is aregex expression which means at the start of the string if you find the exact word <code>LICENCE.md</code> and the end of the string after, avoid this file when you build my package.</li>
 </ul>
 
 
@@ -827,13 +834,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1182,8 +1190,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../pages/_references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../pages/09_dependencies.html" class="pagination-link" aria-label="- Dependencies">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">- Dependencies</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

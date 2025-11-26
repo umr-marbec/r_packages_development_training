@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/index.html</loc>
-    <lastmod>2025-09-03T06:46:43.739Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/_introduction.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.060Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/01_os_software.html</loc>
-    <lastmod>2025-09-03T06:46:43.739Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/02_r_packages_overview.html</loc>
-    <lastmod>2025-09-03T06:46:43.739Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/03_get_ready.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/04_before_creation.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/05_create_package_structure.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/06_package_states.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/07_DESCRIPTION_file.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.059Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/08_licensing.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.060Z</lastmod>
+  </url>
+  <url>
+    <loc>https://umr-marbec.github.io/r_packages_development_training/pages/09_dependencies.html</loc>
+    <lastmod>2025-11-26T16:13:13.060Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/_references.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.060Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/pages/appendices/a_do_define.html</loc>
-    <lastmod>2025-09-03T06:46:43.740Z</lastmod>
+    <lastmod>2025-11-26T16:13:13.060Z</lastmod>
   </url>
   <url>
     <loc>https://umr-marbec.github.io/r_packages_development_training/R-packages-development-training.pdf</loc>
-    <lastmod>2025-09-03T06:50:23.430Z</lastmod>
+    <lastmod>2025-11-26T16:31:26.453Z</lastmod>
   </url>
 </urlset>

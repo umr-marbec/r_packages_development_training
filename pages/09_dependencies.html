@@ -8,7 +8,7 @@
 
 <meta name="description" content="Training and material for learning to create your own R package, maintain and distribute it.">
 
-<title>1&nbsp; - Operating system and working environment associated – R packages development training</title>
+<title>9&nbsp; - Dependencies – R packages development training</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +66,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../pages/02_r_packages_overview.html" rel="next">
-<link href="../pages/_introduction.html" rel="prev">
+<link href="../pages/_references.html" rel="next">
+<link href="../pages/08_licensing.html" rel="prev">
 <link href="../images/cover.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -85,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/01_os_software.html">Training framework and requirements</a></li><li class="breadcrumb-item"><a href="../pages/01_os_software.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">- Operating system and working environment associated</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/07_DESCRIPTION_file.html">Second part - Package metadata</a></li><li class="breadcrumb-item"><a href="../pages/09_dependencies.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">- Dependencies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -141,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/01_os_software.html" class="sidebar-item-text sidebar-link active">
+  <a href="../pages/01_os_software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">- Operating system and working environment associated</span></span></a>
   </div>
 </li>
@@ -211,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/09_dependencies.html" class="sidebar-item-text sidebar-link">
+  <a href="../pages/09_dependencies.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">- Dependencies</span></span></a>
   </div>
 </li>
@@ -261,22 +296,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#requirements-software" id="toc-requirements-software" class="nav-link active" data-scroll-target="#requirements-software"><span class="header-section-number">1.1</span> Requirements software</a></li>
-  <li><a href="#additional-software" id="toc-additional-software" class="nav-link" data-scroll-target="#additional-software"><span class="header-section-number">1.2</span> Additional software</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/01_os_software.html">Training framework and requirements</a></li><li class="breadcrumb-item"><a href="../pages/01_os_software.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">- Operating system and working environment associated</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pages/07_DESCRIPTION_file.html">Second part - Package metadata</a></li><li class="breadcrumb-item"><a href="../pages/09_dependencies.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">- Dependencies</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">- Operating system and working environment associated</span></h1>
+<h1 class="title"><span id="sec-dependencies" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">- Dependencies</span></span></h1>
 </div>
 
 
@@ -293,86 +321,153 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Before going into the fun of R package development, take a moment to setup our working environment and overview some interesting software which can simplify our life.</p>
-<p>First, all the training and test that we will do among this book will be executed with Windows Operating System (OS). When you develop your package, one of the aims could be to share or propose your work to other peoples and you have to take into account about the variability of the processes among OS, software for example R dependencies. We will put in place several processes to support us in our task but keep in your mind that processes that work on an OS could not work in the same pattern in another one. Futermore, one of our tasks among the lifecycle of our package will be to maintain a maximum of compatibility, for example through integration of update or evolution in our code.</p>
-<p>Developing R packages assume that you have a little experience with the R software and not start from scratch with it. Even if you see that R package development is not so hard that it looks like, you will find a lot of resources on the internet to support you if you want to start with R and develop your skills in it.</p>
-<section id="requirements-software" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="requirements-software"><span class="header-section-number">1.1</span> Requirements software</h2>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_r.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>For the training we will use the <em>R</em> version 4.5.0 for Windows available through the web page of <a href="https://cran.r-project.org/" class="external" target="_blank">The Comprehensive R Archive Network</a>. You will find also precompiled binary distributions for Linux and macOS.</p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_rstudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>In addition, we will use the Integrated Development Environment (IDE) <em>RStudio</em>. Today this software is one of the most used in the R communities and includes a lot of things like a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging, and workspace management. Furthermore, recent evolution like the creation of <a href="https://posit.co/" class="external" target="_blank">Posit</a> compagny make the software ecosystem more friendly connected with R and Python. For the training we will use the RStudio version 2025.05.0+496 “Mariposa Orchid” for Windows OS. You can download the one for your configuration throught the <a href="https://posit.co/downloads/" class="external" target="_blank">Posit download webpage</a>.</p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_git.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>At least, we will using Git, for version control system, to host our R package and apply several processes of Continuous Integration (CI), most of them already prepare by the R communities. Today, this is a very precious tool that helps developers track changes in their code, collaborate efficiently, and manage different versions of a project. During this training we will use one of them. You can download the software on the offical website throught this <a href="https://git-scm.com/" class="external" target="_blank">link</a>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Dependencies and deal with them in your package is one of the most steps in your package development and in fact his lifecycle. We will see that adding a dependency could bring a lot of advantages for your processes, but come also with a portion of risk, to summarize <span style="color:#ca0030;"><strong>“great power come with great responsibilities”</strong></span> and you have to define if <span style="color:#ca0030;">“<strong>I do it if it’s worth it !</strong>”</span>.</p>
+<p>At first sight, use a maximum of dependencies could be a great idea because that mind use something already created, tested and used by others and you don’t reinvent something which already exists. But introduce dependencies in your code could also have strong consequences. For example, if dependencies change and evolve over time, you maybe need to change your code and increase the maintenance associated (don’t underestimate this phase because it’s a lot of time consuming in your package life, especial if your package is used and share by a lot of people). In addition, add dependencies could increase the time and disk space needed when users install your package and if you have a little experience in dependency management in R you will know that topic could bring several errors during updating or installing process (in addition to the variability of each OS and user working environment).</p>
+<p>However never use any dependency is not a good idea because even if you don’t have any problem, you leave behind a lot of great potential functionalities and at the end you could increase the time of maintenance (take a look at packages which provide a process of continuous integration) and be sensitive to new bugs because you don’t use the power of reflection of the global R community (you will get the benefit of all the bugs that have already been discoeverd and fixed).</p>
+<p>Like always, there is not one perfect way but a <span style="color:#ca0030;"><strong>good compromise</strong></span> between no dependency and the hell of too many dependencies and the goal is to find your way according to your needs. To support you in the search to find the right choice for you, you will find below several advises:</p>
+<ul>
+<li><span style="color:#ca0030;"><strong>First one</strong></span>, to take into account that all the dependencies don’t have the same level of consequences if you put them into your package structure (a balance between costs and benefits). For example you should have heard about the <a href="https://search.r-project.org/R/refmans/base/html/base-package.html" class="external" target="_blank">base</a> or the <a href="https://search.r-project.org/R/refmans/stats/html/stats-package.html" class="external" target="_blank">stats</a> packages. Theses kind of packages come bundled with R itself and they are very low cost of depend on because they are nearly universally installed on all users’ systems and were updated with new R versions. In opposition, if you want to add in dependencies a package from a Git repository, you should have a lot of consequences in term of maintenance and of deployment of your package to users (also associated to the potential instability to the package). Just to explain more that, you will find today a lot of packages hosted on the CRAN repository in a stable version with a development version of packages associated available on a Git (often GitHub). To be available on CRAN repository, a package must follow several rules and in particular be compatible with the all existing R environment, included packages already available on CRAN. To simplify, take a package from CRAN guarantee to have a stable version, which is not the case all the time when you deal with package hosted on a Git. Generally we take package from a Git when we want a specific function or feature, not included yet in the stable version of the package. To come back to the topic of type of dependencies, take a dependency package from CRAN will come with less of consequences that a package take from a Git (or similar) repository.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Under Windows OS, it’s necessary to install the <a href="https://cran.rstudio.com/bin/windows/Rtools/rtools44/rtools.html" class="external" target="_blank">RTools</a> software. This is a toolchains for building R and R packages from source on Windows. And don’t need it on macOS and Linux because theses OS have usually pre-installed compilation tools. You can download it from the <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external" target="_blank">offical link</a>.Be aware that you need to take the correct version according to our R version installated (for this training it would be the RTools 4.5).</p>
-</div>
-</div>
-</section>
-<section id="additional-software" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="additional-software"><span class="header-section-number">1.2</span> Additional software</h2>
-<p>Several software are not necessary to create your own R package but bring you a lot of improvement and at leave simplify you life.</p>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_vscode.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+<p>When you update your packages in R you should have a popup menu with the question “Do you want to install from sources packages which needs compilation” with in addtion in the R console something like the image below.</p>
+<figure id="figure1" class="figure">
+<img src="../images/update_packge_binary_source.png" alt="Figure 1: Packages update process" class="resized-img figure-img" width="40%">
 </figure>
-</div>
-</div><div class="column" style="width:85%;">
-<p>The first one is <a href="https://code.visualstudio.com/" class="external" target="_blank">Visual Studio Code</a> (or VS Code) which is a free, lightweight, extensible code editor developed by Microsoft. He supports a wide variety of programming languages such as R, JavaScript, Python, C++, Java, HTML/CSS. In addition is cross-platform compatibility, support Git and other version control systems and one of his best advantages is to provide extensions to add functionality and customize the environment. If you want you can download it from this <a href="https://code.visualstudio.com/Download" class="external" target="_blank">offical website</a> and if it’s possible according to your configuration prefer a system installer version. For this training I will use the version 1.100.2 on Windows OS.</p>
+<p>It’s important to understand that if you answer yes to this question, you will install package (not in <a href="https://umr-marbec.github.io/r_packages_development_training/pages/06_package_states.html#binary-package" class="external" target="_blank">binary state</a>) from another repository than the one defined as your package repository (like the CRAN or <a href="https://www.bioconductor.org/" class="external" target="_blank">Bioconductor</a>). That means that you will install the last version of the package available (in the image source version is updated compares the binary one) but maybe not the last stable version. Like we told before, if you don’t need a specific feature prefer install always package from an “official” package repository.</p>
 </div>
 </div>
-<div class="columns">
-<div class="column" style="width:15%;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/logo_github_desktop.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%"></p>
-</figure>
+<ul>
+<li>The <span style="color:#ca0030;"><strong>second</strong></span> advice is to be careful about the recursive dependencies and the associated installation in series. For example, you can find on CRAN package with a lot of recursive dependencies and that means that these dependencies should be installed in addition to the initial package dependency. A good thing about that is that you could have some dependencies already fulfilled. For example, if your package has a <a href="https://dplyr.tidyverse.org/" class="external" target="_blank">dplyr</a> dependency, adding <a href="https://tibble.tidyverse.org/" class="external" target="_blank">tibble</a> dependency does not change the dependency footprint because dplyr already depends of tibble (it’s a recursive dependency). To go deeper, use packages structured in a larger community (again the case of the tidyverse packages), simplify your code because these packages could share the same behaviours regarding processes are in addition could by associated between them. In the same aspect, popular packages were probably already installed on the majority of users’ machines and adding theses in dependencies should be lower in terms of consequences.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</div><div class="column" style="width:85%;">
-<p>According to the use of Git, we will use one of them call <a href="https://github.com/" class="external" target="_blank">GitHub</a>. You will see that a loot of processes were developed for work natively with GitHub and facilitate your R package creation. If you want to use another one, like a GitLab hosted by your company for example, you can of course but you will have to modify and adapted by yourself several processes propose during this training. In addition we will use here a Graphical User Interface (GUI) for managing Git repositories called GitHub Desktop. This is a free, open-source application which simplifies current Git operations, making it easier for developers to clone repositories, commit changes, create branches, and push updates without using the command line. Like its name suggests is working natively with GitHub repositories but you can also use it for connection with other Git like GitLab. Officially is available for Windows and MacOS but you can also find adapted version for Linux on the internet. For download it goes through the following <a href="https://desktop.github.com/download/" class="external" target="_blank">link</a>.</p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Two functions of the <a href="https://pak.r-lib.org/" class="external" target="_blank">pak</a> package could help you to explore dependencies relations, <a href="https://pak.r-lib.org/reference/pkg_deps_tree.html" class="external" target="_blank"><code>pkg_deps_tree()</code></a> and <a href="https://pak.r-lib.org/reference/pkg_deps_explain.html" class="external" target="_blank"><code>pkg_deps_explain()</code></a>. Below you have an example for the dependency tree of the <a href="https://usethis.r-lib.org/" class="external" target="_blank">usethis</a> package and the explication of the link between <code>usethis</code> and <code>cli</code> package. By default, functions give you the mandatory dependencies (we will explain that after) but you can play with the argument <code>dependencies = TRUE</code> to see all the dependencies associated (mandatory and optional) and begging to understand the “hell”.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pak)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_deps_tree</span>(<span class="at">pkg =</span> <span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Loading metadata database</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Loading metadata database ... done</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>usethis 3.2.1 [new][dl] (954.09 kB)
+├─cli 3.6.5 [new][dl] (1.40 MB)
+├─clipr 0.8.0 [new][dl] (55.50 kB)
+├─crayon 1.5.3 [new][dl] (165.17 kB)
+├─curl 7.0.0 [new][dl] (3.66 MB)
+├─desc 1.4.3 [new][dl] (335.37 kB)
+│ ├─cli
+│ └─R6 2.6.1 [new][dl] (88.59 kB)
+├─fs 1.6.6 [new][dl] (409.57 kB)
+├─gert 2.2.0 [new][bld][cmp][dl] (122.75 kB)
+│ ├─askpass 1.2.1 [new][dl] (74.66 kB)
+│ │ └─sys 3.4.3 [new][dl] (47.79 kB)
+│ ├─credentials 2.0.3 [new][dl] (222.57 kB)
+│ │ ├─askpass
+│ │ ├─curl
+│ │ ├─jsonlite 2.0.0 [new][dl] (1.11 MB)
+│ │ ├─openssl 2.3.4 [new][dl] (3.63 MB)
+│ │ │ └─askpass
+│ │ └─sys
+│ ├─openssl
+│ ├─rstudioapi 0.17.1 [new][dl] (342.43 kB)
+│ ├─sys
+│ └─zip 2.3.3 [new][dl] (456.31 kB)
+├─gh 1.5.0 [new][dl] (131.01 kB)
+│ ├─cli
+│ ├─gitcreds 0.1.2 [new][dl] (100.86 kB)
+│ ├─glue 1.8.0 [new][dl] (183.69 kB)
+│ ├─httr2 1.2.1 [new][dl] (790.53 kB)
+│ │ ├─cli
+│ │ ├─curl
+│ │ ├─glue
+│ │ ├─lifecycle 1.0.4 [new][dl] (141.02 kB)
+│ │ │ ├─cli
+│ │ │ ├─glue
+│ │ │ └─rlang 1.1.6 [new][dl] (1.63 MB)
+│ │ ├─magrittr 2.0.4 [new][dl] (229.05 kB)
+│ │ ├─openssl
+│ │ ├─R6
+│ │ ├─rappdirs 0.3.3 [new][dl] (52.60 kB)
+│ │ ├─rlang
+│ │ ├─vctrs 0.6.5 [new][dl] (1.36 MB)
+│ │ │ ├─cli
+│ │ │ ├─glue
+│ │ │ ├─lifecycle
+│ │ │ └─rlang
+│ │ └─withr 3.0.2 [new][dl] (231.63 kB)
+│ ├─ini 0.3.1 [new][dl] (16.05 kB)
+│ ├─jsonlite
+│ ├─lifecycle
+│ └─rlang
+├─glue
+├─jsonlite
+├─lifecycle
+├─purrr 1.2.0 [new][dl] (572.17 kB)
+│ ├─cli
+│ ├─lifecycle
+│ ├─magrittr
+│ ├─rlang
+│ └─vctrs
+├─rappdirs
+├─rlang
+├─rprojroot 2.1.1 [new][dl] (121.96 kB)
+├─rstudioapi
+├─whisker 0.4.1 [new][dl] (84.01 kB)
+├─withr
+└─yaml 2.3.10 [new][dl] (119.37 kB)
+
+Key:  [new] new | [dl] download | [bld] build | [cmp] compile</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_deps_explain</span>(<span class="at">pkg =</span> <span class="st">"usethis"</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">deps =</span> <span class="st">"cli"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>usethis -&gt; cli
+usethis -&gt; desc -&gt; cli
+usethis -&gt; gh -&gt; cli
+usethis -&gt; gh -&gt; httr2 -&gt; cli
+usethis -&gt; gh -&gt; httr2 -&gt; lifecycle -&gt; cli
+usethis -&gt; gh -&gt; httr2 -&gt; vctrs -&gt; cli
+usethis -&gt; gh -&gt; httr2 -&gt; vctrs -&gt; lifecycle -&gt; cli
+usethis -&gt; gh -&gt; lifecycle -&gt; cli
+usethis -&gt; lifecycle -&gt; cli
+usethis -&gt; purrr -&gt; cli
+usethis -&gt; purrr -&gt; lifecycle -&gt; cli
+usethis -&gt; purrr -&gt; vctrs -&gt; cli
+usethis -&gt; purrr -&gt; vctrs -&gt; lifecycle -&gt; cli</code></pre>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><p><span style="color:#ca0030;"><strong>Third</strong></span> point to be aware is the suffering and the pain of installing the package. This could be associated with the time to compile it (link for example to the complexity of the code contain), the size of the package and the worst one, the system requirements. The best example to illustrate that is the <a href="https://rforge.net/rJava/" class="external" target="_blank">rJava</a> package. If you have dealt with access database connection through R, you should already use it and have some troubles related to the installation and configuration of the Java SDK on your machine (especially if the user doesn’t have the admin rule on his computer). So the best advice that I can get is if you can replace or not use this kind of package, do it!</p></li>
+<li><p>As <span style="color:#ca0030;"><strong>fourth</strong></span> guideline find information about maintenance capacity of the package and globally about the communities associated. Tidyverse packages are a good example of that because you will a very large communities around them, a higher confidence associated and maintained by developers. As example, a non maintained of a dependency in your package should oblige you to modify your processes and request more maintainer from yourself.</p></li>
+<li><p>The <span style="color:#ca0030;"><strong>last one</strong></span> is to ask yourself if you really need to use function(s) of a package to do what you want. Sometime, we just need only one function of a big thing and if we take a moment to step back maybe it’s simpler to write something on your own and avoid all the “complexity” of associated a new dependence in your package. In addition, ask yourself about the potential users of your package could help: an expert on our domain should have already the same kind of packages that you asking throught dependencies.</p></li>
+</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -777,13 +872,13 @@ Important
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../pages/_introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../pages/08_licensing.html" class="pagination-link" aria-label="- Licensing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">- Licensing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../pages/02_r_packages_overview.html" class="pagination-link" aria-label="- Overview of R packages used">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">- Overview of R packages used</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../pages/_references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
