@@ -27,7 +27,7 @@ To support you in this step, you can use functions of the R package, [pak](https
 This package is a modern alternative to the R standard function, `install.packages()`. Is goal is make package installation faster and more reliable. In particular, it performs all HTTP operations in parallel, so metadata resolution and package downloads are fast. In addtion, he has a dependency solver, so it finds version conflicts before performing the installation. Futhermore, he supports CRAN, 'Bioconductor' and 'GitHub' packages as well.
 
 ```{r}
-#| label: pak-package--name-check
+#| label: pak-package-name-check
 #| echo: true
 package_name <- "lightning"
 library(pak)

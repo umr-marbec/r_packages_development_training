@@ -32,6 +32,7 @@ book:
     chapters:
     - pages/07_DESCRIPTION_file.qmd
     - pages/08_licensing.qmd
+    - pages/09_dependencies.qmd
   - part: "Third part - Adding code"
   - part: "Fourth part - Tests and checking"
   - part: "Fifth part - Documentation"
