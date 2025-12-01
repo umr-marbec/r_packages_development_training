@@ -301,12 +301,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#initiation-the-global-architecture" id="toc-initiation-the-global-architecture" class="nav-link active" data-scroll-target="#initiation-the-global-architecture"><span class="header-section-number">5.1</span> Initiation the global architecture</a></li>
-  <li><a href="#overview-of-the-package-strucutre" id="toc-overview-of-the-package-strucutre" class="nav-link" data-scroll-target="#overview-of-the-package-strucutre"><span class="header-section-number">5.2</span> Overview of the package strucutre</a>
+  <li><a href="#initiation-the-global-architecture" id="toc-initiation-the-global-architecture" class="nav-link active" data-scroll-target="#initiation-the-global-architecture"><span class="header-section-number">5.1</span> - Initiation the global architecture</a></li>
+  <li><a href="#overview-of-the-package-strucutre" id="toc-overview-of-the-package-strucutre" class="nav-link" data-scroll-target="#overview-of-the-package-strucutre"><span class="header-section-number">5.2</span> - Overview of the package strucutre</a>
   <ul class="collapse">
-  <li><a href="#the-package-directory" id="toc-the-package-directory" class="nav-link" data-scroll-target="#the-package-directory"><span class="header-section-number">5.2.1</span> The package directory</a></li>
+  <li><a href="#the-package-directory" id="toc-the-package-directory" class="nav-link" data-scroll-target="#the-package-directory"><span class="header-section-number">5.2.1</span> - The package directory</a></li>
   </ul></li>
-  <li><a href="#rstudio-package-environment" id="toc-rstudio-package-environment" class="nav-link" data-scroll-target="#rstudio-package-environment"><span class="header-section-number">5.3</span> RStudio package environment</a></li>
+  <li><a href="#rstudio-package-environment" id="toc-rstudio-package-environment" class="nav-link" data-scroll-target="#rstudio-package-environment"><span class="header-section-number">5.3</span> - RStudio package environment</a></li>
   </ul>
 </nav>
     </div>
@@ -333,12 +333,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="initiation-the-global-architecture" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="initiation-the-global-architecture"><span class="header-section-number">5.1</span> Initiation the global architecture</h2>
+<h2 data-number="5.1" class="anchored" data-anchor-id="initiation-the-global-architecture"><span class="header-section-number">5.1</span> - Initiation the global architecture</h2>
 <p>Now you have an working environment correctly configured and we have taken a few moment to thing about our package aim. We can go deeper and initiate the structure of our new package from an active R session. You don’t have to take care about the configuration of your local session because the function associated will be create a clean new project for your package. First, load the <a href="https://devtools.r-lib.org/" class="external" target="_blank">devtools</a> and by association is friend <a href="https://usethis.r-lib.org/" class="external" target="_blank">usethis</a>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Le chargement a nécessité le package : usethis</code></pre>
+<pre><code>Loading required package: usethis</code></pre>
 </div>
 </div>
 <p>Just to be sure that you have everything you need to develop R package you can launch the following command line to display a report of the package development situation.</p>
@@ -346,39 +346,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── R ───────────────────────────────────────────────────────────────────────────
-• version: 4.5.0
-• path: 'C:/Program Files/R/R-4.5.0/'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• R is out of date (4.5.0 vs 4.5.1)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>── Rtools ──────────────────────────────────────────────────────────────────────
-• path: 
+• version: 4.5.2
+• path: '/opt/R/4.5.2/lib/R/'
 ── devtools ────────────────────────────────────────────────────────────────────
-• version: 2.4.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• devtools or its dependencies out of date:
-  'xml2', 'curl', 'xfun', 'later'
-  Update them with `devtools::update_packages("devtools")`</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>── dev package ─────────────────────────────────────────────────────────────────
+• version: 2.4.6
+── dev package ─────────────────────────────────────────────────────────────────
 • package: &lt;unset&gt;
 • path: &lt;unset&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ All checks passed</code></pre>
 </div>
 </div>
 <p>If everything rock’s, launch the next command to initiate the global architecture of your package. For the training, my new R package will have the acronym “macfly” for “My Anwesone paCkage For Learning with Yearning”.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to "C:/Users/mdepetri/Documents/macfly".</code></pre>
+<pre><code>✔ Creating '/home/runner/macfly/'.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>ℹ Leaving 'DESCRIPTION' unchanged.</code></pre>
+<pre><code>✔ Setting active project to "/home/runner/macfly".</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Creating 'R/'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Writing 'DESCRIPTION'.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Package: macfly
@@ -391,7 +386,10 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2</code></pre>
+RoxygenNote: 7.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Writing 'NAMESPACE'.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Setting active project to "&lt;no active project&gt;".</code></pre>
@@ -427,10 +425,10 @@ Important
 </div>
 </section>
 <section id="overview-of-the-package-strucutre" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="overview-of-the-package-strucutre"><span class="header-section-number">5.2</span> Overview of the package strucutre</h2>
+<h2 data-number="5.2" class="anchored" data-anchor-id="overview-of-the-package-strucutre"><span class="header-section-number">5.2</span> - Overview of the package strucutre</h2>
 <p>If you follow the previous step, you should have the opening of a new RStudio session and the creation of a new directory on your local drive called just like your package name. Let take a moment that.</p>
 <section id="the-package-directory" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="the-package-directory"><span class="header-section-number">5.2.1</span> The package directory</h3>
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="the-package-directory"><span class="header-section-number">5.2.1</span> - The package directory</h3>
 <p>Inside the package directory, you should see 8 elements (the <code>.Rhistory</code> file is normally generated when you close for the first time in your RStudio session, but his generation depends on your personal configuration).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -457,23 +455,7 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">.gitignore</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">.Rbuildignore</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">.Rproj.user</td>
-<td style="text-align: left;">directory</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">DESCRIPTION</td>
-<td style="text-align: left;">file</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">macfly.Rproj</td>
 <td style="text-align: left;">file</td>
 </tr>
 <tr class="even">
@@ -501,7 +483,7 @@ Note
 </section>
 </section>
 <section id="rstudio-package-environment" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="rstudio-package-environment"><span class="header-section-number">5.3</span> RStudio package environment</h2>
+<h2 data-number="5.3" class="anchored" data-anchor-id="rstudio-package-environment"><span class="header-section-number">5.3</span> - RStudio package environment</h2>
 <p>If you take a look at the panel <em>Build</em> in the Rstudio environment you should see several new sections, like <em>Install</em> or <em>Check</em> (<a href="#figure1">figure 1</a>). We will take a look after in each of one, but keep in our mind that this sections is a shorcut way to apply processes on your package.</p>
 <figure id="figure1" class="figure">
 <p><img src="../images/rstudio_package_environment.png" alt="Figure 1: RStudio Build panel" class="resized-img figure-img" width="50%"></p>

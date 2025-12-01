@@ -285,11 +285,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#source-package" id="toc-source-package" class="nav-link active" data-scroll-target="#source-package"><span class="header-section-number">6.1</span> Source package</a></li>
-  <li><a href="#bundled-package" id="toc-bundled-package" class="nav-link" data-scroll-target="#bundled-package"><span class="header-section-number">6.2</span> Bundled package</a></li>
-  <li><a href="#binary-package" id="toc-binary-package" class="nav-link" data-scroll-target="#binary-package"><span class="header-section-number">6.3</span> Binary package</a></li>
-  <li><a href="#installed-package" id="toc-installed-package" class="nav-link" data-scroll-target="#installed-package"><span class="header-section-number">6.4</span> Installed package</a></li>
-  <li><a href="#in-memory-package" id="toc-in-memory-package" class="nav-link" data-scroll-target="#in-memory-package"><span class="header-section-number">6.5</span> In-memory package</a></li>
+  <li><a href="#source-package" id="toc-source-package" class="nav-link active" data-scroll-target="#source-package"><span class="header-section-number">6.1</span> - Source package</a></li>
+  <li><a href="#bundled-package" id="toc-bundled-package" class="nav-link" data-scroll-target="#bundled-package"><span class="header-section-number">6.2</span> - Bundled package</a></li>
+  <li><a href="#binary-package" id="toc-binary-package" class="nav-link" data-scroll-target="#binary-package"><span class="header-section-number">6.3</span> - Binary package</a></li>
+  <li><a href="#installed-package" id="toc-installed-package" class="nav-link" data-scroll-target="#installed-package"><span class="header-section-number">6.4</span> - Installed package</a></li>
+  <li><a href="#in-memory-package" id="toc-in-memory-package" class="nav-link" data-scroll-target="#in-memory-package"><span class="header-section-number">6.5</span> - In-memory package</a></li>
   </ul>
 </nav>
     </div>
@@ -317,12 +317,12 @@ div.csl-indent {
 
 <p>Now we have created our package structure, it’s important to take a moment to understand exactly the different states that your package can have and in addition make a link with all the things that you already do, like use the <code>install.packages()</code> function, maybe without knowing what is behind that. There are five different package states that we will explain below.</p>
 <section id="source-package" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="source-package"><span class="header-section-number">6.1</span> Source package</h2>
+<h2 data-number="6.1" class="anchored" data-anchor-id="source-package"><span class="header-section-number">6.1</span> - Source package</h2>
 <p>When we create our package in section 5, we create a source structure package. This is not the comment form you are most familiar with but to summarize it’s just a directory with files and subdirectories, grouped in a specific structure. If you have already interact with packages developed through a Git (the majority of packages have a Git repository dedicate), the structure associated with it is a source package.</p>
 <p>General, the source package is the most updated form of a package but be aware because it’s mean not necessary the most stable one. To conclud, keep in our mind that this state is not associated to any OS, it’s just element with a particular organisation.</p>
 </section>
 <section id="bundled-package" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="bundled-package"><span class="header-section-number">6.2</span> Bundled package</h2>
+<h2 data-number="6.2" class="anchored" data-anchor-id="bundled-package"><span class="header-section-number">6.2</span> - Bundled package</h2>
 <p>A bundled package is just a package compressed into a single file. By convention, R package extension is <code>.tar.gz</code>. The first one (<code>.tar</code>) is for the reduction in one single file, and the second one (<code>.gz</code>) is compressed with <a href="https://gzip.org/" class="external" target="_blank">gzip</a>. Like the previous state, it’s again not associated to any OS and it’s more a means of transportation for your package. If you are familiar with the package available on CRAN, you should see in a package description page on the CRAN website the item <em>Package source</em> with an associated <code>.tar.gz</code> file, which is the bundle version of the package.</p>
 <p>If you decompress a bundle, you will find 3 differences with a source package structure:</p>
 <ul>
@@ -332,17 +332,17 @@ div.csl-indent {
 </ul>
 </section>
 <section id="binary-package" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="binary-package"><span class="header-section-number">6.3</span> Binary package</h2>
+<h2 data-number="6.3" class="anchored" data-anchor-id="binary-package"><span class="header-section-number">6.3</span> - Binary package</h2>
 <p>This next state is the first one where you have the integration of the OS specification. If you want to share your package without any package development tools mandatory for the user, you need to provide it with a binary package. Like a bundled package, a binary package is a single file but as a user you have to choose the correct one for your OS. Normally you should find two kinds of binary package extensions, one <code>.tgz</code> for macOS and another <code>.zip</code> for Windows. On Linux, you have to install tools necessary to <code>.tar.gz</code> files but some recent resource like <a href="https://packagemanager.posit.co/" class="external" target="_blank">Posit Public Package Manager</a> provide to Linux user access to binary packages just like the other OS.</p>
 <p>We don’t go deeper into the internal structure of a binary package but be aware that is structure is very different than a source and bundled packages and if you want to go deeper you can find a very nice comparative between the three <a href="https://r-pkgs.org/structure.html#fig-package-files" class="external" target="_blank">here</a>.</p>
 </section>
 <section id="installed-package" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="installed-package"><span class="header-section-number">6.4</span> Installed package</h2>
+<h2 data-number="6.4" class="anchored" data-anchor-id="installed-package"><span class="header-section-number">6.4</span> - Installed package</h2>
 <p>An installed package is a binary package that’s been decompressed into a package library (see section below). This is what happens when you use the function <code>install.packages()</code>. At this moment and it’s practically sure that you have already some troubles in the past, it could be complicated to reinstall a package already used in the current R session. Sometime you have popups associated to “need of compilation”, restart a fresh session or again question related to take a package from sources because the version is more updated that the one that you have selected. There don’t have a perfect solution by when troubleshooting, Windows users should strive to install packages in a clean R session, with as few packages loaded as possible. Regarding the popup question of taking the package from the source because the version is higher, I suggest doing that only if you know what you are doing, for example if you want a specific process or function developed so far only on the source.</p>
 <p>If you have a lot of troubles with packages installations and update, remind of the <a href="https://pak.r-lib.org/" class="external" target="_blank">pak</a> <span class="citation" data-cites="pak">[<a href="_references.html#ref-pak" role="doc-biblioref">1</a>]</span> package. We used it before to check our package name, but he provides a good and powerful alternative to <code>install.packages()</code>. Use it with caution because it is a relative newcomer, but we are certainly using it more and more in our personal workflows (in the GitHub action that we see after for example).</p>
 </section>
 <section id="in-memory-package" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="in-memory-package"><span class="header-section-number">6.5</span> In-memory package</h2>
+<h2 data-number="6.5" class="anchored" data-anchor-id="in-memory-package"><span class="header-section-number">6.5</span> - In-memory package</h2>
 <p>Everyone how used R used this state all the time, thought the command <code>library()</code>. When you use that, you loaded the package associated into the memory (and for the R session) and in addition, attached the package to the search path. We will see after the difference between loading and attaching package when we talk about the “hell” of dependencies (it’s a very important thing when you writing package).</p>
 <p>To conclude this part, did not confuse the word <em>library</em> and <em>package</em>. Sometime people talk about a package as a library with for example “I use the library <code>DBI</code> to dealing with my database”. A library is just like if the name suggests an element which containing installed packages, just like a library “in the world” contain books. Most of the time it is not a problem because people will understand anyway, but the distinction is important and useful as you develop package.</p>
 

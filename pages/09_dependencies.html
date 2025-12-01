@@ -296,8 +296,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#global-guideline" id="toc-global-guideline" class="nav-link active" data-scroll-target="#global-guideline"><span class="header-section-number">9.1</span> - Global guideline</a></li>
+  <li><a href="#dependencies-declarations" id="toc-dependencies-declarations" class="nav-link" data-scroll-target="#dependencies-declarations"><span class="header-section-number">9.2</span> - Dependencies declarations</a>
+  <ul class="collapse">
+  <li><a href="#field-in-the-description-file" id="toc-field-in-the-description-file" class="nav-link" data-scroll-target="#field-in-the-description-file"><span class="header-section-number">9.2.1</span> - Field in the <code>DESCRIPTION</code> file</a></li>
+  <li><a href="#the-namespace-file" id="toc-the-namespace-file" class="nav-link" data-scroll-target="#the-namespace-file"><span class="header-section-number">9.2.2</span> - The <code>NAMESPACE</code> file</a></li>
+  <li><a href="#search-path" id="toc-search-path" class="nav-link" data-scroll-target="#search-path"><span class="header-section-number">9.2.3</span> - Search path</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -323,7 +335,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Dependencies and deal with them in your package is one of the most steps in your package development and in fact his lifecycle. We will see that adding a dependency could bring a lot of advantages for your processes, but come also with a portion of risk, to summarize <span style="color:#ca0030;"><strong>“great power come with great responsibilities”</strong></span> and you have to define if <span style="color:#ca0030;">“<strong>I do it if it’s worth it !</strong>”</span>.</p>
 <p>At first sight, use a maximum of dependencies could be a great idea because that mind use something already created, tested and used by others and you don’t reinvent something which already exists. But introduce dependencies in your code could also have strong consequences. For example, if dependencies change and evolve over time, you maybe need to change your code and increase the maintenance associated (don’t underestimate this phase because it’s a lot of time consuming in your package life, especial if your package is used and share by a lot of people). In addition, add dependencies could increase the time and disk space needed when users install your package and if you have a little experience in dependency management in R you will know that topic could bring several errors during updating or installing process (in addition to the variability of each OS and user working environment).</p>
-<p>However never use any dependency is not a good idea because even if you don’t have any problem, you leave behind a lot of great potential functionalities and at the end you could increase the time of maintenance (take a look at packages which provide a process of continuous integration) and be sensitive to new bugs because you don’t use the power of reflection of the global R community (you will get the benefit of all the bugs that have already been discoeverd and fixed).</p>
+<p>However never use any dependency is not a good idea because even if you don’t have any problem, you leave behind a lot of great potential functionalities and at the end you could increase the time of maintenance (take a look at packages which provide a process of continuous integration) and be sensitive to new bugs because you don’t use the power of reflection of the global R community (you will get the benefit of all the bugs that have already been discovered and fixed).</p>
+<section id="global-guideline" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="global-guideline"><span class="header-section-number">9.1</span> - Global guideline</h2>
 <p>Like always, there is not one perfect way but a <span style="color:#ca0030;"><strong>good compromise</strong></span> between no dependency and the hell of too many dependencies and the goal is to find your way according to your needs. To support you in the search to find the right choice for you, you will find below several advises:</p>
 <ul>
 <li><span style="color:#ca0030;"><strong>First one</strong></span>, to take into account that all the dependencies don’t have the same level of consequences if you put them into your package structure (a balance between costs and benefits). For example you should have heard about the <a href="https://search.r-project.org/R/refmans/base/html/base-package.html" class="external" target="_blank">base</a> or the <a href="https://search.r-project.org/R/refmans/stats/html/stats-package.html" class="external" target="_blank">stats</a> packages. Theses kind of packages come bundled with R itself and they are very low cost of depend on because they are nearly universally installed on all users’ systems and were updated with new R versions. In opposition, if you want to add in dependencies a package from a Git repository, you should have a lot of consequences in term of maintenance and of deployment of your package to users (also associated to the potential instability to the package). Just to explain more that, you will find today a lot of packages hosted on the CRAN repository in a stable version with a development version of packages associated available on a Git (often GitHub). To be available on CRAN repository, a package must follow several rules and in particular be compatible with the all existing R environment, included packages already available on CRAN. To simplify, take a package from CRAN guarantee to have a stable version, which is not the case all the time when you deal with package hosted on a Git. Generally we take package from a Git when we want a specific function or feature, not included yet in the stable version of the package. To come back to the topic of type of dependencies, take a dependency package from CRAN will come with less of consequences that a package take from a Git (or similar) repository.</li>
@@ -340,13 +354,13 @@ Note
 <div class="callout-body-container callout-body">
 <p>When you update your packages in R you should have a popup menu with the question “Do you want to install from sources packages which needs compilation” with in addtion in the R console something like the image below.</p>
 <figure id="figure1" class="figure">
-<img src="../images/update_packge_binary_source.png" alt="Figure 1: Packages update process" class="resized-img figure-img" width="40%">
+<p><img src="../images/update_packge_binary_source.png" alt="Figure 1: Packages update process" class="resized-img figure-img" width="40%"></p>
 </figure>
 <p>It’s important to understand that if you answer yes to this question, you will install package (not in <a href="https://umr-marbec.github.io/r_packages_development_training/pages/06_package_states.html#binary-package" class="external" target="_blank">binary state</a>) from another repository than the one defined as your package repository (like the CRAN or <a href="https://www.bioconductor.org/" class="external" target="_blank">Bioconductor</a>). That means that you will install the last version of the package available (in the image source version is updated compares the binary one) but maybe not the last stable version. Like we told before, if you don’t need a specific feature prefer install always package from an “official” package repository.</p>
 </div>
 </div>
 <ul>
-<li>The <span style="color:#ca0030;"><strong>second</strong></span> advice is to be careful about the recursive dependencies and the associated installation in series. For example, you can find on CRAN package with a lot of recursive dependencies and that means that these dependencies should be installed in addition to the initial package dependency. A good thing about that is that you could have some dependencies already fulfilled. For example, if your package has a <a href="https://dplyr.tidyverse.org/" class="external" target="_blank">dplyr</a> dependency, adding <a href="https://tibble.tidyverse.org/" class="external" target="_blank">tibble</a> dependency does not change the dependency footprint because dplyr already depends of tibble (it’s a recursive dependency). To go deeper, use packages structured in a larger community (again the case of the tidyverse packages), simplify your code because these packages could share the same behaviours regarding processes are in addition could by associated between them. In the same aspect, popular packages were probably already installed on the majority of users’ machines and adding theses in dependencies should be lower in terms of consequences.</li>
+<li>The <span style="color:#ca0030;"><strong>second</strong></span> advice is to be careful about the recursive dependencies and the associated installation in series. For example, you can find on CRAN package with a lot of recursive dependencies and that means that these dependencies should be installed in addition to the initial package dependency. A good thing about that is that you could have some dependencies already fulfilled. For example, if your package has a <a href="https://dplyr.tidyverse.org/" class="external" target="_blank">dplyr</a> dependency, adding <a href="https://tibble.tidyverse.org/" class="external" target="_blank">tibble</a> dependency does not change the dependency footprint because dplyr already depends of tibble (it’s a recursive dependency). To go deeper, use packages structured in a larger community (again the case of the tidyverse packages), simplify your code because these packages could share the same behaviors regarding processes are in addition could by associated between them. In the same aspect, popular packages were probably already installed on the majority of users’ machines and adding theses in dependencies should be lower in terms of consequences.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -437,7 +451,7 @@ Note
 ├─rstudioapi
 ├─whisker 0.4.1 [new][dl] (84.01 kB)
 ├─withr
-└─yaml 2.3.10 [new][dl] (119.37 kB)
+└─yaml 2.3.11 [new][bld][cmp][dl] (94.85 kB)
 
 Key:  [new] new | [dl] download | [bld] build | [cmp] compile</code></pre>
 </div>
@@ -464,10 +478,52 @@ usethis -&gt; purrr -&gt; vctrs -&gt; lifecycle -&gt; cli</code></pre>
 <ul>
 <li><p><span style="color:#ca0030;"><strong>Third</strong></span> point to be aware is the suffering and the pain of installing the package. This could be associated with the time to compile it (link for example to the complexity of the code contain), the size of the package and the worst one, the system requirements. The best example to illustrate that is the <a href="https://rforge.net/rJava/" class="external" target="_blank">rJava</a> package. If you have dealt with access database connection through R, you should already use it and have some troubles related to the installation and configuration of the Java SDK on your machine (especially if the user doesn’t have the admin rule on his computer). So the best advice that I can get is if you can replace or not use this kind of package, do it!</p></li>
 <li><p>As <span style="color:#ca0030;"><strong>fourth</strong></span> guideline find information about maintenance capacity of the package and globally about the communities associated. Tidyverse packages are a good example of that because you will a very large communities around them, a higher confidence associated and maintained by developers. As example, a non maintained of a dependency in your package should oblige you to modify your processes and request more maintainer from yourself.</p></li>
-<li><p>The <span style="color:#ca0030;"><strong>last one</strong></span> is to ask yourself if you really need to use function(s) of a package to do what you want. Sometime, we just need only one function of a big thing and if we take a moment to step back maybe it’s simpler to write something on your own and avoid all the “complexity” of associated a new dependence in your package. In addition, ask yourself about the potential users of your package could help: an expert on our domain should have already the same kind of packages that you asking throught dependencies.</p></li>
+<li><p>The <span style="color:#ca0030;"><strong>last one</strong></span> is to ask yourself if you really need to use function(s) of a package to do what you want. Sometime, we just need only one function of a big thing and if we take a moment to step back maybe it’s simpler to write something on your own and avoid all the “complexity” of associated a new dependence in your package. In addition, ask yourself about the potential users of your package could help: an expert on our domain should have already the same kind of packages that you asking through dependencies.</p></li>
 </ul>
+</section>
+<section id="dependencies-declarations" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="dependencies-declarations"><span class="header-section-number">9.2</span> - Dependencies declarations</h2>
+<section id="field-in-the-description-file" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="field-in-the-description-file"><span class="header-section-number">9.2.1</span> - Field in the <code>DESCRIPTION</code> file</h3>
+<p>In the <a href="https://umr-marbec.github.io/r_packages_development_training/pages/07_DESCRIPTION_file.html#futures-fields" class="external" target="_blank">section 7.7</a> we discussed future fields. There are two major field used for declare packages dependencies, <code>Imports</code> and <code>Suggests</code>.</p>
+<p><span style="color:#ca0030;"><strong><code>Imports</code></strong></span> listed packages mandatory for your package work. Any time your package is installed, those packages will also be installed, if not already present.</p>
+<p><span style="color:#ca0030;"><strong><code>Suggests</code></strong></span> if for packages not necessary to your package work, but could be use in several particular case. It might be packages for run tests, build vignettes or development processes. In fact that mean that the regular user never use theses packages, so it’s necessary to install them only if you need to.</p>
+<p>You can find others fields for dependencies like <code>Depends</code> (used for example to define a minimum R version), <code>LinkingTo</code> (used if your package uses C or C++ code from another package) or <code>Enhances</code> but it’s very specifics and you should probably never use them.</p>
+<p>We will go deeper into that later when we define some dependencies for our package but keep in your mind that you will find at the place all the packages dependencies used in your package with some potential additional information (like the minimum version mandatory).</p>
+</section>
+<section id="the-namespace-file" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="the-namespace-file"><span class="header-section-number">9.2.2</span> - The <code>NAMESPACE</code> file</h3>
+<p>The <code>NAMESPACE</code> file is one of the other elements created initially in the package directory. Like the name suggest, information in this file provides a location (or a space) to looking up and find an element (like a function). To summaries the aim behind that process, the idea is to <span style="color:#ca0030;"><strong>avoid any kind of confusion or mistake</strong></span> related to the element that you want to manipulate. You should probably already use the concept of the <code>::</code> operator, which disambiguate functions with the same name. We will explain that deeper in the next section related to the search path but when I say <code>dplyr::filter</code> I say to R that I want to use the <code>filter</code> function of the package <code>dplyr</code>. The <code>NAMESPACE</code> file will do exactly the same thing.</p>
+<p>The good news is that you don’t need to fill this file manually by hand because just like the first line said, this document was “Generated by roxygen2: do not edit by hand”. He describe briefly the package <a href="https://roxygen2.r-lib.org/" class="external" target="_blank">roxygen2</a> in the <a href="file:///D:/developpement/quarto/books/r_packages_development_training/_book/pages/02_r_packages_overview.html" class="external" target="_blank">chapter 2</a> but we go back to it during the chapter on documentation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If by mistake you make a modification by yourself in the <code>NAMESPACE</code> file instead of an automatic implementation, you should have some error with the explication of impossibility to update the file. If it’s the case don’t panic, just remove the file and it could be created again and updated at the next compilation of your package.</p>
+</div>
+</div>
+<p>In this file, each line contains a directive which describes an R object and informs if this object is exported from this package to be used elsewhere or imported from another package to be used internally. Without being exhaustive you can find below the most common directives:</p>
+<ul>
+<li><code>export()</code> for export a function outside the package,</li>
+<li><code>S3method()</code> for export an S3 method (pseudo object),</li>
+<li><code>importFrom()</code> for imported selected object form another namespace,</li>
+<li><code>import()</code> for imported all objects from another package’s namespace,</li>
+<li><code>useDynLib()</code>, less common but for registers routines from a DLL (Dynamic Link Library).</li>
+</ul>
+</section>
+<section id="search-path" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="search-path"><span class="header-section-number">9.2.3</span> - Search path</h3>
+<p>In the section below, we discuss the use of the operator <code>::</code> and the importance to leave no uncertainty or interpretation of R regarding the item that you want to use. To understand why it’s dangerous, it’s important to know how R work to find an element with a name. It’s related to the search path.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
