@@ -1,6 +1,6 @@
 # - Creation of the package structure
 
-## Initiation the global architecture
+## - Initiation the global architecture
 
 Now you have an working environment correctly configured and we have taken a few moment to thing about our package aim. We can go deeper and initiate the structure of our new package from an active R session. You don't have to take care about the configuration of your local session because the function associated will be create a clean new project for your package. First, load the [devtools](https://devtools.r-lib.org/){.external target="_blank"} and by association is friend [usethis](https://usethis.r-lib.org/){.external target="_blank"}.
 
@@ -46,11 +46,11 @@ For your information, you will find in the [usethis](https://usethis.r-lib.org/i
 At least, you could see sometime a function call `package.skeleton` from the [utils](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/package.skeleton){.external target="_blank"} R package. Even if this function create a package structure it's an "old way" to do and you should have some trouble if you use it, especially with you want to use the tidyverse philosophy.
 :::
 
-## Overview of the package strucutre
+## - Overview of the package strucutre
 
 If you follow the previous step, you should have the opening of a new RStudio session and the creation of a new directory on your local drive called just like your package name. Let take a moment that.
 
-### The package directory
+### - The package directory
 
 Inside the package directory, you should see 8 elements (the `.Rhistory` file is normally generated when you close for the first time in your RStudio session, but his generation depends on your personal configuration).
 
@@ -86,7 +86,7 @@ fs::dir_info(all = TRUE) %>%
 -   *NAMESPACE*, this file aims to declares functions "used" among your package (through external and internal ways).
 -   *R*, this directory will contains all the functions developed in your package.
 
-## RStudio package environment
+## - RStudio package environment
 
 If you take a look at the panel *Build* in the Rstudio environment you should see several new sections, like *Install* or *Check* (<a href="#figure1">figure 1</a>). We will take a look after in each of one, but keep in our mind that this sections is a shorcut way to apply processes on your package.
 

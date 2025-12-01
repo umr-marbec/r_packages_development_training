@@ -15,7 +15,7 @@ For our package created before, this is the initial DESCRIPTION file.
 
 To update this file you have two possibilities, open the file and modify it by hand or use the R package [desc](https://desc.r-lib.org/){.external target="_blank"} @desc to manipulate it by command lines. In the following part, we will use functions of this package to reduce as possible typing error.
 
-## Fields `Package`, `Title` and `Description`
+## - Fields `Package`, `Title` and `Description`
 
 The first line in the description file is the `Package` field and refer to the name of the package that we define before (@sec-name). You don't have anything to modify in this field.
 
@@ -40,11 +40,11 @@ description_file$set(Title = "My Anwesone paCkage For Learning with Yearning",
                      Description = "An example of R package development with functions and all the stuff around to increase the joy of writing our own processes.")
 ```
 
-## Field `Version`
+## - Field `Version`
 
 This field is a very important way to indicate the state of your package and evolving across the time and more precisely is lifecycle. We will go deeper into this in the \[section to define\].
 
-## Field `Author`
+## - Field `Author`
 
 The field `Authors@R` inside the DESCRIPTION file identify package's authors and contributors. This is a very important information because with that you know whom to contact if you are any troubles with the package. In comparison with the other field, this one contains executable R code rather than plain text. You could find also a declaration of authors like below.
 
@@ -111,18 +111,18 @@ usethis::use_tidy_description()
 ```{cat, code = readLines(fs::path("DESCRIPTION")), class.source = "yaml"}
 ```
 
-## Field `License` {#sec-license}
+## - Field `License` {#sec-license}
 
 This field is mandatory and reflect your package's license. To simplify the thing, the license will inform users of your package what they can do, or not, when the use or manipulate your package. This is an important task and you have to ask yourself about several question to take the better descision according to your needs. You can find a deeper reflexion on this aspect in the @sec-licensing.
 
-## Field `Encoding`
+## - Field `Encoding`
 
 If you have special characters or diacritical marks like accents in your data, you have already dealing before with the encoding, to avoid text warp. By default the field `Encoding` is UTF-8 as this is the most common encoding in use today. Normally you don't have to modify.
 
-## Roxygen fields
+## - Roxygen fields
 
 By using the function `create_package()` before, two fields related to documentation will be added in the description file, `Roxygen` and `RoxygenNote`. We will see later (section to define) what they are connected to but there are in relation to the [roxygen2](https://roxygen2.r-lib.org/){.external target="_blank"} package, your best ally to simplify the documenting production and icing on the cake theses fields will be updated automatically in the DESCRITPION according to actions initiate during the package development and lifecycle.
 
-## Futures fields
+## - Futures fields
 
 You will that several new fields will be added in the DESCRIPTION file, like `URL`, `BugReports`, `Imports` or `VignetteBuilder`. We will discuss these fields in dedicated sections, but you can have an overview of them [here](https://r-pkgs.org/description.html#other-fields){.external target="_blank"} if you are curious. For information, you can also create custom fields to add additional metadata. So far, I never have the utility to doing that but if it's relevant according to your needs, you will find some guidelines [over there](https://r-pkgs.org/description.html#sec-description-custom-fields){.external target="_blank"}.

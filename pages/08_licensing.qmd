@@ -6,7 +6,7 @@ Choose your licence for your package allows you to declare how you want your cod
 In this section we will just give you basic rules to ask you the good question and if necessary go deeper in the subject. Regarding that, you will find materials like this website for [open-source license comparisons](https://choosealicense.com/){.external target="_blank"}, the [chapter 12](https://r-pkgs.org/license.html){.external target="_blank"} of the R Packages book @r_packages_hadley_2023 which describes a good overview of the license topic, another book [Licensing R](https://thinkr-open.github.io/licensing-r/){.external target="_blank"} write by Colin Fay @licensing_r_2019 or at least the section [1.1.2](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Licensing){.external target="_blank"} of the R manual "Writing R Extensions".
 :::
 
-## Global overview
+## - Global overview
 
 There are 3 main kind of licenses when you talk about software development: the open source, proprietary and source-available licenses. If we go beyond software development, you can find other families of licences in relation to the kind of creation. We can mention [Creative Commons](https://creativecommons.org/share-your-work/cclicenses/){.external target="_blank"} (CC) family for creative works (art, photography, music, ...), [Open Data Commons](https://opendatacommons.org/licenses/){.external target="_blank"} (ODC) licences for data and databases licences or the [GNU Free Documentation License](https://www.gnu.org/licenses/licenses.fr.html#FDL){.external target="_blank"} for Documentation and Educational Content Licenses for manuals, textbooks, tutorials, and academic materials. Here we are just focusing our reflection on software development family (with a little shortcut for licences dedicated to data) because we only deal in our example with an R package.
 
@@ -14,7 +14,7 @@ There are 3 main kind of licenses when you talk about software development: the 
 Keep in our mind that defines a license is an important step to do, and skip it is a possibility but if you are doing that, the default copyright laws apply: no one is allowed to make a copy of your code without your express permission.
 :::
 
-## Software development licenses
+## - Software development licenses
 
 Focusing on this kind of creation, three major families were available.
 
@@ -26,7 +26,7 @@ The last one is source-available licenses. These one make the source code visibl
 
 For our use here, we mainly talk about open source licences because we will use the guideline of the [FAIR principles](https://www.go-fair.org/fair-principles/){.external target="_blank"} to rule our work. We will see below how to specify a proprietary licence if necessary but I let you go deeper into these licences, and the source-available licenses, if you think your work needs one of them.
 
-## Open source licences
+## - Open source licences
 
 In the family of open sources licences for software development we find two major kind of licences :
 
@@ -50,7 +50,7 @@ Table 1: Comparison copyleft versus permissive licenses.
 | Legal complexity | More restrictive, requires careful compliance | Simple and lightweight |
 | Philosophy | Preserve freedom for all users | Maximize adoption, even in closed environments |
 
-## Location of a R package license
+## - Location of a R package license
 
 When you develop a R package and you want to add a license, the information associated is located at 3 or 4 location in your source package state.
 
@@ -77,11 +77,11 @@ The only problem is if you want to publish your package on the CRAN, this one do
 
 The last location of license information is optional, but could occur in a `LICENSE.note` file. We will develop this case in the @sec-licensing-bundle below, but just to summarize, this could happen when you bundle code in your package from other packages and you need to keep the licenses associated with the source packages.
 
-## Application cases
+## - Application cases
 
 Due to the difficulty to have a full overview of all licenses (it really links to your needs), tha aims of the following sections are to develop several cases related to what could occur in the development life of your package.
 
-### For the code you write {#sec-licensing-code-write}
+### - For the code you write {#sec-licensing-code-write}
 
 In a natural way, we will start with the code that you write. It's not an exhaustive list but you should have material to make your first move. You will find at the end of the section a comparative table with [usethis](https://usethis.r-lib.org/){.external target="_blank"} functions to create license resources in your package repository.
 
@@ -136,7 +136,7 @@ Table 3: Comparison between CC0 and CC-BY licences (focus on data).
 If you need to define a proprietary license (not open source), you can use the function `use_proprietary_license()` available in the usethis package.
 :::
 
-### For the code given to you
+### - For the code given to you
 
 In many case in your package life, you will include in code not written by you. The first possibility if where people inject code into your package, for example through a git pull request.
 
@@ -149,11 +149,11 @@ In best practices it's also important to acknowledge the contributors (it's very
 -   During section regarding the documentation of your package (**put section here**) we will introduce a file called `NEWS.md`. In this file, you release changes and updates of your package, and it's a good place to indicate and acknowledge the contribution to your package,
 -   Another option is to use the `Author` field in the `DESCRIPTION` file with the role `cph`. It could be hard at the end if you integrate all the contributors to the `DESCRIPTION` file, in terms of display of this one, but it's a possibility.
 
-### For the code you bundle {#sec-licensing-bundle}
+### - For the code you bundle {#sec-licensing-bundle}
 
 The second form of integration of external code in your package could be if you bundle code. This could happen for example if you copied a piece of R code directly from another package to avoid taking dependency of it (@sec-dependencies). This kind of action has to be done with caution, because indeed you avoid dependency with another package (and in addition you reduce the complexity of your package and the management associated), but the code associated will is not updated automatically (for example in case of a bug fixes) and you have to deal with the licences compatibility (@sec-licence-compatibility). In fact, it's really useful when you need only a very small part of the code from a big package, or if the package is no longer updated.
 
-#### License compatibility {#sec-licence-compatibility}
+#### - License compatibility {#sec-licence-compatibility}
 
 We begin to discuss that in the <a href="#table2">table 2</a> and <a href="#table3">table 3</a>, through the column "Other licences compatibility". Before bundle someone else's code into your package, you have to check licenses compatibility between your package license and the source package. Keep in your mind that you can add additional restrictions, but you can't remove restrictions. Which means that license compatibility is not symmetric.
 
@@ -168,7 +168,7 @@ If you are none of any one of these previous cases, you have to do little resear
 
 If your package isn’t open source, things are more complicated and the best option could be to check with your legal department first.
 
-#### How to include in your package
+#### - How to include in your package
 
 If all the licenses associated to your package are compatible, you can bring the code into your package. Now it's important to follow the next steps:
 
@@ -177,7 +177,7 @@ If all the licenses associated to your package are compatible, you can bring the
 -   you need to update the `Author` field in the `DESCRIPTION` file and used the role `cph` to declare them. In addition, you can use the `comment` field to describing what they're the author of. You could find a example [here](https://github.com/r-lib/diffviewer/blob/main/DESCRIPTION){.external target="_blank"} for a package named `diffviewer`,
 -   if you plan to submitting your package on CRAN and bundled code has different license, you have to include a `LICENSE.note` file that describes the overall license of the package and the specific licenses of each individual component. Take a look on the [file](https://github.com/r-lib/diffviewer/blob/main/LICENSE.note){.external target="_blank"} from the package `diffviewer` for example.
 
-### For the code you use
+### - For the code you use
 
 The last application case is directly related to the use of R. The fact is R is licensed under GPL license version 2 superior or equal.
 
@@ -208,7 +208,7 @@ Table 4: Support for perimeter of R GPL licence obligation
 | Bundling R with your software | Yes | Must comply with GPLv2 or later |
 | Writing a package that runs on R | No | Free to choose license |
 
-## Relicensing {#sec-relicensing}
+## - Relicensing {#sec-relicensing}
 
 This last point focusing on the relicensing of your package. Even if choose the best license for your purpose if better, sometime it's possible that you need to changing it during your package lifecyle. If you are in this case, and it could [happen even to the big](https://www.tidyverse.org/blog/2021/12/relicensing-packages/){.external target="_blank"}, you could use these following step to support in this work:
 
@@ -220,7 +220,7 @@ This last point focusing on the relicensing of your package. Even if choose the 
 
 When you have all the validation, you can change your license.
 
-## Application for my package example {#sec-licensing-example-application}
+## - Application for my package example {#sec-licensing-example-application}
 
 If you are here, that mean that you are an expert in license :)
 
