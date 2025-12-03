@@ -82,8 +82,63 @@ In this file, each line contains a directive which describes an R object and inf
 In the section below, we discuss the use of the operator `::` and the importance to leave no uncertainty or interpretation of R regarding the item that you want to use. To understand why it's dangerous, it's important to know how R work to find an element with a name. It's related to the search path. To call a function, R first has to find it. The first place to look is the global environment (the top-level environment created during a R session). If we doesn't find it there, it looks in the search path which is the list of all packages you have attached to your R session. You can display this search path by launch the code `search()` in the R console. Below, you have an example of my search path of my R session when I launch R without anything else.
 
 ```{r}
-#| label: search-path-initial
+#| label: search-path-initial-setup
 #| echo: false
+detach(name = "package:pak")
+```
+
+
+```{r}
+#| label: search-path-initial
+#| echo: true
 search()
 ```
+
+The order here is important because in this search path each element has the next element as its parents and define the searching order. Like talk before, the first place where R locking is the global environment (`.GlobalEnv`), following by several packages, here attached automatically when you launch a R console. The item `Autoloads` is a little bit particular because it's a special environment used only when it's necessary for save memory. The last one of this search path is the [base](https://search.r-project.org/R/refmans/base/html/base-package.html){.external target="_blank"} package cited before. Now, the important aspect is what happen when you attached a new package through the R console (with `library()` as example)? By doing that you modify the search path, and your package will be inserted right after the global environment. Below, I attached the [pak](https://pak.r-lib.org/){.external target="_blank"} package.
+
+```{r}
+#| label: search-path-pak
+#| echo: true
+library(pak)
+search()
+```
+
+It's a big change because that means that if the package pak and stats contains a function or an element of the same name, if I just call the element in the R console without any other indication of location, R will select the first one he finds, in this example in the package pak. It could be a serious problem if my intention was to use the function in the package stats and by doing that I create incertitude in terms of processing.
+
+::: callout-note
+Behind the tricky way of the search path, R provide you several messages to warning you. As an example, if you attached the `dplyr` package in your R session, you should have the message below.
+
+```{r}
+#| label: dplyr-attached-message
+#| echo: true
+library(dplyr)
+```
+
+With that message, R warning you that by attaching `dplyr` in the search path, several objects will not be selected first (in the package `stats` and `base`) if you call them in the R console with only their names (because these names were present in the `dplyr` package and "replace" the others present in packages).
+:::
+
+::: callout-important
+Attaching and loading
+:::
+
+### - Package environment 
+
+With all the information above, you should understand the process of R to find objects regarding your needs. But to be very clear we have to talk about the package environment. It's an important aspect because you will see after when we write some code inside our package, that you have to play with this package environment to access of the process that you define in your package. 
+
+The best way to deal with that is to take a concrete example from the section [10.3.2](https://r-pkgs.org/dependencies-mindset-background.html#function-lookup-inside-a-package){.external target="_blank"} of the R Packages book. The function `sd()` of the `stats` pacakge use the function `var()`. But, if the user define a new function also call `var()` in the global environment, the function `sd()` will continue to use the function `var()` from the package `stats` and work correctly. This behavior is non consistent with what we expected regarding the search path. It's related to the environments.
+
+Every function in a package is associated with a pair of environments, the package environment and the namespace environment. The package environment is the external interface to the package which exposes only objects exported. Globally, when you use the `::` operators you discuss with the package environment and you use the search path process explain above. The namespace environment is the internal interface of the package and includes all objects in the package (exported or not). That means that every link exists in the package environment also exists in the namespace environment but not to the contrary. This is why the package `stats` use the "correct" function for `var()` in our example above (a summary of the global example process is displayed in the <a href="#figure2">figure 1</a> below).
+
+<figure id="figure2">
+
+<img src="../images/namespace.png" alt="Figure 1: Global process for R object finding (copyright *R Packages (2e)* @r_packages_hadley_2023)" class="resized-img" width="60%"/>
+
+<figcaption class="figcaption-center">
+
+Figure 1: Global process for R object finding (copyright @r_packages_hadley_2023)
+
+</figcaption>
+
+</figure>
+
 
