@@ -56,7 +56,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -307,6 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#field-in-the-description-file" id="toc-field-in-the-description-file" class="nav-link" data-scroll-target="#field-in-the-description-file"><span class="header-section-number">9.2.1</span> - Field in the <code>DESCRIPTION</code> file</a></li>
   <li><a href="#the-namespace-file" id="toc-the-namespace-file" class="nav-link" data-scroll-target="#the-namespace-file"><span class="header-section-number">9.2.2</span> - The <code>NAMESPACE</code> file</a></li>
   <li><a href="#search-path" id="toc-search-path" class="nav-link" data-scroll-target="#search-path"><span class="header-section-number">9.2.3</span> - Search path</a></li>
+  <li><a href="#package-environment" id="toc-package-environment" class="nav-link" data-scroll-target="#package-environment"><span class="header-section-number">9.2.4</span> - Package environment</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -521,6 +541,17 @@ Note
 <h3 data-number="9.2.3" class="anchored" data-anchor-id="search-path"><span class="header-section-number">9.2.3</span> - Search path</h3>
 <p>In the section below, we discuss the use of the operator <code>::</code> and the importance to leave no uncertainty or interpretation of R regarding the item that you want to use. To understand why it’s dangerous, it’s important to know how R work to find an element with a name. It’s related to the search path. To call a function, R first has to find it. The first place to look is the global environment (the top-level environment created during a R session). If we doesn’t find it there, it looks in the search path which is the list of all packages you have attached to your R session. You can display this search path by launch the code <code>search()</code> in the R console. Below, you have an example of my search path of my R session when I launch R without anything else.</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] ".GlobalEnv"        "package:stats"     "package:graphics" 
+[4] "package:grDevices" "package:utils"     "package:datasets" 
+[7] "package:methods"   "Autoloads"         "package:base"     </code></pre>
+</div>
+</div>
+<p>The order here is important because in this search path each element has the next element as its parents and define the searching order. Like talk before, the first place where R locking is the global environment (<code>.GlobalEnv</code>), following by several packages, here attached automatically when you launch a R console. The item <code>Autoloads</code> is a little bit particular because it’s a special environment used only when it’s necessary for save memory. The last one of this search path is the <a href="https://search.r-project.org/R/refmans/base/html/base-package.html" class="external" target="_blank">base</a> package cited before. Now, the important aspect is what happen when you attached a new package through the R console (with <code>library()</code> as example)? By doing that you modify the search path, and your package will be inserted right after the global environment. Below, I attached the <a href="https://pak.r-lib.org/" class="external" target="_blank">pak</a> package.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pak)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] ".GlobalEnv"        "package:pak"       "package:stats"    
  [4] "package:graphics"  "package:grDevices" "package:utils"    
@@ -528,8 +559,70 @@ Note
 [10] "package:base"     </code></pre>
 </div>
 </div>
+<p>It’s a big change because that means that if the package pak and stats contains a function or an element of the same name, if I just call the element in the R console without any other indication of location, R will select the first one he finds, in this example in the package pak. It could be a serious problem if my intention was to use the function in the package stats and by doing that I create incertitude in terms of processing.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Behind the tricky way of the search path, R provide you several messages to warning you. As an example, if you attached the <code>dplyr</code> package in your R session, you should have the message below.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attachement du package : 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Les objets suivants sont masqués depuis 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Les objets suivants sont masqués depuis 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+<p>With that message, R warning you that by attaching <code>dplyr</code> in the search path, several objects will not be selected first (in the package <code>stats</code> and <code>base</code>) if you call them in the R console with only their names (because these names were present in the <code>dplyr</code> package and “replace” the others present in packages).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Attaching and loading</p>
+</div>
+</div>
+</section>
+<section id="package-environment" class="level3" data-number="9.2.4">
+<h3 data-number="9.2.4" class="anchored" data-anchor-id="package-environment"><span class="header-section-number">9.2.4</span> - Package environment</h3>
+<p>With all the information above, you should understand the process of R to find objects regarding your needs. But to be very clear we have to talk about the package environment. It’s an important aspect because you will see after when we write some code inside our package, that you have to play with this package environment to access of the process that you define in your package.</p>
+<p>The best way to deal with that is to take a concrete example from the section <a href="https://r-pkgs.org/dependencies-mindset-background.html#function-lookup-inside-a-package" class="external" target="_blank">10.3.2</a> of the R Packages book. The function <code>sd()</code> of the <code>stats</code> pacakge use the function <code>var()</code>. But, if the user define a new function also call <code>var()</code> in the global environment, the function <code>sd()</code> will continue to use the function <code>var()</code> from the package <code>stats</code> and work correctly. This behavior is non consistent with what we expected regarding the search path. It’s related to the environments.</p>
+<p>Every function in a package is associated with a pair of environments, the package environment and the namespace environment. The package environment is the external interface to the package which exposes only objects exported. Globally, when you use the <code>::</code> operators you discuss with the package environment and you use the search path process explain above. The namespace environment is the internal interface of the package and includes all objects in the package (exported or not). That means that every link exists in the package environment also exists in the namespace environment but not to the contrary. This is why the package <code>stats</code> use the “correct” function for <code>var()</code> in our example above (a summary of the global example process is displayed in the <a href="#figure2">figure 1</a> below).</p>
+<figure id="figure2" class="figure">
+<p><img src="../images/namespace.png" alt="Figure 1: Global process for R object finding (copyright *R Packages (2e)* @r_packages_hadley_2023)" class="resized-img figure-img" width="60%"></p>
+<figcaption class="figcaption-center">
+<p>Figure 1: Global process for R object finding (copyright <span class="citation" data-cites="r_packages_hadley_2023">[<a href="_references.html#ref-r_packages_hadley_2023" role="doc-biblioref">1</a>]</span>)</p>
+</figcaption>
+</figure>
 
 
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-r_packages_hadley_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H, Bryan J (2023) R packages: Organize, test, document, and share your code (2nd edition). O’Reilly Media</div>
+</div>
+</div>
 </section>
 </section>
 
