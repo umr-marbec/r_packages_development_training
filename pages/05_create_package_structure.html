@@ -338,42 +338,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: usethis</code></pre>
+<pre><code>Warning: le package 'devtools' a été compilé avec la version R 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Le chargement a nécessité le package : usethis</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: le package 'usethis' a été compilé avec la version R 4.5.2</code></pre>
 </div>
 </div>
 <p>Just to be sure that you have everything you need to develop R package you can launch the following command line to display a report of the package development situation.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── R ───────────────────────────────────────────────────────────────────────────
-• version: 4.5.2
-• path: '/opt/R/4.5.2/lib/R/'
-── devtools ────────────────────────────────────────────────────────────────────
-• version: 2.4.6
-── dev package ─────────────────────────────────────────────────────────────────
-• package: &lt;unset&gt;
-• path: &lt;unset&gt;</code></pre>
+• version: 4.5.0
+• path: 'C:/Program Files/R/R-4.5.0/'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ All checks passed</code></pre>
+<pre><code>• R is out of date (4.5.0 vs 4.5.2)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>── Rtools ──────────────────────────────────────────────────────────────────────
+• path: 
+── devtools ────────────────────────────────────────────────────────────────────
+• version: 2.4.6</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>• devtools or its dependencies out of date:
+  'xml2', 'yaml', 'digest', 'fansi', 'gert', 'testthat'
+  Update them with `devtools::update_packages("devtools")`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>── dev package ─────────────────────────────────────────────────────────────────
+• package: &lt;unset&gt;
+• path: &lt;unset&gt;</code></pre>
 </div>
 </div>
 <p>If everything rock’s, launch the next command to initiate the global architecture of your package. For the training, my new R package will have the acronym “macfly” for “My Anwesone paCkage For Learning with Yearning”.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="st">"~/macfly"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ Creating '/home/runner/macfly/'.</code></pre>
+<pre><code>✔ Setting active project to "C:/Users/mdepetri/Documents/macfly".</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ Setting active project to "/home/runner/macfly".</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Creating 'R/'.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Writing 'DESCRIPTION'.</code></pre>
+<pre><code>ℹ Leaving 'DESCRIPTION' unchanged.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Package: macfly
@@ -387,9 +398,6 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✔ Writing 'NAMESPACE'.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Setting active project to "&lt;no active project&gt;".</code></pre>
@@ -455,14 +463,34 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">DESCRIPTION</td>
+<td style="text-align: left;">.gitignore</td>
 <td style="text-align: left;">file</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">NAMESPACE</td>
+<td style="text-align: left;">.Rbuildignore</td>
 <td style="text-align: left;">file</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">.Rproj.user</td>
+<td style="text-align: left;">directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DESCRIPTION</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LICENSE.md</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">macfly.Rproj</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NAMESPACE</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">R</td>
 <td style="text-align: left;">directory</td>
 </tr>

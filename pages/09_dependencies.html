@@ -519,7 +519,15 @@ Note
 </section>
 <section id="search-path" class="level3" data-number="9.2.3">
 <h3 data-number="9.2.3" class="anchored" data-anchor-id="search-path"><span class="header-section-number">9.2.3</span> - Search path</h3>
-<p>In the section below, we discuss the use of the operator <code>::</code> and the importance to leave no uncertainty or interpretation of R regarding the item that you want to use. To understand why it’s dangerous, it’s important to know how R work to find an element with a name. It’s related to the search path.</p>
+<p>In the section below, we discuss the use of the operator <code>::</code> and the importance to leave no uncertainty or interpretation of R regarding the item that you want to use. To understand why it’s dangerous, it’s important to know how R work to find an element with a name. It’s related to the search path. To call a function, R first has to find it. The first place to look is the global environment (the top-level environment created during a R session). If we doesn’t find it there, it looks in the search path which is the list of all packages you have attached to your R session. You can display this search path by launch the code <code>search()</code> in the R console. Below, you have an example of my search path of my R session when I launch R without anything else.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] ".GlobalEnv"        "package:pak"       "package:stats"    
+ [4] "package:graphics"  "package:grDevices" "package:utils"    
+ [7] "package:datasets"  "package:methods"   "Autoloads"        
+[10] "package:base"     </code></pre>
+</div>
+</div>
 
 
 </section>
