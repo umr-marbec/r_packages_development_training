@@ -415,7 +415,7 @@ Note
 │ ├─cli
 │ └─R6 2.6.1 [new][dl] (88.59 kB)
 ├─fs 1.6.6 [new][dl] (409.57 kB)
-├─gert 2.2.0 [new][bld][cmp][dl] (122.75 kB)
+├─gert 2.2.0 [new][dl] (4.01 MB)
 │ ├─askpass 1.2.1 [new][dl] (74.66 kB)
 │ │ └─sys 3.4.3 [new][dl] (47.79 kB)
 │ ├─credentials 2.0.3 [new][dl] (222.57 kB)
@@ -433,7 +433,7 @@ Note
 │ ├─cli
 │ ├─gitcreds 0.1.2 [new][dl] (100.86 kB)
 │ ├─glue 1.8.0 [new][dl] (183.69 kB)
-│ ├─httr2 1.2.1 [new][dl] (790.53 kB)
+│ ├─httr2 1.2.2 [new][dl] (798.54 kB)
 │ │ ├─cli
 │ │ ├─curl
 │ │ ├─glue
@@ -471,9 +471,9 @@ Note
 ├─rstudioapi
 ├─whisker 0.4.1 [new][dl] (84.01 kB)
 ├─withr
-└─yaml 2.3.11 [new][bld][cmp][dl] (94.85 kB)
+└─yaml 2.3.12 [new][dl] (124.88 kB)
 
-Key:  [new] new | [dl] download | [bld] build | [cmp] compile</code></pre>
+Key:  [new] new | [dl] download</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pkg_deps_explain</span>(<span class="at">pkg =</span> <span class="st">"usethis"</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">deps =</span> <span class="st">"cli"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -601,7 +601,34 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Attaching and loading</p>
+<p>In this section we discuss about packages attached to our R session but it’s important to take a moment to develop this term and the subject around that, especially as you are a package developers. In the common R users way we use the function <code>library()</code> to “load” package in our R session but in fact when we doing that we attaches package to the search path and theoretically not loading it.</p>
+<p>When you <span style="color:#ca0030;"><strong>loading</strong></span> a package, you will load code, data, DLLs (little pieces of codes to simplifying ) and register S3 and S4 methods and by association run the <code>.onLoad()</code> function (could be used for side-effects, for example to doing something after package loading). Your package will be available in memory but not in the search path so you won’t be able to access its without using <code>::</code>. The tricky thing it’s that using <code>::</code> will also load package automatically is it isn’t already loaded.</p>
+<p>In a second hand, when you <span style="color:#ca0030;"><strong>attaching</strong></span> a package, you put it in the search, but you can’t attach a package without loading it first, so when you use <code>library()</code> you load and attach a package (by association run <code>.onAttach()</code> function, which have the same purpose that the <code>.onLoad()</code> but when you attach package).</p>
+<p>You will find in the <a href="#table1">table 1</a> below a comparative of the four functions that make a package available.</p>
+<figcaption id="table1" class="figcaption-center">
+<p>Table 1: R functions for load or attach a package.</p>
+</figcaption>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Return an error</th>
+<th>Return <code>FALSE</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Load</td>
+<td><code>loadNamespace("package_name")</code><br>Not really used</td>
+<td><code>requireNamespace("package_name")</code><br>Used if you want a specific behaviour depending is the package is installer or not</td>
+</tr>
+<tr class="even">
+<td>Attach</td>
+<td><code>library(package_name)</code><br>Never use in package code below R/ or tests/, used locally if you want to terminate a script after an error</td>
+<td><code>require(package_name)</code><br>Don’t trust the name and dangerous because the process will continue when in case of failure. Maybe useful in case of suggested package (see <a href="https://umr-marbec.github.io/r_packages_development_training/pages/09_dependencies.html#field-in-the-description-file" class="external" target="_blank">section 9.2.1</a>)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
