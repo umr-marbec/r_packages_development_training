@@ -87,7 +87,6 @@ In the section below, we discuss the use of the operator `::` and the importance
 detach(name = "package:pak")
 ```
 
-
 ```{r}
 #| label: search-path-initial
 #| echo: true
@@ -118,12 +117,29 @@ With that message, R warning you that by attaching `dplyr` in the search path, s
 :::
 
 ::: callout-important
-Attaching and loading
+In this section we discuss about packages attached to our R session but it's important to take a moment to develop this term and the subject around that, especially as you are a package developers. In the common R users way we use the function `library()` to "load" package in our R session but in fact when we doing that we attaches package to the search path and theoretically not loading it.
+
+When you [**loading**]{style="color:#ca0030;"} a package, you will load code, data, DLLs (little pieces of codes to simplifying ) and register S3 and S4 methods and by association run the `.onLoad()` function (could be used for side-effects, for example to doing something after package loading). Your package will be available in memory but not in the search path so you won't be able to access its without using `::`. The tricky thing it's that using `::` will also load  package automatically is it isn't already loaded.
+
+In a second hand, when you [**attaching**]{style="color:#ca0030;"} a package, you put it in the search, but you can't attach a package without loading it first, so when you use `library()` you load and attach a package (by association run `.onAttach()` function, which have the same purpose that the `.onLoad()` but when you attach package).
+
+You will find in the <a href="#table1">table 1</a> below a comparative of the four functions that make a package available.
+
+<figcaption id="table1" class="figcaption-center">
+
+Table 1: R functions for load or attach a package.
+
+</figcaption>
+
+| | Return an error | Return `FALSE` |
+|----|----|----|
+| Load | `loadNamespace("package_name")`<br>Not really used | `requireNamespace("package_name")`<br>Used if you want a specific behaviour depending is the package is installer or not |
+| Attach | `library(package_name)`<br>Never use in package code below R/ or tests/, used locally if you want to terminate a script after an error | `require(package_name)`<br>Don't trust the name and dangerous because the process will continue when in case of failure. Maybe useful in case of suggested package (see [section 9.2.1](https://umr-marbec.github.io/r_packages_development_training/pages/09_dependencies.html#field-in-the-description-file){.external target="_blank"}) |
 :::
 
-### - Package environment 
+### - Package environment
 
-With all the information above, you should understand the process of R to find objects regarding your needs. But to be very clear we have to talk about the package environment. It's an important aspect because you will see after when we write some code inside our package, that you have to play with this package environment to access of the process that you define in your package. 
+With all the information above, you should understand the process of R to find objects regarding your needs. But to be very clear we have to talk about the package environment. It's an important aspect because you will see after when we write some code inside our package, that you have to play with this package environment to access of the process that you define in your package.
 
 The best way to deal with that is to take a concrete example from the section [10.3.2](https://r-pkgs.org/dependencies-mindset-background.html#function-lookup-inside-a-package){.external target="_blank"} of the R Packages book. The function `sd()` of the `stats` pacakge use the function `var()`. But, if the user define a new function also call `var()` in the global environment, the function `sd()` will continue to use the function `var()` from the package `stats` and work correctly. This behavior is non consistent with what we expected regarding the search path. It's related to the environments.
 
@@ -140,5 +156,3 @@ Figure 1: Global process for R object finding (copyright @r_packages_hadley_2023
 </figcaption>
 
 </figure>
-
-
