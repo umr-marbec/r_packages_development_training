@@ -51,13 +51,17 @@ pkg_deps_explain(pkg = "usethis",
 
 In the [section 7.7](https://umr-marbec.github.io/r_packages_development_training/pages/07_DESCRIPTION_file.html#futures-fields){.external target="_blank"} we discussed future fields. There are two major field used for declare packages dependencies, `Imports` and `Suggests`.
 
-[**`Imports`**]{style="color:#ca0030;"} listed packages mandatory for your package work. Any time your package is installed, those packages will also be installed, if not already present.
+[**`Imports`**]{style="color:#ca0030;"} listed packages mandatory for your package work. Any time your package is installed, those packages will also be installed, if not already present. It's maybe not the best name for that process, because `Imports` doesn't means the package associated is "imported".
 
 [**`Suggests`**]{style="color:#ca0030;"} if for packages not necessary to your package work, but could be use in several particular case. It might be packages for run tests, build vignettes or development processes. In fact that mean that the regular user never use theses packages, so it's necessary to install them only if you need to.
 
 You can find others fields for dependencies like `Depends` (used for example to define a minimum R version), `LinkingTo` (used if your package uses C or C++ code from another package) or `Enhances` but it's very specifics and you should probably never use them.
 
 We will go deeper into that later when we define some dependencies for our package but keep in your mind that you will find at the place all the packages dependencies used in your package with some potential additional information (like the minimum version mandatory).
+
+::: callout-note
+It could be difficult to understand the difference between the field `Imports` and `Depends` because both will install the package dependencies when your package is installed. The difference is that when you use `Depends`, the package loaded when your package is attached. With `Imports`, you loaded the package only when you use it. Globally it's better, because with that you minimise changes to the global landscape and you look forward to the ideal goal of a package which is to be self-contained. Furthermore, it reaches the example above regarding the use of `Depends` to define à minimum R version because this "check" should be done at some kind of low levels of the process.
+:::
 
 ### - The `NAMESPACE` file
 
@@ -119,7 +123,7 @@ With that message, R warning you that by attaching `dplyr` in the search path, s
 ::: callout-important
 In this section we discuss about packages attached to our R session but it's important to take a moment to develop this term and the subject around that, especially as you are a package developers. In the common R users way we use the function `library()` to "load" package in our R session but in fact when we doing that we attaches package to the search path and theoretically not loading it.
 
-When you [**loading**]{style="color:#ca0030;"} a package, you will load code, data, DLLs (little pieces of codes to simplifying ) and register S3 and S4 methods and by association run the `.onLoad()` function (could be used for side-effects, for example to doing something after package loading). Your package will be available in memory but not in the search path so you won't be able to access its without using `::`. The tricky thing it's that using `::` will also load  package automatically is it isn't already loaded.
+When you [**loading**]{style="color:#ca0030;"} a package, you will load code, data, DLLs (little pieces of codes to simplifying ) and register S3 and S4 methods and by association run the `.onLoad()` function (could be used for side-effects, for example to doing something after package loading). Your package will be available in memory but not in the search path so you won't be able to access its without using `::`. The tricky thing it's that using `::` will also load package automatically is it isn't already loaded.
 
 In a second hand, when you [**attaching**]{style="color:#ca0030;"} a package, you put it in the search, but you can't attach a package without loading it first, so when you use `library()` you load and attach a package (by association run `.onAttach()` function, which have the same purpose that the `.onLoad()` but when you attach package).
 
@@ -131,8 +135,8 @@ Table 1: R functions for load or attach a package.
 
 </figcaption>
 
-| | Return an error | Return `FALSE` |
-|----|----|----|
+|   | Return an error | Return `FALSE` |
+|------------------------|------------------------|------------------------|
 | Load | `loadNamespace("package_name")`<br>Not really used | `requireNamespace("package_name")`<br>Used if you want a specific behaviour depending is the package is installer or not |
 | Attach | `library(package_name)`<br>Never use in package code below R/ or tests/, used locally if you want to terminate a script after an error | `require(package_name)`<br>Don't trust the name and dangerous because the process will continue when in case of failure. Maybe useful in case of suggested package (see [section 9.2.1](https://umr-marbec.github.io/r_packages_development_training/pages/09_dependencies.html#field-in-the-description-file){.external target="_blank"}) |
 :::
@@ -156,3 +160,7 @@ Figure 1: Global process for R object finding (copyright @r_packages_hadley_2023
 </figcaption>
 
 </figure>
+
+## - Dependencies workflow
+
+Now you should better understand the global process behind dependencies management in R packages. In this section we will see how to implement that in our package and display a global workflow to deal with that.
