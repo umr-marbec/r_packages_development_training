@@ -328,6 +328,7 @@ div.csl-indent {
   <li><a href="#search-path" id="toc-search-path" class="nav-link" data-scroll-target="#search-path"><span class="header-section-number">9.2.3</span> - Search path</a></li>
   <li><a href="#package-environment" id="toc-package-environment" class="nav-link" data-scroll-target="#package-environment"><span class="header-section-number">9.2.4</span> - Package environment</a></li>
   </ul></li>
+  <li><a href="#dependencies-workflow" id="toc-dependencies-workflow" class="nav-link" data-scroll-target="#dependencies-workflow"><span class="header-section-number">9.3</span> - Dependencies workflow</a></li>
   </ul>
 </nav>
     </div>
@@ -506,10 +507,23 @@ usethis -&gt; purrr -&gt; vctrs -&gt; lifecycle -&gt; cli</code></pre>
 <section id="field-in-the-description-file" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="field-in-the-description-file"><span class="header-section-number">9.2.1</span> - Field in the <code>DESCRIPTION</code> file</h3>
 <p>In the <a href="https://umr-marbec.github.io/r_packages_development_training/pages/07_DESCRIPTION_file.html#futures-fields" class="external" target="_blank">section 7.7</a> we discussed future fields. There are two major field used for declare packages dependencies, <code>Imports</code> and <code>Suggests</code>.</p>
-<p><span style="color:#ca0030;"><strong><code>Imports</code></strong></span> listed packages mandatory for your package work. Any time your package is installed, those packages will also be installed, if not already present.</p>
+<p><span style="color:#ca0030;"><strong><code>Imports</code></strong></span> listed packages mandatory for your package work. Any time your package is installed, those packages will also be installed, if not already present. It’s maybe not the best name for that process, because <code>Imports</code> doesn’t means the package associated is “imported”.</p>
 <p><span style="color:#ca0030;"><strong><code>Suggests</code></strong></span> if for packages not necessary to your package work, but could be use in several particular case. It might be packages for run tests, build vignettes or development processes. In fact that mean that the regular user never use theses packages, so it’s necessary to install them only if you need to.</p>
 <p>You can find others fields for dependencies like <code>Depends</code> (used for example to define a minimum R version), <code>LinkingTo</code> (used if your package uses C or C++ code from another package) or <code>Enhances</code> but it’s very specifics and you should probably never use them.</p>
 <p>We will go deeper into that later when we define some dependencies for our package but keep in your mind that you will find at the place all the packages dependencies used in your package with some potential additional information (like the minimum version mandatory).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It could be difficult to understand the difference between the field <code>Imports</code> and <code>Depends</code> because both will install the package dependencies when your package is installed. The difference is that when you use <code>Depends</code>, the package loaded when your package is attached. With <code>Imports</code>, you loaded the package only when you use it. Globally it’s better, because with that you minimise changes to the global landscape and you look forward to the ideal goal of a package which is to be self-contained. Furthermore, it reaches the example above regarding the use of <code>Depends</code> to define à minimum R version because this “check” should be done at some kind of low levels of the process.</p>
+</div>
+</div>
 </section>
 <section id="the-namespace-file" class="level3" data-number="9.2.2">
 <h3 data-number="9.2.2" class="anchored" data-anchor-id="the-namespace-file"><span class="header-section-number">9.2.2</span> - The <code>NAMESPACE</code> file</h3>
@@ -643,6 +657,11 @@ Important
 <p>Figure 1: Global process for R object finding (copyright <span class="citation" data-cites="r_packages_hadley_2023">[<a href="_references.html#ref-r_packages_hadley_2023" role="doc-biblioref">1</a>]</span>)</p>
 </figcaption>
 </figure>
+</section>
+</section>
+<section id="dependencies-workflow" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="dependencies-workflow"><span class="header-section-number">9.3</span> - Dependencies workflow</h2>
+<p>Now you should better understand the global process behind dependencies management in R packages. In this section we will see how to implement that in our package and display a global workflow to deal with that.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
@@ -650,7 +669,6 @@ Important
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H, Bryan J (2023) R packages: Organize, test, document, and share your code (2nd edition). O’Reilly Media</div>
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
