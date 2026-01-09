@@ -361,7 +361,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If everything rock’s, launch the next command to initiate the global architecture of your package. For the training, my new R package will have the acronym “macfly” for “My Anwesone paCkage For Learning with Yearning”.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_package</span>(<span class="at">path =</span> <span class="fu">path.expand</span>(<span class="st">"~/macfly"</span>),</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">open =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">rstudio =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">open =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Creating '/home/runner/macfly/'.</code></pre>
 </div>
@@ -389,6 +390,18 @@ RoxygenNote: 7.3.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Writing 'NAMESPACE'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Writing 'macfly.Rproj'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Adding "^macfly\\.Rproj$" to '.Rbuildignore'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Adding ".Rproj.user" to '.gitignore'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Adding "^\\.Rproj\\.user$" to '.Rbuildignore'.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>✔ Setting active project to "&lt;no active project&gt;".</code></pre>
@@ -454,6 +467,14 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">.Rbuildignore</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">.gitignore</td>
+<td style="text-align: left;">file</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">DESCRIPTION</td>
 <td style="text-align: left;">file</td>
 </tr>
@@ -464,6 +485,10 @@ Note
 <tr class="odd">
 <td style="text-align: left;">R</td>
 <td style="text-align: left;">directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">macfly.Rproj</td>
+<td style="text-align: left;">file</td>
 </tr>
 </tbody>
 </table>
