@@ -1,3 +1,9 @@
+```{r}
+#| label: change-qmd-wd
+#| echo: false
+knitr::opts_knit$set(root.dir = path.expand("~/macfly"))
+```
+
 # - Licensing {#sec-licensing}
 
 Choose your licence for your package allows you to declare how you want your code to be used and an important step if you use or include code written by someone else, to respect his work and license associated. You don't need, thankfully, to be an expert and you just need to follow several guidelines. If you have any doubt or if you are in a specific case, like if selling your package, don't hesitate to consult juridic service of your company/institute or for example a lawyer.
@@ -227,13 +233,6 @@ If you are here, that mean that you are an expert in license :)
 Now we will just define a license for our R package example called "macfly". After a very hard debate in my mind, I choose to use a GPL v3 license. Behind that choose I like the idea to keep all the future production associated with my package (and there will be because my package name contains the word awesome) free and open. In the discussion the MIT license was at the top of the list and I also think about the AGPL linked to the potential network use of my package (if I decided to add R Shiny for example), but we stay simple here. It's a joke but it is the kind of discussion that you should have and could avoid pain if you add to change your license in the middle of the life of your package.
 
 Focusing on my want, to define a license to my package, I've to launch the following command line in the working directory of my package.
-
-```{r}
-#| label: setup
-#| include: false
-source("../common.R")
-library(usethis)
-```
 
 ```{r}
 #| label: define-gpl3

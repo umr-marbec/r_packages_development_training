@@ -1,6 +1,9 @@
 project:
   type: book
 
+render:
+    clean: true
+
 book:
   title: "R packages development training"
   author: "[Mathieu Depetris](mailto:mathieu.depetris@cnrs.fr)"
@@ -63,6 +66,3 @@ format:
 editor: visual
 
 lang: en-US
-
-execute:
-  freeze: auto

@@ -21,17 +21,16 @@ dev_sitrep()
 If everything rock's, launch the next command to initiate the global architecture of your package. For the training, my new R package will have the acronym "macfly" for "My Anwesone paCkage For Learning with Yearning".
 
 ```{r}
-#| label: create-package-fake
-#| eval: false
-#| include: true
-create_package(path = "~/macfly")
+#| label: create-package
+#| echo: true
+create_package(path = path.expand("~/macfly"),
+               open = FALSE)
 ```
 
 ```{r}
-#| label: create-package
+#| label: change-qmd-wd
 #| echo: false
-create_package(path = path.expand("~/macfly"))
-knitr::opts_knit$set(root.dir = "~/macfly")
+knitr::opts_knit$set(root.dir = path.expand("~/macfly"))
 ```
 
 Another solution with RStudio is to use the interface through the *file* menu, *New Project...*, *New Directory*, *R Package*, file the field "Package name:", click on "Open in new session" and finish with \*Create Project". Even is the approach is similar, the click-button interface create in addition a template function with a proposal for the documentation associated. In opposite, the command line creation include by default a .gitignore file (for Git use). It's not true important but it could be a bit better to use the command line because we will learn how to create a R function template later and in your developer life it could be very rare (and dangerous) when you don't use a Git associated to your work.
