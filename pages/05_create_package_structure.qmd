@@ -24,6 +24,7 @@ If everything rock's, launch the next command to initiate the global architectur
 #| label: create-package
 #| echo: true
 create_package(path = path.expand("~/macfly"),
+               rstudio = TRUE,
                open = FALSE)
 ```
 
